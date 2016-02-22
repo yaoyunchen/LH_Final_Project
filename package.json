@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IamElaya/LH_Final_Project.git"
+    "url": "git+https://github.com/yaoyunchen/LH_Final_Project"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IamElaya/LH_Final_Project/issues"
+    "url": "https://github.com/yaoyunchen/LH_Final_Project/issues"
   },
-  "homepage": "https://github.com/IamElaya/LH_Final_Project#readme",
+  "homepage": "https://github.com/yaoyunchen/LH_Final_Project#readme",
   "dependencies": {
     "babel-loader": "^6.2.3",
     "babel-preset-es2015": "^6.5.0",
