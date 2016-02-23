@@ -1,22 +1,24 @@
 import React from 'react';
 
-class VideoPlayer extends React.Component {
-render(){
-  var Flickr = require("flickrapi"),
-    flickrOptions = {
-      api_key: "15eb0376258be9a35a642a28973fa317",
-      secret: "f2c7887a440ecaf4"
-    };
-  Flickr.tokenOnly(flickrOptions, function(error, flickr) {
-  // we can now use "flickr" as our API object,
-  // but we can only call public methods and access public data
-  
-  });
 
-  return (
-    <div>
-      <p>EAT SHIT</p>
-    </div>
+class VideoPlayer extends React.Component {
+  componentWillMount() {
+    this.setState({
+      video_url: "https://www.flickr.com/photos/132209807@N03/23853274680/play/hd/574c827b24/"
+    })
+  }
+
+  // componentDidMount() {
+    
+  // }
+
+  render(){
+    return (
+      <div>
+        <video width="100%" height="100%" controls autoPlay>
+          <source src={this.state.video_url} type="video/mp4"></source>
+        </video>
+      </div>
     )
   }
 }

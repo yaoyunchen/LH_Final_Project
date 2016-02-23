@@ -1,13 +1,42 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="utf-8">
   <title>React</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.33/browser.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link href="./assets/jqmap/dist/jqvmap.css" media="screen" rel="stylesheet" type="text/css">
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/jqmap/dist/jquery.vmap.js"></script>
+  <script type="text/javascript" src="./assets/jqmap/dist/maps/jquery.vmap.world.js" charset="utf-8"></script>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery('#vmap').vectorMap({ map: 'world_en',
+        // backgroundColor: '#000',
+        backgroundOpacity: 0.1,
+        borderColor: '#add8e6',
+        borderOpacity: 0.35,
+        borderWidth: 5, 
+        hoverColor: '#d3d3d3',
+        selectedColor: '#666666',
+        onRegionClick: function (element, code, region) {
+          var message = 'You clicked "' + region + '" which has the code: '+ code.toUpperCase();
+          alert(message);
+           }
+        });
+    });
+    </script>
+
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+  </div>
   <script src="index.js"></script>
+  <footer>
+
+  </footer>
 </body>
 </html>
