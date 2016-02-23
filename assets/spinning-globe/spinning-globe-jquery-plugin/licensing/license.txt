@@ -1,0 +1,12 @@
+This Spinning Globe jQuery plugin is comprised of two parts:
+
+
+(1) The Javascript library jQuery is licensed under MIT License and GPL. You can read about that licnese here:
+
+http://jquery.org/license/
+
+
+
+(2) All other parts of the Spinning Globe jQuery plugin including, but not limited to the CSS code, javascript code, HTML files, images, PSD files, and design are licensed according to the license purchased. Read about licensing details here: 
+
+http://codecanyon.net/licenses/regular_extended
