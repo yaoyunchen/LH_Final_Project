@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+  background-color: black;
+  color: #f2f2f2;
+}
+
+a {
+  color: green;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #f2f2f2;
+}
+
+#globe4 {
+  margin: auto;
+  margin-bottom: 30px;
+}
