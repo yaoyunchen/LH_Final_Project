@@ -26,16 +26,12 @@ var App = {
     }, function() {
       this.flickrFindPlace(this.props.countryCode)
     });
-    console.log("HANDLING MAP CLICK");
-    console.log('first', this);
     
   },
 
 
   flickrFindPlace : function(code) {
     var that = this
-    console.log("FINDING PLACE")
-    console.log('second', this)
 
     var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=c01e0fde2a3823f1e80eed24d5b80e63&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
     
@@ -61,8 +57,16 @@ var App = {
       if (pagesNumber == 1) {
         totalVideos = results.photos.total;
       } else {
-        pagesNumber = Math.floor(Math.random() * (pagesNumber - 0 + 1) + 0);
+        if (pagesNumber > 200) {
+          pagesNumber = 200;
+        }
+        pagesNumber = Math.floor(Math.random() * (pagesNumber - 0 + 1) + 0);  
       }
+
+      var arrayLength = results.photos.photo.length;
+      while (arrayLength == 0) {
+        pagesNumber = 1;
+      } 
 
       that.flickrPhotoSearch(place_id,woe_id, totalVideos, pagesNumber)
     })
@@ -74,7 +78,7 @@ var App = {
     var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=c01e0fde2a3823f1e80eed24d5b80e63&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=" +totalVideos + "&page=" + pagesNumber + "&format=json&nojsoncallback=1"
     
     // Add &pages to randomize played videos
-
+    console.log('Photo search', strUrl)
     this.serverRequest = $.get(strUrl, function(results){
 
       var randomVideo = Math.floor(Math.random() * (totalVideos));
@@ -90,7 +94,7 @@ var App = {
   flickrGetSizes : function(id, owner, title) {
     var that = this
     var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=c01e0fde2a3823f1e80eed24d5b80e63&photo_id=" + id + "&format=json&nojsoncallback=1"
-
+    console.log('Get sizes', strUrl)
     this.serverRequest = $.get(strUrl, function(results){
       
       var size = results.sizes.size[results.sizes.size.length - 1];
@@ -130,6 +134,3 @@ var App = {
 };
 
 export default React.createClass(App)
-
-// call and bind
-
