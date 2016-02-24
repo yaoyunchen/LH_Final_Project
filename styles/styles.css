@@ -13,7 +13,34 @@ h1 {
   color: #f2f2f2;
 }
 
+footer {
+  width: 100%;
+  height: 75px;
+  bottom: 0;
+  position: fixed;
+  background-color: #131314;
+  position: relative;
+  bottom: 0;
+  overflow: hidden;
+}
+
 #globe5 {
   margin: auto;
   margin-bottom: 30px;
+}
+
+#main-logo {
+  position: absolute;
+  left: 0;
+  width: 170px;
+  height: 75px;
+  padding: 5px 20px;
+}
+
+#splash {
+  position: absolute;
+  left: 3px;
+  top: 0.01%;
+  width: 12%;
+  opacity: 0.7; 
 }
