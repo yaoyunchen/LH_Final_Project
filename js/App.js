@@ -66,7 +66,8 @@ var App = {
       }
 
       var arrayLength = results.photos.photo.length;
-      while (arrayLength == 0) {
+      
+      if (arrayLength == 0) {
         pagesNumber = 1;
       } 
 
