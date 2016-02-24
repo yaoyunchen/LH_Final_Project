@@ -19,21 +19,26 @@ var App = {
   },
 
 
-  handleMapClick(code) {
-    var that = this;
-    that.setState({
-      countryCode: code,
-      getCode: true
+  handleMapClick : function(code) {
+    
+    this.setState({
+      countryCode: code
+    }, function() {
+      this.flickrFindPlace(this.props.countryCode)
     });
-    console.log(that, this);
     console.log("HANDLING MAP CLICK");
+    console.log('first', this);
+    
   },
 
 
-  flickrFindPlace : function(code){
+  flickrFindPlace : function(code) {
     var that = this
-    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=c01e0fde2a3823f1e80eed24d5b80e63&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
+    console.log("FINDING PLACE")
+    console.log('second', this)
 
+    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=c01e0fde2a3823f1e80eed24d5b80e63&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
+    
     this.serverRequest = $.get(strUrl, function(results){
       for (var i=0; i < results.places.place.length; i ++) {
           if (results.places.place[i].place_type == 'country') {
@@ -76,12 +81,9 @@ var App = {
 
 
   flickrEmbedVideo(url) {
-    var that = this
-    that.setState({
-      videoURL: url,
-      getCode: false
+    this.setState({
+      videoUrl: url
     })
-    console.log("HERE NOW")
   },
 
   render(){

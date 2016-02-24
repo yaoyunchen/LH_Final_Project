@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default React.createClass({  
+var Map = {  
 
   componentDidMount() {
     jQuery('#vmap').bind('regionClick.jqvmap', function(event, code, region)
@@ -30,9 +30,7 @@ export default React.createClass({
       </div>     
     )
   }
-})
+}
 
-// // About to remove the element from the DOM.
-// componentWillUnmount() {
 
-// }
+export default React.createClass(Map)

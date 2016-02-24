@@ -1,33 +1,32 @@
 import React from 'react';
 
 
-class VideoPlayer extends React.Component {
+var VideoPlayer = {
 
-  shouldComponentUpdate() {
-    console.log('test',this);
-    console.log("TIME FOR SHIT TO CHANGE")
-    console.log(this.props.getCode)
-    if (this.props.getCode === true) {
-      console.log("SHIT IS CHANGING")
-      this.props.flickrFindPlace(this.props.countryCode)
-    } else {
-      console.log("SHIT DOESNT NEED TO CHANGE")
-    }
-    console.log('test2',this);
-    return true;
-  }
+  // componentWillReceiveProp() {
+  //   this.props.flickrFindPlace(this.props.countryCode)
+  //   // console.log('test',this);
+  //   // console.log("TIME FOR SHIT TO CHANGE")
+  //   // console.log(this.props.getCode)
+  //   // if (this.props.getCode === true) {
+  //   //   console.log("SHIT IS CHANGING")
+  //   //   this.props.flickrFindPlace(this.props.countryCode)
+  //   // } else {
+  //   //   console.log("SHIT DOESNT NEED TO CHANGE")
+  //   // }
+  //   // console.log('test2',this);
+  //   // return true;
+  // },
 
 
   render(){
     return (
       <div>
-        <video width="100%" height="100%" controls autoPlay>
-          <source src={this.props.videoUrl} type="video/mp4">
-          </source>
+        <video width="100%" height="100%" controls autoPlay src={this.props.videoUrl} type="video/mp4">
         </video>
       </div>
     )
   }
 }
 
-export default VideoPlayer
+export default React.createClass(VideoPlayer)
