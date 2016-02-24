@@ -5,6 +5,10 @@ var VideoPlayer = {
   componentDidMount() {
     Video(document.getElementById("player"), {"playbackRates": [1, 2, 4]});
   },
+  
+  playNextVideo(){
+    this.props.onEnded()
+  },
 
   render(){
     return (
@@ -13,7 +17,7 @@ var VideoPlayer = {
           controls
           preload="auto"
           autoPlay
-          loop
+          onEnded={this.playNextVideo}
           src={this.props.videoUrl} 
         > 
         </video>

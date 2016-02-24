@@ -22,21 +22,6 @@
 
   <script type="text/javascript" src="./assets/jqmap/dist/maps/jquery.vmap.world.js" charset="utf-8"></script>
 
-  <script type="text/javascript">
-    $(function() {
-      $("#globe5").spinningGlobe({
-        earthWidth: 284, 
-        earthHeight: 75, 
-        prefix: '/assets/spinning-globe/spinning-globe-jquery-plugin/img/globe5/', 
-        logo: false, 
-        resistance: 25 
-      });
-      $('#globe5').on('click', function() {
-        $('#slider').toggleClass('menu-open');
-      });
-    })     
-  </script>
-
 
   <script id="map" type="text/javascript">
     jQuery(document).ready(function() {
@@ -47,7 +32,6 @@
 </head>
 <body>
   <div id="container">
-    <div id="globe5"></div>
     <div id="app"></div>
     <footer>
       <img id="main-logo" src="/assets/logo/glimpse_logo1.gif" />
