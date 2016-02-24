@@ -70,6 +70,11 @@ var App = {
       if (arrayLength == 0) {
         pagesNumber = 1;
       } 
+      console.log('photos', results.photos.photo)
+       console.log('photos photo', results.photos.photo)
+      console.log('array length', arrayLength)
+      console.log('pages number', pagesNumber)
+      console.log('PAY ATTN FUCKNI', place_id,woe_id, totalVideos, pagesNumber)
 
       that.flickrPhotoSearch(place_id,woe_id, totalVideos, pagesNumber)
     })
@@ -82,13 +87,19 @@ var App = {
     
     // Add &pages to randomize played videos
     console.log('Photo search', strUrl)
+
     this.serverRequest = $.get(strUrl, function(results){
 
       var randomVideo = Math.floor(Math.random() * (totalVideos));
 
       var photo = results.photos.photo[randomVideo];
 
-      that.flickrGetSizes(photo.id, photo.owner, photo.title);
+      if (typeof photo.id === 'undefined') {
+        console.log("FIXING SHIT UP BRO");
+        that.flickrFindPlace(this.props.countryCode)
+      } else {
+        that.flickrGetSizes(photo.id, photo.owner, photo.title);
+      }
       
     })
   },
@@ -113,6 +124,10 @@ var App = {
     })
   },
 
+  handleNextVideo(){
+    this.flickrFindPlace(this.props.countryCode)
+  },
+
   render(){
 
     return (
@@ -122,6 +137,7 @@ var App = {
           onMapClick={this.handleMapClick}
         />
         <VideoPlayer
+          onEnded={this.handleNextVideo}
           videoUrl={this.state.videoUrl}
           countryCode={this.state.countryCode}
           getCode={this.state.getCode}

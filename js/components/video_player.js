@@ -18,11 +18,14 @@ var VideoPlayer = {
   //   // return true;
   // },
 
+  playNextVideo(){
+    this.props.onEnded();
+  },
 
   render(){
     return (
       <div>
-        <video id="player" controls autoPlay src={this.props.videoUrl} type="video/mp4">
+        <video onEnded={this.playNextVideo} id="player" controls autoPlay src={this.props.videoUrl} type="video/mp4">
         </video>
       </div>
     )
