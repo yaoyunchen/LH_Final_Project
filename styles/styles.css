@@ -15,7 +15,7 @@ h1 {
 
 footer {
   width: 100%;
-  height: 10%;
+  height: 75px;
   bottom: 0;
   background-color: #131314;
   position: fixed;
@@ -28,52 +28,31 @@ footer {
   width: 100%;
 }
 
-#container2 {
-  height: 100%;
-  min-width: 100%;
-  position: relative;
-  /*overflow: hidden;*/
-}
-
 #app {
   width: 100%;
   height: 100%;
-  position: fixed;
-}
-
-#player {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  bottom: 10%;
-}
-
-#globe {
-  width: 100%;
-  top: 55%;
-  left: 45%;
   position: relative;
 }
 
-#globe5 {
-  margin: auto;
-  z-index: 2000;
-  position: absolute;
+#player {
+  position: fixed;
   height: 100%;
   width: 100%;
-  top: 20%;
   left: 0;
-  /*overflow: hidden;*/
-  border-radius: 50%;
-  /*float: right;*/
+  bottom: 75px;
+}
+
+
+#globe5 {
+  margin: auto;
+  z-index: 1000;
 }
 
 #main-logo {
   position: absolute;
   left: 0;
-  min-width: 11%;
-  height: 100%;
+  width: 170px;
+  height: 75px;
   padding: 5px 20px;
 }
 
@@ -82,43 +61,25 @@ footer {
   left: 3px;
   top: 0.01%;
   width: 12%;
-  height: auto;
   opacity: 0.7; 
 }
 
 #vmap {
   z-index: 1000;
   position: absolute;
-/*  float: right;
-  right: -600px;*/
-  top: 7%;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  float: right;
-}
-
-#outerslider {
-  width: auto;
-  height: 450px;
-  position: relative;
 }
 
 #slider {
-  width: 50%; 
+  width: 600px; 
   height: 900px;
   background-color: rgba(245, 245, 245, 0.5);
   position: relative;
   float: right;
-  right: -720px;
+  right: -600px;
   z-index: 1000;
   bottom: 75px;
 }
 
 #slider.menu-open {
   right: 0;
-}
-
-#globe.globe-move {
-  left: 0;
 }

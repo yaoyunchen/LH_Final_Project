@@ -26,6 +26,7 @@
     "flickrapi": "^0.4.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
+    "video.js": "^5.7.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   }

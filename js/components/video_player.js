@@ -1,28 +1,21 @@
 import React from 'react';
-
-
+import Video from 'video.js';
 var VideoPlayer = {
 
-  // componentWillReceiveProp() {
-  //   this.props.flickrFindPlace(this.props.countryCode)
-  //   // console.log('test',this);
-  //   // console.log("TIME FOR SHIT TO CHANGE")
-  //   // console.log(this.props.getCode)
-  //   // if (this.props.getCode === true) {
-  //   //   console.log("SHIT IS CHANGING")
-  //   //   this.props.flickrFindPlace(this.props.countryCode)
-  //   // } else {
-  //   //   console.log("SHIT DOESNT NEED TO CHANGE")
-  //   // }
-  //   // console.log('test2',this);
-  //   // return true;
-  // },
-
+  componentDidMount() {
+    Video(document.getElementById("player"), {"playbackRates": [1, 2, 4]});
+  },
 
   render(){
     return (
       <div>
-        <video id="player" controls autoPlay src={this.props.videoUrl} type="video/mp4">
+        <video id="player" className="video-js vjs-default-skin"
+          controls
+          preload="auto"
+          autoPlay
+          loop
+          src={this.props.videoUrl} 
+        > 
         </video>
       </div>
     )

@@ -81,7 +81,6 @@ var App = {
     var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=c01e0fde2a3823f1e80eed24d5b80e63&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=" +totalVideos + "&page=" + pagesNumber + "&format=json&nojsoncallback=1"
     
     // Add &pages to randomize played videos
-    console.log('Photo search', strUrl)
     this.serverRequest = $.get(strUrl, function(results){
 
       var randomVideo = Math.floor(Math.random() * (totalVideos));
@@ -97,7 +96,6 @@ var App = {
   flickrGetSizes : function(id, owner, title) {
     var that = this
     var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=c01e0fde2a3823f1e80eed24d5b80e63&photo_id=" + id + "&format=json&nojsoncallback=1"
-    console.log('Get sizes', strUrl)
     this.serverRequest = $.get(strUrl, function(results){
       
       var size = results.sizes.size[results.sizes.size.length - 1];
