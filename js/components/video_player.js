@@ -2,15 +2,21 @@ import React from 'react';
 
 
 class VideoPlayer extends React.Component {
-  // componentWillMount() {
-  //   this.setState({
-  //     video_url: "https://www.flickr.com/photos/132209807@N03/23853274680/play/hd/574c827b24/"
-  //   })
-  // }
 
-  // componentDidMount() {
-    
-  // }
+  shouldComponentUpdate() {
+    console.log('test',this);
+    console.log("TIME FOR SHIT TO CHANGE")
+    console.log(this.props.getCode)
+    if (this.props.getCode === true) {
+      console.log("SHIT IS CHANGING")
+      this.props.flickrFindPlace(this.props.countryCode)
+    } else {
+      console.log("SHIT DOESNT NEED TO CHANGE")
+    }
+    console.log('test2',this);
+    return true;
+  }
+
 
   render(){
     return (

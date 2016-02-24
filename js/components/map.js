@@ -1,31 +1,18 @@
 import React from 'react';
 
-export default React.createClass({
-  getInitialState(){
-    return {
-      code: ''
-    }
-  },
+export default React.createClass({  
 
-  componentDisMount() {
-    console.log('mounted')
+  componentDidMount() {
     jQuery('#vmap').bind('regionClick.jqvmap', function(event, code, region)
       {
-        // somehow link countryCode in App.js to the code
-
+        handleMapClick(event)
       }
     );
-    this.setState({
-      code: 'CA'
-    });
-    console.log(this.state.code)
   },
 
-
-  handleMapClick(){
+  handleMapClick(code){
     //jQuery('#vmap').vectorMap('set', 'backgroundColor', '#FFF');
-    console.log('clicked')
-    this.props.onMapClick(this.state.code)
+    this.props.onMapClick(code.target.id.slice(-2).toUpperCase());
   },
 
   render(){
