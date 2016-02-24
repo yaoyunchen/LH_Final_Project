@@ -21,9 +21,9 @@ var Slider = {
     }
   },
 
-
-
-  // set state to 'show' on handleGlobeClick;
+  handleSliderMapClick(code){
+    this.props.onMapClick(code);
+  },
 
   render() {
     return (
@@ -33,7 +33,7 @@ var Slider = {
         <div className={this.state.status} id="slider">
           <Map 
             countryCode={this.props.countryCode}
-            onMapClick={this.props.handleMapClick}
+            onMapClick={this.handleSliderMapClick}
           />
         </div>
       </div>
