@@ -17,7 +17,7 @@
 			earthWidth: 1889, // width of the earth map 
 			earthHeight: 500, // height of the earth map
 			// prefix: 'img/globe1/', // prefix for your image path
-			prefix: '/assets/spinning-globe/spinning-globe-jquery-plugin/img/globe4/',
+			prefix: '/assets/spinning-globe/spinning-globe-jquery-plugin/img/globe5/',
 			logo: false, // if true, will look for image file named 'globe_middleground_{width}x{height}.png'
 			resistance: 20 // value 1-100. The higher the number, the slower the globe spins.
 		};  
