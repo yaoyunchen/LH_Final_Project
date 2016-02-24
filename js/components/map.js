@@ -16,18 +16,18 @@ var Map = {
   },
 
   render(){
-    var map_style = {
-      width: "600px",
-      height: "400px",
-    };
+    // var map_style = {
+    //   width: "600px",
+    //   height: "400px",
+    // };
     return (
-      <nav id="slider">
+      // <nav id="slider">
         <div id="vmap"
-          style={map_style}
+          // style={map_style}
           onClick={this.handleMapClick}
         >
         </div> 
-      </nav>     
+      // </nav>     
     )
   }
 }
