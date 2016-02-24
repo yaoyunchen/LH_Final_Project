@@ -2,12 +2,13 @@ import React from 'react';
 import Video from 'video.js';
 var VideoPlayer = {
 
+
   componentDidMount() {
     Video(document.getElementById("player"), {"playbackRates": [1, 2, 4]});
   },
   
   playNextVideo(){
-    this.props.onEnded()
+    this.props.onEnded();
   },
 
   render(){
