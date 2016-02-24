@@ -11,25 +11,25 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="/assets/spinning-globe/spinning-globe-jquery-plugin/js/jquery.spinningGlobe.js"></script>
   <script type="text/javascript">
-        $(function() {
-          $("#globe4").spinningGlobe({
-            earthWidth: 378, 
-            earthHeight: 100, 
-            prefix: '/assets/spinning-globe/spinning-globe-jquery-plugin/img/globe4/', 
-            logo: false, 
-            resistance: 25 
-          });
-        })
-        
+    $(function() {
+      $("#globe4").spinningGlobe({
+        earthWidth: 378, 
+        earthHeight: 100, 
+        prefix: '/assets/spinning-globe/spinning-globe-jquery-plugin/img/globe4/', 
+        logo: false, 
+        resistance: 25 
+      });
+    }) 
   </script>
+
   <script type="text/javascript" src="./assets/jqmap/dist/jquery.vmap.min.js"></script>
   <script type="text/javascript" src="./assets/jqmap/dist/maps/jquery.vmap.world.js" charset="utf-8"></script>
 
-  <!-- // <script id="map" type="text/javascript">
-  //   jQuery(document).ready(function() {
-  //     jQuery('#vmap').vectorMap({ map: 'world_en'});
-  //   });
-  // </script> -->
+  <script id="map" type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery('#vmap').vectorMap({ map: 'world_en'});
+    });
+  </script>
 
 </head>
 <body>
@@ -38,7 +38,8 @@
   </div>
   <script src="index.js"></script>
   <footer>
-
+    <img id="main-logo" src="/assets/logo/glimpse_logo1.gif" />
+    <img id="splash" src="/assets/logo/logoback1.png" />
   </footer>
 </body>
 </html>
