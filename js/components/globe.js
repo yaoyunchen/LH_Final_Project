@@ -8,13 +8,13 @@ var Globe = {
   //   //     handleMapClick(event)
   //   //   }
   //   );
-  jQuery("#globe5").spinningGlobe({
-        earthWidth: 284, 
-        earthHeight: 75, 
-        prefix: '/assets/spinning-globe/spinning-globe-jquery-plugin/img/globe5/', 
-        logo: false, 
-        resistance: 25 
-      });
+    jQuery("#globe5").spinningGlobe({
+      earthWidth: 284, 
+      earthHeight: 75, 
+      prefix: '/assets/spinning-globe/spinning-globe-jquery-plugin/img/globe5/', 
+      logo: false, 
+      resistance: 25 
+    });
   },
 
   // handleMapClick(code){
@@ -22,19 +22,16 @@ var Globe = {
   //   this.props.onMapClick(code.target.id.slice(-2).toUpperCase());
   // },
 
+  onGlobeClick(e) {
+    this.props.onGlobeClick(e);
+  },
+
   render(){
-    // var map_style = {
-    //   width: "600px",
-    //   height: "400px",
-    // };
     return (
-      // <nav id="slider">
-        <div id="globe5"
-          // style={map_style}
-          // onClick={this.handleMapClick}
-        >
-        </div> 
-      // </nav>     
+      <div id="globe5"
+        onClick={this.onGlobeClick}
+      >
+      </div>    
     )
   }
 }

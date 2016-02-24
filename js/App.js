@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import VideoPlayer from './components/video_player';
-import Map from './components/map';
-import Globe from './components/globe';
+// import Map from './components/map';
+import Slider from './components/slider';
+// import Globe from './components/globe';
 
 
 var App = {
@@ -115,7 +116,7 @@ var App = {
 
     return (
       <div id="container2">
-        <Map 
+        <Slider 
           countryCode={this.state.countryCode}
           onMapClick={this.handleMapClick}
         />
@@ -128,7 +129,6 @@ var App = {
           flickrGetSizes={this.flickrGetSizes}
           flickrEmbedVideo={this.flickrEmbedVideo}
         />
-        <Globe />
       </div>
       )
   }

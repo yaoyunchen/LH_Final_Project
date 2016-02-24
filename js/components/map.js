@@ -27,7 +27,7 @@ var Map = {
           onClick={this.handleMapClick}
         >
         </div> 
-      // </nav>     
+      // </nav>  
     )
   }
 }

@@ -32,7 +32,7 @@ footer {
   height: 100%;
   min-width: 100%;
   position: relative;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 #app {
@@ -51,16 +51,21 @@ footer {
 
 #globe5 {
   margin: auto;
-  z-index: 1000;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%
+  z-index: 2000;
+  /*position: relative;*/
+  height: 100%;
+  width: 100%;
+  top: 20%;
+  left: 0;
+  /*overflow: hidden;*/
+  border-radius: 50%;
+  /*float: right;*/
 }
 
 #main-logo {
   position: absolute;
   left: 0;
-  width: 15%;
+  min-width: 11%;
   height: 100%;
   padding: 5px 20px;
 }
@@ -77,25 +82,25 @@ footer {
 #vmap {
   z-index: 1000;
   position: absolute;
- /* float: right;*/
- /* right: -600px;*/
-   left: 0;
-  width: 50%;
+/*  float: right;
+  right: -600px;*/
+  left: 0;
+  width: 100%;
   height: 50%;
   float: right;
 }
 
-/*#slider {
-  width: 50%; 
-  height: 100%;
+#slider {
+  width: 720px; 
+  height: 900px;
   background-color: rgba(245, 245, 245, 0.5);
   position: relative;
-  float: right;*/
-/*  right: -600px;*/
-/*  z-index: 1000;*/
- /* bottom: 75px;*/
-/*}*/
+  float: right;
+  right: -720px;
+  z-index: 1000;
+  bottom: 75px;
+}
 
-#vmap.menu-open {
+#slider.menu-open {
   right: 0;
 }
