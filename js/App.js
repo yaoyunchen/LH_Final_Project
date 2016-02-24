@@ -109,7 +109,7 @@ var App = {
   render(){
 
     return (
-      <div>
+      <div id="container2">
         <Map 
           countryCode={this.state.countryCode}
           onMapClick={this.handleMapClick}
