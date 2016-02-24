@@ -22,7 +22,7 @@ var VideoPlayer = {
   render(){
     return (
       <div>
-        <video width="100%" height="100%" controls autoPlay src={this.props.videoUrl} type="video/mp4">
+        <video id="player" controls autoPlay src={this.props.videoUrl} type="video/mp4">
         </video>
       </div>
     )

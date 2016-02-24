@@ -19,6 +19,9 @@
         logo: false, 
         resistance: 25 
       });
+      $('#globe5').on('click', function() {
+        $('#slider').toggleClass('menu-open');
+      });
     })     
   </script>
 
@@ -33,13 +36,15 @@
 
 </head>
 <body>
-  <div id="globe5"></div>
-  <div id="app">
+  <div id="container">
+    <div id="globe5"></div>
+    <div id="app">
+    </div>
+    <script src="index.js"></script>
+    <footer>
+      <img id="main-logo" src="/assets/logo/glimpse_logo1.gif" />
+      <img id="splash" src="/assets/logo/logoback1.png" />
+    </footer>
   </div>
-  <script src="index.js"></script>
-  <footer>
-    <img id="main-logo" src="/assets/logo/glimpse_logo1.gif" />
-    <img id="splash" src="/assets/logo/logoback1.png" />
-  </footer>
 </body>
 </html>
