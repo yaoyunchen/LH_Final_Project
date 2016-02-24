@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import VideoPlayer from './components/video_player';
 import Map from './components/map';
+import Globe from './components/globe';
 
 
 var App = {
@@ -123,7 +124,7 @@ var App = {
           flickrGetSizes={this.flickrGetSizes}
           flickrEmbedVideo={this.flickrEmbedVideo}
         />
-
+        <Globe />
       </div>
       )
   }

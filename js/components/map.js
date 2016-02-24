@@ -21,13 +21,13 @@ var Map = {
     //   height: "400px",
     // };
     return (
-      <nav id="slider">
+      // <nav id="slider">
         <div id="vmap"
           // style={map_style}
           onClick={this.handleMapClick}
         >
         </div> 
-      </nav>     
+      // </nav>     
     )
   }
 }

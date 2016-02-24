@@ -30,8 +30,9 @@ footer {
 
 #container2 {
   height: 100%;
-  width: 100%;
-  position: fixed;
+  min-width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 #app {
@@ -41,8 +42,8 @@ footer {
 }
 
 #player {
-  position: fixed;
-  height: auto;
+  position: absolute;
+  height: 100%;
   width: 100%;
   left: 0;
   bottom: 10%;
@@ -51,10 +52,9 @@ footer {
 #globe5 {
   margin: auto;
   z-index: 1000;
-  position: absolute;
+  position: relative;
   overflow: hidden;
   border-radius: 50%
-
 }
 
 #main-logo {
@@ -76,23 +76,25 @@ footer {
 
 #vmap {
   z-index: 1000;
-/*  position: absolute;*/
+  position: absolute;
  /* float: right;*/
  /* right: -600px;*/
-  width: 75%;
-  height: 50%
+   left: 0;
+  width: 50%;
+  height: 50%;
+  float: right;
 }
 
-#slider {
+/*#slider {
   width: 50%; 
   height: 100%;
   background-color: rgba(245, 245, 245, 0.5);
   position: relative;
-  float: right;
+  float: right;*/
 /*  right: -600px;*/
-  z-index: 1000;
+/*  z-index: 1000;*/
  /* bottom: 75px;*/
-}
+/*}*/
 
 #vmap.menu-open {
   right: 0;
