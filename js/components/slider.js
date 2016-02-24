@@ -5,18 +5,21 @@ import Map from './map';
 var Slider = {
   getInitialState() {
     return {
-      status: ''
+      status: '',
+      globestatus: ''
     }
   },
 
   handleGlobeClick() {
     if (this.state.status == '') {
       this.setState({
-        status: 'menu-open'
+        status: 'menu-open',
+        globestatus: 'globe-move'
       })  
     } else {
       this.setState({
-        status: ''
+        status: '',
+        globestatus: ''
       })
     }
   },
@@ -27,9 +30,11 @@ var Slider = {
 
   render() {
     return (
-      <div>
+      <div id="outerslider">
+      <div className={this.state.globestatus} id="globe">
         <Globe 
           onGlobeClick={this.handleGlobeClick} />
+      </div>
         <div className={this.state.status} id="slider">
           <Map 
             countryCode={this.props.countryCode}

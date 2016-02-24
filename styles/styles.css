@@ -49,10 +49,17 @@ footer {
   bottom: 10%;
 }
 
+#globe {
+  width: 100%;
+  top: 55%;
+  left: 45%;
+  position: relative;
+}
+
 #globe5 {
   margin: auto;
   z-index: 2000;
-  /*position: relative;*/
+  position: absolute;
   height: 100%;
   width: 100%;
   top: 20%;
@@ -84,14 +91,21 @@ footer {
   position: absolute;
 /*  float: right;
   right: -600px;*/
+  top: 7%;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 40%;
   float: right;
 }
 
+#outerslider {
+  width: auto;
+  height: 450px;
+  position: relative;
+}
+
 #slider {
-  width: 720px; 
+  width: 50%; 
   height: 900px;
   background-color: rgba(245, 245, 245, 0.5);
   position: relative;
@@ -103,4 +117,8 @@ footer {
 
 #slider.menu-open {
   right: 0;
+}
+
+#globe.globe-move {
+  left: 0;
 }
