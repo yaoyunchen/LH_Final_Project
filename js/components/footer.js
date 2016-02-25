@@ -4,7 +4,9 @@ import Overlay from './overlay';
 var Footer = {
   getInitialState() {
     return {
-      top: ''
+      top: '',
+      userUrl: '',
+      status: 'Loading ... '
     }
   },
 
@@ -13,7 +15,6 @@ var Footer = {
       this.setState({
         top: 'overlay-move'
       })
-      console.log('testing this thang');
     } else {
       this.setState({
         top: ''
@@ -32,6 +33,10 @@ var Footer = {
         <div id="logo" onClick={this.onLogoClick}>
           <img id="main-logo" src="/assets/logo/glimpse_logo1.gif" />
           <img id="splash" src="/assets/logo/logoback1.png" />
+        </div>
+        <div>
+          <a href={this.props.userUrl} >{this.props.videoTitle}</a>
+          <p>{this.props.countryName}</p>
         </div>
       </footer>
       </div>

@@ -15,10 +15,13 @@ var App = {
       imageUrl: '',
       musicUrl: '',
       countryCode: '',
+      countryName: '',
       getCode: false,
       countryCache: '',
       cityName: '',
       playMode: 'videos',
+      videoTitle: '',
+      userUrl: ''
     }
   },
 
@@ -38,11 +41,17 @@ var App = {
     var that = this
 
     var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=c01e0fde2a3823f1e80eed24d5b80e63&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
-    
+    console.log(strUrl)
     this.serverRequest = $.get(strUrl, function(results){
       for (var i=0; i < results.places.place.length; i ++) {
           if (results.places.place[i].place_type == 'country') {
             var country = results.places.place[i];
+            var countryName = country.place_url.replace(/\//, '');
+
+            that.setState({
+              countryName: countryName
+            })
+
             that.flickrPhotoPage(country.place_id, country.woeid);
           }
       }
@@ -93,6 +102,11 @@ var App = {
         that.flickrFindPlace(that.props.countryCode)
       } else {
         that.flickrGetSizes(photo.id, photo.owner, photo.title);
+        that.setState({
+          videoTitle: photo.title,
+          userUrl: "https://www.flickr.com/photos/" + photo.owner
+        })
+        console.log(that.state.userUrl);
       }
       
     })
@@ -100,8 +114,9 @@ var App = {
 
 
   flickrGetSizes : function(id, owner, title) {
-    var that = this
-    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=c01e0fde2a3823f1e80eed24d5b80e63&photo_id=" + id + "&format=json&nojsoncallback=1"
+    var that = this;
+    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=c01e0fde2a3823f1e80eed24d5b80e63&photo_id=" + id + "&format=json&nojsoncallback=1";
+
     this.serverRequest = $.get(strUrl, function(results){
       
       var size = results.sizes.size[results.sizes.size.length - 1];
@@ -139,7 +154,11 @@ var App = {
           flickrGetSizes={this.flickrGetSizes}
           flickrEmbedVideo={this.flickrEmbedVideo}
         />
-        <Footer />
+        <Footer 
+          videoTitle={this.state.videoTitle}
+          countryName={this.state.countryName}
+          userUrl={this.state.userUrl}
+        />
       </div>
       )
   }
