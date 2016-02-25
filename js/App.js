@@ -9,7 +9,7 @@ import Slider from './components/slider';
 var App = {
   getInitialState(){
     return {
-      videoUrl: "https://www.flickr.com/photos/132209807@N03/23853274680/play/hd/574c827b24/",
+      videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
       imageUrl: '',
       musicUrl: '',
       countryCode: '',
@@ -70,11 +70,6 @@ var App = {
       if (arrayLength == 0) {
         pagesNumber = 1;
       } 
-      console.log('photos', results.photos.photo)
-       console.log('photos photo', results.photos.photo)
-      console.log('array length', arrayLength)
-      console.log('pages number', pagesNumber)
-      console.log('PAY ATTN FUCKNI', place_id,woe_id, totalVideos, pagesNumber)
 
       that.flickrPhotoSearch(place_id,woe_id, totalVideos, pagesNumber)
     })
@@ -92,9 +87,8 @@ var App = {
 
       var photo = results.photos.photo[randomVideo];
 
-      if (typeof photo.id === 'undefined') {
-        console.log("FIXING SHIT UP BRO");
-        that.flickrFindPlace(this.props.countryCode)
+      if (typeof photo === 'undefined') {
+        that.flickrFindPlace(that.props.countryCode)
       } else {
         that.flickrGetSizes(photo.id, photo.owner, photo.title);
       }
@@ -124,6 +118,8 @@ var App = {
   handleNextVideo(){
     this.flickrFindPlace(this.props.countryCode)
   },
+
+  
 
   render(){
 
