@@ -140,10 +140,12 @@ footer {
 #overlay {
   z-index: 2000;
   width: 100%;
-  height: 100%;
+  height: 90%;
   bottom: 10%;
   position: absolute;
   background-color: rgba(245, 245, 245, 0.5);
+  transition: all 0.3s ease-in-out;
+  top: -627px;
 }
 
 #overlay-content, #overlay-content h1 {
@@ -151,6 +153,8 @@ footer {
   color: black;
 }
 
-#overlay-parent {
-  transition: all 0.3s ease-in-out;
+
+#overlay.overlay-move {
+  top: 0;
 }
+

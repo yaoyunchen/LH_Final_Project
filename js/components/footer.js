@@ -4,31 +4,28 @@ import Overlay from './overlay';
 var Footer = {
   getInitialState() {
     return {
-      mode: 'none'
+      top: ''
     }
   },
 
   onLogoClick() {
-    if(this.state.mode === 'none') {
+    if(this.state.top == '') {
       this.setState({
-        mode: 'block'
+        top: 'overlay-move'
       })
       console.log('testing this thang');
     } else {
       this.setState({
-        mode: 'none'
+        top: ''
       })
     }
   },
 
   render() {
-    var overlayStyle = {
-      display: this.state.mode
-    }
     
     return (
       <div>
-        <div id="overlay" style={overlayStyle}>
+        <div id="overlay" className={this.state.top} >
           <Overlay />
         </div>
       <footer>
