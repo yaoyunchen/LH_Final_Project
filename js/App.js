@@ -4,6 +4,8 @@ import VideoPlayer from './components/video_player';
 // import Map from './components/map';
 import Slider from './components/slider';
 // import Globe from './components/globe';
+import Footer from './components/footer';
+// import Overlay from './components/overlay';
 
 
 var App = {
@@ -117,9 +119,7 @@ var App = {
 
   handleNextVideo(){
     this.flickrFindPlace(this.props.countryCode)
-  },
-
-  
+  },  
 
   render(){
 
@@ -139,6 +139,7 @@ var App = {
           flickrGetSizes={this.flickrGetSizes}
           flickrEmbedVideo={this.flickrEmbedVideo}
         />
+        <Footer />
       </div>
       )
   }
