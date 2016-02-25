@@ -5,8 +5,8 @@ import Map from './map';
 var Slider = {
   getInitialState() {
     return {
-      status: '',
-      globestatus: ''
+      status: 'menu-open',
+      globestatus: 'globe-move'
     }
   },
 
@@ -26,6 +26,10 @@ var Slider = {
 
   handleSliderMapClick(code){
     this.props.onMapClick(code);
+    this.setState({
+      status: '',
+      globestatus: ''
+    })
   },
 
   render() {

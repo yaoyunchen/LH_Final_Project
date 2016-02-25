@@ -11,15 +11,10 @@ var Map = {
   },
 
   handleMapClick(code){
-    //jQuery('#vmap').vectorMap('set', 'backgroundColor', '#FFF');
     this.props.onMapClick(code.target.id.slice(-2).toUpperCase());
   },
 
   render(){
-    // var map_style = {
-    //   width: "600px",
-    //   height: "400px",
-    // };
     return (
       // <nav id="slider">
         <div id="vmap"
