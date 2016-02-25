@@ -9,8 +9,8 @@ var Globe = {
   //   //   }
   //   );
     jQuery("#globe5").spinningGlobe({
-      earthWidth: 284, 
-      earthHeight: 75, 
+      earthWidth: 189, 
+      earthHeight: 50, 
       prefix: '/assets/spinning-globe/spinning-globe-jquery-plugin/img/globe5/', 
       logo: false, 
       resistance: 25 

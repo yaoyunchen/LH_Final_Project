@@ -22,6 +22,10 @@ footer {
   overflow: hidden;
 }
 
+.jqvmap-zoomin, .jqvmap-zoomout {
+  background: none;
+}
+
 #container {
   position: fixed;
   height: 100%;
@@ -51,9 +55,10 @@ footer {
 
 #globe {
   width: 100%;
-  top: 55%;
-  left: 45%;
+  top: 60%;
+  left: 47%;
   position: relative;
+  transition: all 0.35s ease;
 }
 
 #globe5 {
@@ -64,9 +69,8 @@ footer {
   width: 100%;
   top: 20%;
   left: 0;
-  /*overflow: hidden;*/
+  overflow: hidden;
   border-radius: 50%;
-  /*float: right;*/
 }
 
 #main-logo {
@@ -107,12 +111,13 @@ footer {
 #slider {
   width: 50%; 
   height: 900px;
-  background-color: rgba(245, 245, 245, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: relative;
   float: right;
   right: -720px;
   z-index: 1000;
   bottom: 75px;
+  transition: all 0.35s ease;
 }
 
 #slider.menu-open {
