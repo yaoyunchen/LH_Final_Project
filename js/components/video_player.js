@@ -13,7 +13,7 @@ var vidDefault = {
   src: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
   poster: "https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif",
   playbackRate: 0.25
-}
+};
 
 class VideoPlayer extends React.Component{
   constructor() {
@@ -60,6 +60,7 @@ class VideoPlayer extends React.Component{
   }
 
   componentWillReceiveProps() {
+
     this.setState({
       playDefault: false
     })
@@ -86,7 +87,7 @@ class VideoPlayer extends React.Component{
     )
   }
 
-}
+};
 
 
 export default VideoPlayer

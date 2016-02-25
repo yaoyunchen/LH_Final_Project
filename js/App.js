@@ -4,42 +4,48 @@ var React = require('react');
 import VideoPlayer from './components/video_player';
 import Slider from './components/slider';
 import Footer from './components/footer';
+import LoadingScreen from './components/loading_screen';
 
 
+var keys = {
+  flickrKey: "c01e0fde2a3823f1e80eed24d5b80e63"
+}
 
-var App = {
-  getInitialState(){
-    return {
+class App extends React.Component{
+  constructor() {
+    super();
+    this.state = {
       videoUrl: 'https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/',
       imageUrl: '',
       musicUrl: '',
+      userUrl: '',
       countryCode: '',
       countryName: '',
-      getCode: false,
-      countryCache: '',
       cityName: '',
+      getCode: false,
+      loading: '',
       playMode: 'videos',
-      videoTitle: '',
-      userUrl: ''
-    }
-  },
+      videoTitle: ''
+    };
+    this.handleMapClick = this.handleMapClick.bind(this);
+    this.handleNextVideo = this.handleNextVideo.bind(this);
+  }
 
 
-  handleMapClick : function(code) {
-    
+  handleMapClick(code) {
     this.setState({
       countryCode: code
     }, function() {
       this.flickrFindPlace(this.props.countryCode)
     });
-    
-  },
+  }
 
 
-  flickrFindPlace : function(code) {
+  flickrFindPlace(code) {
+
     var that = this
 
-    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=c01e0fde2a3823f1e80eed24d5b80e63&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
+    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=" + keys.flickrKey + "&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
 
     this.serverRequest = $.get(strUrl, function(results){
       for (var i=0; i < results.places.place.length; i ++) {
@@ -49,18 +55,20 @@ var App = {
             countryName = countryName.replace(/\+/, ' ');
 
             that.setState({
-              countryName: countryName
+              countryName: countryName,
+              loading: 'show-loading'
             })
-
+            //console.log(that.state.countryCache)
             that.flickrPhotoPage(country.place_id, country.woeid);
           }
       }
     })
-  },
+  }
 
-  flickrPhotoPage : function(place_id, woe_id){
+
+  flickrPhotoPage(place_id, woe_id) {
     var that = this;
-    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=c01e0fde2a3823f1e80eed24d5b80e63&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=10&page=&format=json&nojsoncallback=1";
+    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=" + keys.flickrKey + "&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=10&page=&format=json&nojsoncallback=1";
 
     this.serverRequest = $.get(strUrl, function(results){
 
@@ -85,11 +93,11 @@ var App = {
       that.flickrPhotoSearch(place_id,woe_id, totalVideos, pagesNumber)
     })
 
-  },
+  }
 
-  flickrPhotoSearch : function(place_id, woe_id, totalVideos, pagesNumber){
+  flickrPhotoSearch(place_id, woe_id, totalVideos, pagesNumber) {
     var that = this;
-    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=c01e0fde2a3823f1e80eed24d5b80e63&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=" +totalVideos + "&page=" + pagesNumber + "&format=json&nojsoncallback=1"
+    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=" + keys.flickrKey + "&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=" +totalVideos + "&page=" + pagesNumber + "&format=json&nojsoncallback=1"
     
     // Add &pages to randomize played videos
     this.serverRequest = $.get(strUrl, function(results){
@@ -109,12 +117,12 @@ var App = {
       }
       
     })
-  },
+  }
 
 
-  flickrGetSizes : function(id, owner, title) {
+  flickrGetSizes(id, owner, title) {
     var that = this;
-    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=c01e0fde2a3823f1e80eed24d5b80e63&photo_id=" + id + "&format=json&nojsoncallback=1";
+    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=" + keys.flickrKey + "&photo_id=" + id + "&format=json&nojsoncallback=1";
 
     this.serverRequest = $.get(strUrl, function(results){
       
@@ -122,26 +130,29 @@ var App = {
 
       that.flickrEmbedVideo(size.source)
     })
-  },
+  }
 
 
   flickrEmbedVideo(url) {
     this.setState({
-      videoUrl: url
+      videoUrl: url,
+      loading: ''
     })
-  },
+  }
 
   handleNextVideo(){
     this.flickrFindPlace(this.props.countryCode)
-  },  
+  }
 
   render(){
-
     return (
       <div id="container2">
         <Slider 
           countryCode={this.state.countryCode}
           onMapClick={this.handleMapClick}
+        />
+        <LoadingScreen 
+          loading={this.state.loading}
         />
         <VideoPlayer
           onEnded={this.handleNextVideo}
@@ -156,6 +167,8 @@ var App = {
       </div>
       )
   }
+
 };
 
-export default React.createClass(App)
+export default App
+
