@@ -11,8 +11,6 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 
-gem 'rdiscount'
-
 group :development, :test do
   gem 'faker'
   gem 'pry'

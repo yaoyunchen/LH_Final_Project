@@ -1,48 +1,92 @@
-import React from 'react';
-import Video from 'video.js';
-
-var VideoPlayer = {
+var React = require('react');
+var videojs = require('video.js');
 
 
-  componentDidMount() {
-    Video(document.getElementById("player"), {
-      'playbackRates': [0.25, 1, 2, 4],
-      'controls': true,
-      'autoplay': true
-    }).ready(function() {
-      this.playbackRate(0.25);
-      //console.log('did mount', this.getCache())
-      //console.log('did mount', this.load())
-      //console.log('did mount', this.toJSON())
-    });
-  },
-  
-  playNextVideo(){
-    this.props.onEnded();
-  },
+var vidOptions = {
+  "preload": 'auto',
+  "autoplay": true,
+  "controls": true,
+  "playbackRates": [0.25, 1, 2, 4]
+};
 
-  componentWillReceiveProps() {
-    Video(document.getElementById("player")).ready(function(){
-      // console.log(this.duration());
-      // console.log('receive_props', this.getCache())
-      //console.log('receive props', this.load())
-    });
-  },
-
-  render(){
-    return (
-      <div>
-        <video id="player" className="video-js vjs-default-skin"
-          
-          preload="auto"
-          poster="https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif"
-          onEnded={this.playNextVideo}
-          src={this.props.videoUrl} 
-        > 
-        </video>
-      </div>
-    )
-  }
+var vidDefault = {
+  src: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
+  poster: "https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif",
+  playbackRate: 0.25
 }
 
-export default React.createClass(VideoPlayer)
+class VideoPlayer extends React.Component{
+  constructor() {
+    super();
+    this.state = {
+      playDefault: false
+    }
+    this.playNextVideo = this.playNextVideo.bind(this);
+
+    // var player = videojs(document.getElementById("player"), vidOptions);
+  }
+
+  componentDidMount() {
+    var that = this;
+    var player = videojs(document.getElementById("player"), vidOptions, function(){
+        player.playbackRate(vidDefault.playbackRate);
+    });
+
+    player.on("error", (e) => {
+      if (this.props.countryCode != "") {
+        console.log("Video Error - Loading another video from the country.")
+        this.props.onEnded();
+      } else {
+        console.log("Video Error - Loading default.")
+        this.setState({playDefault: true})
+        player.playbackRate(vidDefault.playbackRate);
+      }
+    });
+
+
+    var videojsBtn = videojs.getComponent('Button');
+    var skipBtn = videojs.extend(videojsBtn, {
+      constructor: function() {
+        videojsBtn.call(this, player);
+      },
+      handleClick: function() {
+        that.props.onEnded();
+      }
+    });
+
+    var skip = player.controlBar.addChild(new skipBtn());
+    skip.addClass("vjs-skip-btn")
+
+  }
+
+  componentWillReceiveProps() {
+    this.setState({
+      playDefault: false
+    })
+  }
+
+
+  playNextVideo() {
+    this.props.onEnded();
+  }
+
+  render(){
+    var src = this.props.videoUrl
+    if (this.state.playDefault === true) {
+      src = vidDefault.src
+    }
+
+    return (
+        <video id="player" className="video-js vjs-default-skin"
+          poster={vidDefault.poster}
+          onEnded= {this.playNextVideo}
+          src={src}
+        > 
+        </video>
+    )
+  }
+
+}
+
+
+export default VideoPlayer

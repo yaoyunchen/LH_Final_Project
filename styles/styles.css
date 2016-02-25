@@ -145,3 +145,8 @@ footer {
 #overlay.overlay-move {
   top: 0;
 }
+
+
+button.vjs-control.vjs-button.vjs-skip-btn {
+  background-color: yellow;
+}

@@ -8,7 +8,6 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/contrib/all' # Requires cookies, among other things
 
-require 'rdiscount'
 require 'pry'
 require 'faker'
 

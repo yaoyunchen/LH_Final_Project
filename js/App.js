@@ -1,17 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom'
+var React = require('react');
+// import ReactDOM from 'react-dom';
+
 import VideoPlayer from './components/video_player';
-// import Map from './components/map';
 import Slider from './components/slider';
-// import Globe from './components/globe';
 import Footer from './components/footer';
-// import Overlay from './components/overlay';
+
 
 
 var App = {
   getInitialState(){
     return {
-      videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
+      videoUrl: 'https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/',
       imageUrl: '',
       musicUrl: '',
       countryCode: '',
@@ -146,13 +145,8 @@ var App = {
         />
         <VideoPlayer
           onEnded={this.handleNextVideo}
+          countryCode = {this.state.countryCode}
           videoUrl={this.state.videoUrl}
-          countryCode={this.state.countryCode}
-          getCode={this.state.getCode}
-          flickrFindPlace={this.flickrFindPlace}
-          flickrPhotoSearch={this.flickrPhotoSearch}
-          flickrGetSizes={this.flickrGetSizes}
-          flickrEmbedVideo={this.flickrEmbedVideo}
         />
         <Footer 
           videoTitle={this.state.videoTitle}
