@@ -40,12 +40,13 @@ var App = {
     var that = this
 
     var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=c01e0fde2a3823f1e80eed24d5b80e63&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
-    console.log(strUrl)
+
     this.serverRequest = $.get(strUrl, function(results){
       for (var i=0; i < results.places.place.length; i ++) {
           if (results.places.place[i].place_type == 'country') {
             var country = results.places.place[i];
             var countryName = country.place_url.replace(/\//, '');
+            countryName = countryName.replace(/\+/, ' ');
 
             that.setState({
               countryName: countryName
@@ -105,7 +106,6 @@ var App = {
           videoTitle: photo.title,
           userUrl: "https://www.flickr.com/photos/" + photo.owner
         })
-        console.log(that.state.userUrl);
       }
       
     })
