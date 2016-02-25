@@ -93,8 +93,6 @@ footer {
 #vmap {
   z-index: 1000;
   position: absolute;
-/*  float: right;
-  right: -600px;*/
   top: 7%;
   left: 0;
   width: 100%;
@@ -128,15 +126,6 @@ footer {
   left: 0;
 }
 
-/*#overlay {
-  display: none;
-}
-
-#overlay.overlay-show {
-  display: block;
-  z-index: 2000;
-}*/
-
 #overlay {
   z-index: 2000;
   width: 100%;
@@ -153,8 +142,6 @@ footer {
   color: black;
 }
 
-
 #overlay.overlay-move {
   top: 0;
 }
-
