@@ -2,10 +2,11 @@ body {
   text-align: center;
   background-color: black;
   color: #f2f2f2;
+  font-family: 'Lato';
 }
 
 a {
-  color: green;
+  color: #d3d3d3;
 }
 
 h1 {
@@ -20,6 +21,12 @@ footer {
   background-color: #131314;
   position: fixed;
   overflow: hidden;
+}
+
+
+button.vjs-control.vjs-button.material-icons {
+  background-color: rgba(245, 245, 245, 0.5);
+  font-size: 2em;
 }
 
 .jqvmap-zoomin, .jqvmap-zoomout {
@@ -92,7 +99,20 @@ footer {
 #logo {
   position: relative;
   width: 25%;
+  /*width: 100%;*/
   height: 100%;
+  display: inline-block;
+  float: left;
+}
+
+#video-info {
+  /*position: absolute;*/
+  /*height: 100%;*/
+  display: inline-block;
+  margin-top: 1%;
+  margin-right: 0;
+  /*right: 42.5%;*/
+  font-size: 2em;
 }
 
 #vmap {
@@ -139,8 +159,7 @@ footer {
   position: absolute;
   background-color: rgba(245, 245, 245, 0.5);
   transition: all 0.3s ease-in-out;
-  /*top: -627px;*/
-  top: -100%;
+  top: -110%;
 }
 
 #overlay-content, #overlay-content h1 {
@@ -150,9 +169,4 @@ footer {
 
 #overlay.overlay-move {
   top: 0;
-}
-
-
-button.vjs-control.vjs-button.vjs-skip-btn {
-  background-color: yellow;
 }

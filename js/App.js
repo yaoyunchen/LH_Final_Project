@@ -45,7 +45,7 @@ var App = {
       for (var i=0; i < results.places.place.length; i ++) {
           if (results.places.place[i].place_type == 'country') {
             var country = results.places.place[i];
-            var countryName = country.place_url.replace(/\//, '');
+            var countryName = country.place_url.replace(/\//, ' ');
             countryName = countryName.replace(/\+/, ' ');
 
             that.setState({
