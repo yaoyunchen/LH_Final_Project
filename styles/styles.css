@@ -181,7 +181,15 @@ button.vjs-control.vjs-button.material-icons {
   height: 90%;
   bottom: 10%;
   position: absolute;
-  background-color: rgba(245, 245, 245, 0.5);
+  /*background-color: rgba(245, 245, 245, 0.5);*/
+  background: rgba(246,246,246,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(20%, rgba(246,246,246,1)), color-stop(58%, rgba(255,255,255,0.53)), color-stop(100%, rgba(237,237,237,0)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  background: radial-gradient(ellipse at center, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ededed', GradientType=1 );
   transition: all 0.5s ease-in-out;
   top: -110%;
 }
