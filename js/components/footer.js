@@ -5,6 +5,7 @@ var Footer = {
   getInitialState() {
     return {
       top: '',
+      opacity: '0',
       userUrl: '',
       status: 'Loading ... '
     }
@@ -13,20 +14,22 @@ var Footer = {
   onLogoClick() {
     if(this.state.top == '') {
       this.setState({
-        top: 'overlay-move'
+        top: 'overlay-move',
+        opacity: '1'
       })
     } else {
       this.setState({
-        top: ''
+        top: '',
+        opacity: '0'
       })
     }
   },
 
   render() {
-    
+    var overlayStyle = {opacity: this.state.opacity}
     return (
       <div>
-        <div id="overlay" className={this.state.top} >
+        <div id="overlay" style={overlayStyle} className={this.state.top}>
           <Overlay />
         </div>
       <footer>
