@@ -2,13 +2,15 @@ var React = require('react');
 // import ReactDOM from 'react-dom';
 
 import VideoPlayer from './components/video_player';
+import MusicPlayer from './components/music_player';
 import Slider from './components/slider';
 import Footer from './components/footer';
 import LoadingScreen from './components/loading_screen';
 
 
 var keys = {
-  flickrKey: "c01e0fde2a3823f1e80eed24d5b80e63"
+  flickrKey: "c01e0fde2a3823f1e80eed24d5b80e63",
+  soundCloudKey: "fa2d3ee788a538551b4a812ccabaf9b9"
 }
 
 class App extends React.Component{
@@ -17,7 +19,7 @@ class App extends React.Component{
     this.state = {
       videoUrl: 'https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/',
       imageUrl: '',
-      musicUrl: '',
+      musicUrl: 'https://soundcloud.com/thrilljockey/future-islands-balance',
       userUrl: '',
       countryCode: '',
       countryName: '',
@@ -25,7 +27,8 @@ class App extends React.Component{
       getCode: false,
       loading: '',
       playMode: 'videos',
-      videoTitle: ''
+      videoTitle: '',
+      songTitle: ''
     };
     this.handleMapClick = this.handleMapClick.bind(this);
     this.handleNextVideo = this.handleNextVideo.bind(this);
@@ -170,15 +173,21 @@ class App extends React.Component{
         />
         <VideoPlayer
           onEnded={this.handleNextVideo}
-          countryCode = {this.state.countryCode}
+          countryCode={this.state.countryCode}
           videoUrl={this.state.videoUrl}
           loading={this.state.loading}
           endLoadingScreen={this.endLoadingScreen}
         />
+
         <Footer 
           videoTitle={this.state.videoTitle}
           countryName={this.state.countryName}
           userUrl={this.state.userUrl}
+        />
+        <MusicPlayer
+          musicUrl={this.musicUrl}
+          countryCode={this.state.countryCode}
+          key={keys.soundCloudKey}
         />
       </div>
       )
