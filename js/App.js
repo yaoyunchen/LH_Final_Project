@@ -6,6 +6,7 @@ import MusicPlayer from './components/music_player';
 import Slider from './components/slider';
 import Footer from './components/footer';
 import LoadingScreen from './components/loading_screen';
+import ToggleButtons from './components/toggle_buttons';
 
 
 var keys = {
@@ -165,6 +166,7 @@ class App extends React.Component{
   render(){
     return (
       <div id="container2">
+        <ToggleButtons />
         <Slider 
           countryCode={this.state.countryCode}
           onMapClick={this.handleMapClick}
