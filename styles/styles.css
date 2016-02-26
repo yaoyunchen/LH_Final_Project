@@ -158,8 +158,13 @@ button.vjs-control.vjs-button.material-icons {
   bottom: 10%;
   position: absolute;
   background-color: rgba(245, 245, 245, 0.5);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   top: -110%;
+}
+
+#overlay-content {
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #overlay-content, #overlay-content h1 {
