@@ -11,8 +11,6 @@ var vidOptions = {
 
 var vidDefault = {
   src: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
-  poster: "https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif",
-  //poster: "https://media.giphy.com/media/iMMfCfD9TLuCY/giphy.gif",
   playbackRate: 0.25
 };
 
@@ -62,12 +60,10 @@ class VideoPlayer extends React.Component{
   }
 
   componentWillReceiveProps() {
-
     this.setState({
       playDefault: false
     })
   }
-
 
   playNextVideo() {
     this.props.onEnded();
@@ -81,7 +77,7 @@ class VideoPlayer extends React.Component{
 
     return (
         <video id="player" className="video-js vjs-default-skin"
-          poster={vidDefault.poster}
+          poster= "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Flag_of_Afghanistan_%281880%E2%80%931901%29.svg/900px-Flag_of_Afghanistan_%281880%E2%80%931901%29.svg.png"
           onEnded= {this.playNextVideo}
           src={src}
         > 
