@@ -25,6 +25,7 @@ footer {
   background-color: #131314;
   position: fixed;
   overflow: hidden;
+  z-index: 6000;
 }
 
 
@@ -83,7 +84,7 @@ button.vjs-control.vjs-button.material-icons {
 
 #globe {
   width: 100%;
-  top: 50%;
+  top: 40%;
   left: 47%;
   position: relative;
   transition: all 0.35s ease;
@@ -134,7 +135,7 @@ button.vjs-control.vjs-button.material-icons {
   margin-right: 0;
   text-align: right;
   /*right: 42.5%;*/
-  font-size: 2em;
+  font-size: 4.0vh;
 }
 
 #vmap {
@@ -149,13 +150,14 @@ button.vjs-control.vjs-button.material-icons {
 
 #outerslider {
   width: auto;
-  height: 90%;
+  /*height: 90%;*/
+  height: 100%;
   position: relative;
 }
 
 #slider {
   width: 50%; 
-  height: 900px;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
   float: right;
@@ -179,7 +181,15 @@ button.vjs-control.vjs-button.material-icons {
   height: 90%;
   bottom: 10%;
   position: absolute;
-  background-color: rgba(245, 245, 245, 0.5);
+  /*background-color: rgba(245, 245, 245, 0.5);*/
+  background: rgba(246,246,246,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(20%, rgba(246,246,246,1)), color-stop(58%, rgba(255,255,255,0.53)), color-stop(100%, rgba(237,237,237,0)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  background: radial-gradient(ellipse at center, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ededed', GradientType=1 );
   transition: all 0.5s ease-in-out;
   top: -110%;
 }
@@ -201,12 +211,12 @@ button.vjs-control.vjs-button.material-icons {
 #intro {
   margin-top: 7%;
   margin-bottom: 0;
-  font-size: 2em;
+  font-size: 4.0vh;
 }
 
 #country-title {
   display: inline;
-  font-size: 0.9em;
+  font-size: 3.5vh;
   margin-left: 5px;
 }
 
@@ -236,7 +246,7 @@ button.vjs-control.vjs-button.material-icons {
   padding: 0.6em;
   color: white;
   border: none;
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 #video-toggle {
