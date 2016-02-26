@@ -40,6 +40,7 @@ var Slider = {
           onGlobeClick={this.handleGlobeClick} />
       </div>
         <div className={this.state.status} id="slider">
+          <h3 id="intro">Where would you like to go?</h3>
           <Map 
             countryCode={this.props.countryCode}
             onMapClick={this.handleSliderMapClick}
