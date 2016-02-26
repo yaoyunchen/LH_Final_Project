@@ -46,6 +46,8 @@ class VideoPlayer extends React.Component{
 
 
     var videojsBtn = videojs.getComponent('Button');
+
+
     var skipBtn = videojs.extend(videojsBtn, {
       constructor: function() {
         videojsBtn.call(this, player);
