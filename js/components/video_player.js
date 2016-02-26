@@ -12,6 +12,7 @@ var vidOptions = {
 var vidDefault = {
   src: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
   poster: "https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif",
+  //poster: "https://media.giphy.com/media/iMMfCfD9TLuCY/giphy.gif",
   playbackRate: 0.25
 };
 

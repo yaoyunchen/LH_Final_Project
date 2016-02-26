@@ -5,7 +5,7 @@ class LoadingScreen extends React.Component{
   render() {
     return (
       <div className={this.props.loading} >
-        <img src="http://media4.giphy.com/media/12RyRAsnHqIQr6/giphy.gif"></img>
+        <img src="https://media.giphy.com/media/tL5HmgfZi0Qow/giphy.gif"></img>
       </div>
     )
   }
