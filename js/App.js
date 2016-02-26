@@ -29,13 +29,64 @@ class App extends React.Component{
       loading: '',
       playMode: 'videos',
       videoTitle: '',
-      songTitle: ''
+      songTitle: '',
+      tracks: [],
+      musicUsers: []
     };
     this.handleMapClick = this.handleMapClick.bind(this);
     this.handleNextVideo = this.handleNextVideo.bind(this);
     this.startLoadingScreen = this.startLoadingScreen.bind(this);
     this.endLoadingScreen = this.endLoadingScreen.bind(this);
+    this.scUsersQueryByCountry = this.scUsersQueryByCountry.bind(this);
+    this.scCreateTracklist = this.scCreateTracklist.bind(this);
   }
+//called from flickrfindplace function
+//uses current state's country NAME
+  scUsersQueryByCountry(country){
+    var that = this;
+    //limited to first 5 users (usually most popular)
+    var strUrl = "http://api.soundcloud.com/users.json?client_id=" + keys.soundCloudKey + "&country=" + country + "&limit=5";
+
+    this.serverRequest = $.get(strUrl, function(results) {
+//clear old requests
+      that.setState({
+          musicUsers: [],
+          tracks: []
+        })
+//repopulate current state with soundcloud user id
+      for (var i = 0; i < results.length; i++){
+        that.setState({
+          musicUsers: that.state.musicUsers.concat(results[i].id)
+        })
+      }
+//invoke function to populate current state's tracklist with newly populated users    
+      that.scCreateTracklist();
+    })
+  }
+
+  scCreateTracklist(){
+    var that = this;
+
+    that.state.musicUsers.forEach( function(user) {
+      //create a unique api request for each user on state's music users list
+      var strUrl = "http://api.soundcloud.com/tracks.json?client_id=" + keys.soundCloudKey + "&user_id=" + user
+
+      that.serverRequest = $.get(strUrl, function(results) {
+//make api request for all tracks of the users
+        results.forEach( function(track){
+          if (track.length != 0) {
+//add the current state's tracks with objects containing url and song title
+            that.setState({
+              tracks: that.state.tracks.concat
+              ({title: track.title,
+                link: track.permalink_url})
+            })
+          }
+        })
+      })
+    })
+  }
+
 
 
   handleMapClick(code) {
@@ -65,6 +116,7 @@ class App extends React.Component{
               countryName: countryName
             })
 
+            that.scUsersQueryByCountry(that.state.countryName)
             that.startLoadingScreen();
             that.flickrPhotoPage(country.place_id, country.woeid);
           }
@@ -161,6 +213,8 @@ class App extends React.Component{
       loading: ''
     })
   }
+
+
 
 
   render(){
