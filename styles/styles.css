@@ -115,6 +115,7 @@ button.vjs-control.vjs-button.material-icons {
   display: inline-block;
   margin-top: 1%;
   margin-right: 0;
+  text-align: right;
   /*right: 42.5%;*/
   font-size: 2em;
 }
@@ -143,7 +144,7 @@ button.vjs-control.vjs-button.material-icons {
   float: right;
   right: -100%;
   z-index: 1000;
-  bottom: 75px;
+  bottom: 10%;
   transition: all 0.35s ease;
 }
 
@@ -183,6 +184,7 @@ button.vjs-control.vjs-button.material-icons {
 #intro {
   margin-top: 7%;
   margin-bottom: 0;
+  font-size: 2em;
 }
 
 #country-title {
