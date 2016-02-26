@@ -55,8 +55,7 @@ class VideoPlayer extends React.Component{
     });
 
     var skip = player.controlBar.addChild(new skipBtn());
-    skip.addClass("vjs-skip-btn")
-
+    skip.addClass("material-icons");
   }
 
   componentWillReceiveProps() {

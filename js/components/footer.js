@@ -34,9 +34,9 @@ var Footer = {
           <img id="main-logo" src="/assets/logo/glimpse_logo1.gif" />
           <img id="splash" src="/assets/logo/logoback1.png" />
         </div>
-        <div>
-          <a href={this.props.userUrl} >{this.props.videoTitle}</a>
-          <p>{this.props.countryName}</p>
+        <div id="video-info">
+          <p><a href={this.props.userUrl} >{this.props.videoTitle}</a>      
+          <i>{this.props.countryName}</i></p>
         </div>
       </footer>
       </div>
