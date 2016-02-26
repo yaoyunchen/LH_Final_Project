@@ -172,7 +172,7 @@ button.vjs-control.vjs-button.material-icons {
 }
 
 #overlay-content, #overlay-content h1 {
-  margin-top: 17%;
+  margin-top: 15%;
   color: black;
 }
 
@@ -183,6 +183,21 @@ button.vjs-control.vjs-button.material-icons {
 #intro {
   margin-top: 7%;
   margin-bottom: 0;
+}
+
+#country-title {
+  display: inline;
+  font-size: 0.9em;
+  margin-left: 5px;
+}
+
+#video-title {
+  display: inline;
+}
+
+#plane-icon {
+  height: 8%;
+  width: 8%;
 }
 
 .show-loading {

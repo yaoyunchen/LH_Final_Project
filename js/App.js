@@ -58,6 +58,7 @@ class App extends React.Component{
             var country = results.places.place[i];
             var countryName = country.place_url.replace(/\//, ' ');
             countryName = countryName.replace(/\+/, ' ');
+            countryName = countryName.toUpperCase();
 
             that.setState({
               countryName: countryName
