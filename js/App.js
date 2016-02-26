@@ -29,6 +29,8 @@ class App extends React.Component{
     };
     this.handleMapClick = this.handleMapClick.bind(this);
     this.handleNextVideo = this.handleNextVideo.bind(this);
+    this.startLoadingScreen = this.startLoadingScreen.bind(this);
+    this.endLoadingScreen = this.endLoadingScreen.bind(this);
   }
 
 
@@ -55,10 +57,10 @@ class App extends React.Component{
             countryName = countryName.replace(/\+/, ' ');
 
             that.setState({
-              countryName: countryName,
-              loading: 'show-loading'
+              countryName: countryName
             })
-            //console.log(that.state.countryCache)
+
+            that.startLoadingScreen();
             that.flickrPhotoPage(country.place_id, country.woeid);
           }
       }
@@ -135,14 +137,26 @@ class App extends React.Component{
 
   flickrEmbedVideo(url) {
     this.setState({
-      videoUrl: url,
-      loading: ''
+      videoUrl: url
     })
+    this.endLoadingScreen();
   }
 
   handleNextVideo(){
     this.flickrFindPlace(this.props.countryCode)
   }
+
+  startLoadingScreen() {
+    this.setState({
+      loading:'show-loading'
+    })
+  }
+  endLoadingScreen() {
+    this.setState({
+      loading: ''
+    })
+  }
+
 
   render(){
     return (
@@ -158,6 +172,8 @@ class App extends React.Component{
           onEnded={this.handleNextVideo}
           countryCode = {this.state.countryCode}
           videoUrl={this.state.videoUrl}
+          loading={this.state.loading}
+          endLoadingScreen={this.endLoadingScreen}
         />
         <Footer 
           videoTitle={this.state.videoTitle}
