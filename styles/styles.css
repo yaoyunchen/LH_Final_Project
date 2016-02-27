@@ -28,6 +28,9 @@ footer {
   z-index: 6000;
 }
 
+button:focus {
+  outline: 0;
+}
 
 button.vjs-control.vjs-button.material-icons {
   background-color: rgba(245, 245, 245, 0);
@@ -264,6 +267,11 @@ button.vjs-control.vjs-button.material-icons {
 }
 
 #video-toggle:hover, #slideshow-toggle:hover {
+  box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
+
+#video-toggle:focus, #slideshow-toggle:focus {
   box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.4);
   opacity: 1;
 }
