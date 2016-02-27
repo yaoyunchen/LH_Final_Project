@@ -18,9 +18,9 @@ class App extends React.Component{
   constructor() {
     super();
     this.state = {
-      videoUrl: 'https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/',
+      videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
       imageUrl: '',
-      musicUrl: 'https://soundcloud.com/thrilljockey/future-islands-balance',
+      musicUrl: "https://soundcloud.com/thrilljockey/future-islands-balance",
       userUrl: '',
       countryCode: '',
       countryName: '',
@@ -220,31 +220,11 @@ class App extends React.Component{
   render(){
     return (
       <div id="container2">
-        <ToggleButtons />
-        <Slider 
-          countryCode={this.state.countryCode}
-          onMapClick={this.handleMapClick}
-        />
-        <LoadingScreen 
-          loading={this.state.loading}
-        />
-        <VideoPlayer
-          onEnded={this.handleNextVideo}
-          countryCode={this.state.countryCode}
-          videoUrl={this.state.videoUrl}
-          loading={this.state.loading}
-          endLoadingScreen={this.endLoadingScreen}
-        />
-
-        <Footer 
-          videoTitle={this.state.videoTitle}
-          countryName={this.state.countryName}
-          userUrl={this.state.userUrl}
-        />
         <MusicPlayer
-          musicUrl={this.musicUrl}
+          musicUrl={this.state.musicUrl}
           countryCode={this.state.countryCode}
           key={keys.soundCloudKey}
+          tracks={[this.state.musicUrl, "https://soundcloud.com/mantis-innerverse/mantis-nightshade-1998-remastered-2015", "http://soundcloud.com/citytronix/sad-machine"]}
         />
       </div>
       )
