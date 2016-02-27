@@ -30,7 +30,7 @@ var Footer = {
     return (
       <div>
         <div id="overlay" style={overlayStyle} className={this.state.top}>
-          <Overlay />
+          <Overlay onLogoClick={this.onLogoClick} />
         </div>
       <footer>
         <div id="logo" onClick={this.onLogoClick}>
