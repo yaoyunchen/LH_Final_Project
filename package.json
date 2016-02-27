@@ -30,6 +30,7 @@
     "react-dom": "^0.14.7",
     "react-soundcloud": "^0.1.1",
     "react-soundplayer": "^0.3.2",
+    "shuffle-array": "^0.1.2",
     "soundcloud-audio": "^0.1.7",
     "video.js": "^5.7.1",
     "webpack": "^1.12.14",

@@ -1,5 +1,5 @@
 var React = require('react');
-// import ReactDOM from 'react-dom';
+var shuffle = require('shuffle-array');
 
 import VideoPlayer from './components/video_player';
 import MusicPlayer from './components/music_player';
@@ -20,86 +20,93 @@ class App extends React.Component{
     this.state = {
       videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
       imageUrl: '',
-      musicUrl: "https://soundcloud.com/thrilljockey/future-islands-balance",
+      musicUrl: '',
       userUrl: '',
       countryCode: '',
       countryName: '',
       cityName: '',
       getCode: false,
       loading: '',
-      playMode: 'videos',
+      playMode: 'music',
       videoTitle: '',
-      songTitle: '',
       tracks: [],
+      tmpTrack: '',
       musicUsers: []
     };
+
     this.handleMapClick = this.handleMapClick.bind(this);
     this.handleNextVideo = this.handleNextVideo.bind(this);
     this.startLoadingScreen = this.startLoadingScreen.bind(this);
     this.endLoadingScreen = this.endLoadingScreen.bind(this);
     this.scUsersQueryByCountry = this.scUsersQueryByCountry.bind(this);
-    this.scCreateTracklist = this.scCreateTracklist.bind(this);
   }
-//called from flickrfindplace function
-//uses current state's country NAME
+  
+  //called from flickrfindplace function
+  //uses current state's country NAME
   scUsersQueryByCountry(country){
     var that = this;
     //limited to first 5 users (usually most popular)
-    var strUrl = "http://api.soundcloud.com/users.json?client_id=" + keys.soundCloudKey + "&country=" + country + "&limit=5";
-
+    var strUrl = "http://api.soundcloud.com/users.json?client_id=" + keys.soundCloudKey + "&q=" + country + "&limit=5";
     this.serverRequest = $.get(strUrl, function(results) {
-//clear old requests
+      //clear old requests
       that.setState({
           musicUsers: [],
           tracks: []
         })
-//repopulate current state with soundcloud user id
+      //repopulate current state with soundcloud user id
       for (var i = 0; i < results.length; i++){
         that.setState({
           musicUsers: that.state.musicUsers.concat(results[i].id)
         })
       }
-//invoke function to populate current state's tracklist with newly populated users    
-      that.scCreateTracklist();
+      //invoke function to populate current state's tracklist with newly populated users
+      
+      that.scCreateTracklist()
+      
     })
   }
 
   scCreateTracklist(){
     var that = this;
 
-    that.state.musicUsers.forEach( function(user) {
+    var tmpTracks = [];
+
+    var build = this.state.musicUsers.forEach( function(user) {
       //create a unique api request for each user on state's music users list
       var strUrl = "http://api.soundcloud.com/tracks.json?client_id=" + keys.soundCloudKey + "&user_id=" + user
 
+      // SOMETIMES A USER WILL HAVE NO TRACKS
+      // ADD BY DURATION?
+
       that.serverRequest = $.get(strUrl, function(results) {
-//make api request for all tracks of the users
+        //make api request for all tracks of the users
         results.forEach( function(track){
-          if (track.length != 0) {
-//add the current state's tracks with objects containing url and song title
-            that.setState({
-              tracks: that.state.tracks.concat
-              ({title: track.title,
-                link: track.permalink_url})
-            })
+          if (track.length !== 0) {
+            tmpTracks.push(track);
           }
         })
       })
-    })
+    }) 
+
+    this.setState({
+      tracks: tmpTracks
+    })  
   }
-
-
 
   handleMapClick(code) {
     this.setState({
-      countryCode: code
+      countryCode: code,
+      countryName: 'Kenya'
     }, function() {
-      this.flickrFindPlace(this.props.countryCode)
+
+      this.flickrFindPlace(this.state.countryCode);
+      this.scUsersQueryByCountry(this.state.countryName);
+ 
     });
   }
 
 
   flickrFindPlace(code) {
-
     var that = this
 
     var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=" + keys.flickrKey + "&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
@@ -115,8 +122,7 @@ class App extends React.Component{
             that.setState({
               countryName: countryName
             })
-
-            that.scUsersQueryByCountry(that.state.countryName)
+            
             that.startLoadingScreen();
             that.flickrPhotoPage(country.place_id, country.woeid);
           }
@@ -214,17 +220,37 @@ class App extends React.Component{
     })
   }
 
-
-
-
   render(){
     return (
       <div id="container2">
+        <ToggleButtons />
+        <Slider 
+          countryCode={this.state.countryCode}
+          onMapClick={this.handleMapClick}
+        />
+        <LoadingScreen 
+          loading={this.state.loading}
+        />
+        <VideoPlayer
+          onEnded={this.handleNextVideo}
+          countryCode={this.state.countryCode}
+          videoUrl={this.state.videoUrl}
+          loading={this.state.loading}
+          endLoadingScreen={this.endLoadingScreen}
+        />
+        <Footer 
+          videoTitle={this.state.videoTitle}
+          countryName={this.state.countryName}
+          userUrl={this.state.userUrl}
+        />
         <MusicPlayer
           musicUrl={this.state.musicUrl}
           countryCode={this.state.countryCode}
           key={keys.soundCloudKey}
-          tracks={[this.state.musicUrl, "https://soundcloud.com/mantis-innerverse/mantis-nightshade-1998-remastered-2015", "http://soundcloud.com/citytronix/sad-machine"]}
+          tracks={shuffle(this.state.tracks)}
+          playing={this.state.playing}
+          currentTime={this.state.currentTime}
+          currentTrack={this.state.currentTrack}
         />
       </div>
       )
@@ -233,4 +259,6 @@ class App extends React.Component{
 };
 
 export default App
+
+
 

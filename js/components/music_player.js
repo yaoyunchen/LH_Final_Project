@@ -1,5 +1,4 @@
 var React = require('react');
-var ReactDOM = require('react-dom')
 var SoundCloudAudio = require('soundcloud-audio');
 
 var clientId = 'fa2d3ee788a538551b4a812ccabaf9b9';
@@ -42,7 +41,9 @@ var PlayerMixin = {
 
   pauseAction: function () {
     this.audio.pause();
-    this.setState({ playing:false });
+    this.setState({ 
+      playing:false 
+    });
   },
 
   playPauseAction: function () {
@@ -67,7 +68,6 @@ var MusicPlayer = React.createClass({
 
   getInitialState: function() {
     return {
-      tracks: this.props.tracks || [],
       playing: false,
       currentTrack: 0,
       currentTime: 0
@@ -76,8 +76,6 @@ var MusicPlayer = React.createClass({
 
   componentWillMount: function() {
     var self = this;
-
-    this.initTracks();
 
     this.audio = document.createElement('audio');
 
@@ -92,40 +90,13 @@ var MusicPlayer = React.createClass({
     }, false);
   },
 
-  initTracks: function () {
-    var self = this;
-    var url, track, counter = 0, tmp = [];
 
-    for (var i = 0; i < this.state.tracks.length; i++) {
-      (function (i) {
-        track = self.state.tracks[i];
-        url ="http://api.soundcloud.com/resolve.json?url=" + track + "&client_id=" + clientId;
-        self.jsonp(url, function(data) {
-          counter++;
-          tmp.push(data);
-          if (counter === self.state.tracks.length) {
-            self.setState({
-              tracks: sortTracks(tmp)
-            });
-          }
-        });
-      })(i);
-    }
 
-    var sortTracks = function (tmp) {
-      return self.state.tracks.map(function (item) {
-        for (var i = 0; i < tmp.length; i++) {
-          if (item.split('soundcloud.com/')[1] === tmp[i].permalink_url.split('soundcloud.com/')[1]) {
-            return tmp[i];
-          }
-        }
-      })
-    }
-  },
+
 
   playAction: function (i) {
     var ind = i !== undefined ? i : this.state.currentTrack,
-      currentTrack = this.state.tracks[ind],
+      currentTrack = this.props.tracks[ind],
       audioUrl = currentTrack.stream_url + '?client_id=' + clientId;
 
     if (this.audio.src !== audioUrl) {
@@ -137,7 +108,7 @@ var MusicPlayer = React.createClass({
 
 
   nextTrack: function () {
-    if (this.state.currentTrack + 1 >= this.state.tracks.length) {
+    if (this.state.currentTrack + 1 >= this.props.tracks.length) {
       return;
     }
     var val = this.state.currentTrack + 1;
@@ -168,8 +139,7 @@ var MusicPlayer = React.createClass({
 
   render: function() {
     var isActive;
-
-    var tracks = this.state.tracks.map(function (track, i) {
+    var tracks = this.props.tracks.map(function (track, i) {
       isActive = this.state.currentTrack === i ? true : undefined;
 
       return <Track 
@@ -180,11 +150,10 @@ var MusicPlayer = React.createClass({
       />;
     }, this);
 
-    var currentTrack = this.state.tracks[this.state.currentTrack] || {},
+    var currentTrack = this.props.tracks[this.state.currentTrack] || {},
       title = currentTrack.title,
       duration = currentTrack.duration/1000,
       btnClassName = this.state.playing ? 'react-soundcloud-pause' : 'react-soundcloud-play';
-
     return(
       <div>
         <div className="player">
@@ -209,7 +178,6 @@ var MusicPlayer = React.createClass({
           >
             {this.state.currentTime / duration || 0}
           </progress>
-          {tracks}
         </div>
       </div>
     ) 

@@ -256,7 +256,7 @@ button.vjs-control.vjs-button.material-icons {
   right: 40%;
   border-bottom-left-radius: 25%;
   border-top-left-radius: 25%;
-  /*padding: 0.6em 1.055em;*/
+  /*padding: 0.6em 1.055em;*/.
 }
 
 #slideshow-toggle {
@@ -274,4 +274,11 @@ button.vjs-control.vjs-button.material-icons {
 #video-toggle:focus, #slideshow-toggle:focus {
   box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.4);
   opacity: 1;
+}
+
+.player {
+  z-index: 100000;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
 }
