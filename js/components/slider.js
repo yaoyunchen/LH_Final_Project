@@ -25,11 +25,17 @@ var Slider = {
   },
 
   handleSliderMapClick(code){
-    this.props.onMapClick(code);
-    this.setState({
-      status: '',
-      globestatus: ''
-    })
+    if (code == '') {
+      this.setState({
+        status: 'menu-open'
+      })
+    } else {
+      this.props.onMapClick(code);
+      this.setState({
+        status: '',
+        globestatus: ''
+      })
+    } 
   },
 
   render() {
