@@ -141,9 +141,7 @@ class App extends React.Component{
     var index = -1;
     
     for(var i=0; i < list.length; i++) {
-      console.log('searching')
       if(list[i].code == code) {
-        console.log('found')
         found = true;
         this.setState({
           countryList: list,
@@ -153,7 +151,6 @@ class App extends React.Component{
           woe_id: list[i].woe_id,
           place_id: list[i].place_id
         }, function() {
-          console.log('Flickr Photo Pages')
           that.flickrPhotoPage(that.state.place_id, that.state.woe_id);
           that.scUsersQueryByCountry(that.state.countryName);
         });
@@ -216,7 +213,6 @@ class App extends React.Component{
       var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=" + keys.flickrKey + "&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=10&page=&format=json&nojsoncallback=1";
 
       this.serverRequest = $.get(strUrl, function(results){
-        console.log(results);
         var pagesNumber = results.photos.pages;
         var totalVideos = 10;
 
@@ -252,7 +248,7 @@ class App extends React.Component{
       var photo = results.photos.photo[randomVideo];
 
       if (typeof photo === 'undefined') {
-        that.flickrPhotoPage(that.searchCountry(that.state.countryCode, that.state.countryList, "place_id"), that.searchCountry(that.state.countryCode, that.state.countryList, "woe_id"));
+        that.flickrPhotoPage(that.state.place_id, that.state.woe_id);  
       } else {
         that.flickrGetSizes(photo.id, photo.owner, photo.title);
         that.setState({
@@ -311,6 +307,7 @@ class App extends React.Component{
     
     $('video').get(0).play();
   }
+  
   handleMusicClick() {
     this.setState({
       videoPlayerStatus: 'vjs-tech hide-display',

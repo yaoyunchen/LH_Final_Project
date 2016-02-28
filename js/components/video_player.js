@@ -18,14 +18,14 @@ var vidDefaultOptions = {
   "loop": true
 };
 
-var vidDefault = {
+const vidDefault = {
   src: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
   playbackRate: 0.25
 };
 
 class VideoPlayer extends React.Component{
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       playDefault: false
     }

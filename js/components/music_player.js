@@ -90,16 +90,19 @@ var MusicPlayer = React.createClass({
     this.audio.addEventListener('ended', function() {
       self.nextTrack();
     }, false);
+
+    
   },
 
-  componentWillReceiveProps() {
-    if (this.props.playMode == 'music') {
+  componentWillReceiveProps(nextProps) {
+    if (this.props.playMode == 'video' && nextProps.playMode == 'music') {
       this.getinfo();
-      // this.audio.play();
-    } else if (this.props.playMode == 'video') {
-      if (this.state.playing === true) {
-        this.playPauseAction(this.props.currentTrack)
-      }
+      this.playPauseAction();
+    } else if (this.props.playMode == 'music' && nextProps.playMode == 'video') {
+        this.setState({
+          playing: false
+        });
+        this.playPauseAction();
     }
   },
 
@@ -173,14 +176,6 @@ var MusicPlayer = React.createClass({
     // var duration = currentTrack.duration/1000
     
     var btnClassName = this.state.playing ? 'react-soundcloud-pause' : 'react-soundcloud-play';
-
-    // if (this.props.musicPlayerStatus == 'hide-display') {
-    //   //this.audio.play();
-    //   //this.playPauseAction(this.props.currentTrack)
-    // } else if (this.props.musicPlayerStatus == 'music-player') {
-    //   //this.audio.play();
-    //   //this.playPauseAction(this.props.currentTrack)
-    // }
 
     return(
       <div>
