@@ -1,6 +1,7 @@
 var React = require('react');
-var shuffle = require('shuffle-array');
 var ReactDOM = require('react-dom');
+``
+var shuffle = require('shuffle-array');
 
 import VideoPlayer from './components/video_player';
 import MusicPlayer from './components/music_player';
@@ -9,10 +10,12 @@ import Footer from './components/footer';
 import LoadingScreen from './components/loading_screen';
 import ToggleButtons from './components/toggle_buttons';
 
-var keys = {
+const keys = {
   flickrKey: "c01e0fde2a3823f1e80eed24d5b80e63",
   soundCloudKey: "fa2d3ee788a538551b4a812ccabaf9b9"
 }
+
+var file = './db/countries.json';
 
 class App extends React.Component{
   constructor() {
@@ -24,6 +27,8 @@ class App extends React.Component{
       countryList: [],
       countryCode: '',
       countryName: '',
+      woe_id: '',
+      place_id: '',
       cityList: [],
       cityName: '',
       getCode: false,
@@ -39,6 +44,7 @@ class App extends React.Component{
 
     this.handleMapClick = this.handleMapClick.bind(this);
     this.searchCountry = this.searchCountry.bind(this);
+    this.newList = this.newList.bind(this);
     this.handleNextVideo = this.handleNextVideo.bind(this);
     this.startLoadingScreen = this.startLoadingScreen.bind(this);
     this.endLoadingScreen = this.endLoadingScreen.bind(this);
@@ -54,12 +60,11 @@ class App extends React.Component{
   
   loadCountries() {
     $.ajax({
-      url: './db/countries.json',
+      url: file,
       dataType: 'json',
       success: (data) => {
-        this.setState({
-          countryList: data
-        });
+        localStorage.setItem('countries', JSON.stringify(data)), function() {
+        }
       }
     });
   }
@@ -119,64 +124,89 @@ class App extends React.Component{
   }
 
   handleMapClick(code) {
-    var list = this.state.countryList;
-    var that = this;
     if (code !== '') {
-      this.setState({
-        countryCode: code,
-        countryName: this.searchCountry(code, list, "name"),
-        cityList: this.searchCountry(code, list, "cities"),
-      }, function() {
-        that.flickrPhotoPage(that.searchCountry(code, list, "place_id"), that.searchCountry(code, list, "woe_id"));
-        this.scUsersQueryByCountry(this.state.countryName);
-      });
-    }
-
-  }
-
-  searchCountry(code, list, type) {
-    for(var i=0; i < list.length; i++) {
-      if(list[i].code == code) {
-        switch(type) {
-          case "name":
-            return list[i].name;
-          case "cities":
-            return list[i].cities;
-          case "woe_id":
-            return list[i].woe_id;
-          case "place_id":
-            return list[i].place_id;
-          default:
-            break;
-        }
+      var that = this;
+      
+      if (this.state.countryList.length == 0) { 
+        this.searchCountry(code, JSON.parse(localStorage.getItem('countries')));
+      } else {
+        this.searchCountry(code, this.state.countryList)
       }
     }
   }
 
+  searchCountry(code, list) {
+    var that = this;
+    var found = false;
+    var index = -1;
+    
+    for(var i=0; i < list.length; i++) {
+      console.log('searching')
+      if(list[i].code == code) {
+        console.log('found')
+        found = true;
+        this.setState({
+          countryList: list,
+          countryCode: code,
+          countryName: list[i].name,
+          cityList: list[i].cities,
+          woe_id: list[i].woe_id,
+          place_id: list[i].place_id
+        }, function() {
+          console.log('Flickr Photo Pages')
+          that.flickrPhotoPage(that.state.place_id, that.state.woe_id);
+          that.scUsersQueryByCountry(that.state.countryName);
+        });
+        break;
+      }
+    }
 
-  // flickrFindPlace(code) {
-  //   var that = this;
+    if (found === false) {
+      this.flickrFindPlace(code, list);
+    }
+  }
 
-  //   var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=" + keys.flickrKey + "&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
+  // Search for and add the country to the json file if it doesn't exist.
+  flickrFindPlace(code, list) {
+    var that = this;
+    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=" + keys.flickrKey + "&query=" + code + "&format=json&nojsoncallback=1"
+    this.serverRequest = $.get(strUrl, function(results){
+      for (var i=0; i < results.places.place.length; i ++) {
+        if (results.places.place[i].place_type == 'country') {
+          var country = results.places.place[i];
+          
+          var name = country.place_url.replace(/\//, '');
+          name = name.replace(/\+/, ' ');
+          name = name.toUpperCase();
+          
+          // Empty placeholder for cities, no data actually returned.
+          var cities = []
 
-  //   this.serverRequest = $.get(strUrl, function(results){
-  //     for (var i=0; i < results.places.place.length; i ++) {
-  //       if (results.places.place[i].place_type == 'country') {
-  //         var country = results.places.place[i];
-  //         var countryName = country.place_url.replace(/\//, ' ');
-  //         countryName = countryName.replace(/\+/, ' ');
-  //         countryName = countryName.toUpperCase();
+          var data = {
+            "code": code,
+            "name": name,
+            "woe_id": country.woeid,
+            "place_id": country.place_id,
+            "cities": cities
+          };
+          list.push(data);
+          
+          localStorage.setItem('countries', JSON.stringify(list));
+          var newList = JSON.parse(localStorage.getItem('countries'));
+          
+          that.newList(newList);
+          that.searchCountry(code, newList);
+  
+        }
+      }
+    })
+  }
 
-  //         that.setState({
-  //           countryName: countryName
-  //         })
-  //         that.startLoadingScreen();
-  //         that.flickrPhotoPage(country.place_id, country.woeid);
-  //       }
-  //     }
-  //   })
-  // }
-
+  newList(list) {
+    this.setState({
+      countryList: list
+    });
+  }
 
   flickrPhotoPage(place_id, woe_id) {
     var that = this;
@@ -246,7 +276,6 @@ class App extends React.Component{
     })
   }
 
-
   flickrEmbedVideo(url) {
     this.setState({
       videoUrl: url
@@ -255,8 +284,9 @@ class App extends React.Component{
   }
 
   handleNextVideo(){
-    if (this.state.playMode == 'video') {
-      this.flickrPhotoPage(this.searchCountry(this.state.countryCode, this.state.countryList, "place_id"), this.searchCountry(this.state.countryCode, this.state.countryList, "woe_id"));  
+    var that = this;
+    if (this.state.playMode == 'video' && this.state.countryCode != '') {
+      this.flickrPhotoPage(that.state.place_id, that.state.woe_id);  
     }
   }
 
@@ -265,17 +295,20 @@ class App extends React.Component{
       loading:'show-loading'
     })
   }
+
   endLoadingScreen() {
     this.setState({
       loading: ''
     })
   }
+
   handleEyeClick() {
     this.setState({
       videoPlayerStatus: 'vjs-tech',
       musicPlayerStatus: 'hide-display',
       playMode: 'video'
     })
+    
     $('video').get(0).play();
   }
   handleMusicClick() {
@@ -284,7 +317,9 @@ class App extends React.Component{
       musicPlayerStatus: 'music-player',
       playMode: 'music'
     });
+
     $('video').get(0).pause();
+    
   }
 
   render(){

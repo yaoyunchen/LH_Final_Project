@@ -95,6 +95,7 @@ var MusicPlayer = React.createClass({
   componentWillReceiveProps() {
     if (this.props.playMode == 'music') {
       this.getinfo();
+      // this.audio.play();
     } else if (this.props.playMode == 'video') {
       if (this.state.playing === true) {
         this.playPauseAction(this.props.currentTrack)
@@ -147,6 +148,7 @@ var MusicPlayer = React.createClass({
   getinfo: function () {
     var currentTrack = this.props.tracks[this.state.currentTrack] || {}
     this.setState({
+      playing: true,
       title: currentTrack.title,
       duration: currentTrack.duration/1000
     });

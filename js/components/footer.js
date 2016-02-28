@@ -25,6 +25,7 @@ var Footer = {
     }
   },
 
+
   render() {
     var overlayStyle = {opacity: this.state.opacity}
     return (
