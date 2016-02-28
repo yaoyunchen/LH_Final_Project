@@ -75,9 +75,13 @@ class VideoPlayer extends React.Component{
     if (this.state.playDefault === true) {
       src = vidDefault.src
     }
-
+    if (this.props.videoPlayerStatus == 'vjs-tech hide-display') {
+      $('video').get(0).pause();
+    }
     return (
-        <video id="player" className={this.props.videoPlayerStatus}
+        <video 
+          id="player" 
+          className={this.props.videoPlayerStatus}
           poster= "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Flag_of_Afghanistan_%281880%E2%80%931901%29.svg/900px-Flag_of_Afghanistan_%281880%E2%80%931901%29.svg.png"
           onEnded= {this.playNextVideo}
           src={src}
