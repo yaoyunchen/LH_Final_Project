@@ -70,7 +70,8 @@ class App extends React.Component{
     var that = this;
     if (country !== '') {
       //limited to first 5 users (usually most popular)
-      var strUrl = "http://api.soundcloud.com/users.json?client_id=" + keys.soundCloudKey + "&q=" + country + "&limit=5";
+      var strUrl = "http://api.soundcloud.com/users.json?client_id=" + keys.soundCloudKey + "&q=" + country;
+      // + "&limit=10"
       this.serverRequest = $.get(strUrl, function(results) {
         //clear old requests
         that.setState({
@@ -98,11 +99,12 @@ class App extends React.Component{
 
     var build = this.state.musicUsers.forEach( function(user) {
       //create a unique api request for each user on state's music users list
-      var strUrl = "http://api.soundcloud.com/tracks.json?client_id=" + keys.soundCloudKey + "&user_id=" + user
+      var strUrl = "http://api.soundcloud.com/tracks.json?duration[from]=120000&duration[to]=300000&client_id=" + keys.soundCloudKey + "&user_id=" + user
 
       that.serverRequest = $.get(strUrl, function(results) {
         //make api request for all tracks of the users
         results.forEach( function(track){
+          // console.log(track)
           if (track.length !== 0) {
             tmpTracks.push(track);
           }
@@ -184,7 +186,7 @@ class App extends React.Component{
       var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=" + keys.flickrKey + "&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=10&page=&format=json&nojsoncallback=1";
 
       this.serverRequest = $.get(strUrl, function(results){
-
+        console.log(results);
         var pagesNumber = results.photos.pages;
         var totalVideos = 10;
 

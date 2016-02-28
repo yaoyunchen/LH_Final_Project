@@ -232,6 +232,15 @@ button.vjs-control.vjs-button.material-icons {
   width: 8%;
 }
 
+/*#plane-icon:hover {
+  box-shadow: 0px 0px 15px 0px rgba(46, 138, 138, 0.4);
+}*/
+
+/*#flying-plane {
+  height: 18%;
+  width: 18%;
+}*/
+
 #mode-toggle {
   position: relative;
   z-index: 4000;
