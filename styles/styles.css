@@ -281,7 +281,7 @@ button.vjs-control.vjs-button.material-icons {
 }
 
 .music-player {
-  z-index: 100000;
+  z-index: 900;
   width: 100%;
   bottom: 10%;
   /*background-color: rgba(43, 51, 63, 1);*/
