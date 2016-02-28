@@ -280,9 +280,13 @@ button.vjs-control.vjs-button.material-icons {
   opacity: 1;
 }
 
-.player {
+.music-player {
   z-index: 100000;
   width: 100%;
   bottom: 0;
   position: absolute;
+}
+
+.hide-display {
+  display:none;
 }

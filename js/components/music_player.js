@@ -156,7 +156,7 @@ var MusicPlayer = React.createClass({
       btnClassName = this.state.playing ? 'react-soundcloud-pause' : 'react-soundcloud-play';
     return(
       <div>
-        <div className="player">
+        <div className={this.props.musicPlayerStatus}>
           <button className="react-soundcloud-previous"
             type="button"
             onClick={this.previousTrack}

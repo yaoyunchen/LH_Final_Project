@@ -12,14 +12,16 @@ var ToggleButtons = {
     this.setState({
       eyeStatus: 'focused',
       musicStatus: ''
-    })
+    });
+    this.props.handleEyeClick();
   },
 
   handleMusicClick(){
     this.setState({
       eyeStatus: '',
       musicStatus: 'focused'
-    })  
+    });
+    this.props.handleMusicClick();
   },
 
   render() {

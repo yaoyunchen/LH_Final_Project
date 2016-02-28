@@ -1,5 +1,6 @@
 var React = require('react');
 var shuffle = require('shuffle-array');
+var ReactDOM = require('react-dom');
 
 import VideoPlayer from './components/video_player';
 import MusicPlayer from './components/music_player';
@@ -31,7 +32,9 @@ class App extends React.Component{
       videoTitle: '',
       tracks: [],
       tmpTrack: '',
-      musicUsers: []
+      musicUsers: [],
+      musicPlayerStatus: 'hide-display',
+      videoPlayerStatus: 'video-js vjs-default-skin'
     };
 
     this.handleMapClick = this.handleMapClick.bind(this);
@@ -39,6 +42,8 @@ class App extends React.Component{
     this.startLoadingScreen = this.startLoadingScreen.bind(this);
     this.endLoadingScreen = this.endLoadingScreen.bind(this);
     this.scUsersQueryByCountry = this.scUsersQueryByCountry.bind(this);
+    this.handleEyeClick = this.handleEyeClick.bind(this);
+    this.handleMusicClick = this.handleMusicClick.bind(this);
   }
   
   //called from flickrfindplace function
@@ -219,11 +224,30 @@ class App extends React.Component{
       loading: ''
     })
   }
+  handleEyeClick() {
+    this.setState({
+      videoPlayerStatus: 'vjs-tech',
+      musicPlayerStatus: 'hide-display',
+      playMode: 'video'
+    })
+    $('video').get(0).play();
+  }
+  handleMusicClick() {
+    this.setState({
+      videoPlayerStatus: 'vjs-tech hide-display',
+      musicPlayerStatus: 'music-player',
+      playMode: 'music'
+    });
+    $('video').get(0).pause();
+  }
 
   render(){
     return (
       <div id="container2">
-        <ToggleButtons />
+        <ToggleButtons
+          handleEyeClick={this.handleEyeClick}
+          handleMusicClick={this.handleMusicClick}
+        />
         <Slider 
           countryCode={this.state.countryCode}
           onMapClick={this.handleMapClick}
@@ -232,6 +256,7 @@ class App extends React.Component{
           loading={this.state.loading}
         />
         <VideoPlayer
+          videoPlayerStatus={this.state.videoPlayerStatus}
           onEnded={this.handleNextVideo}
           countryCode={this.state.countryCode}
           videoUrl={this.state.videoUrl}
@@ -244,6 +269,7 @@ class App extends React.Component{
           userUrl={this.state.userUrl}
         />
         <MusicPlayer
+          musicPlayerStatus={this.state.musicPlayerStatus}
           musicUrl={this.state.musicUrl}
           countryCode={this.state.countryCode}
           key={keys.soundCloudKey}

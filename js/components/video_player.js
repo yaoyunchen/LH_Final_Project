@@ -1,5 +1,6 @@
 var React = require('react');
 var videojs = require('video.js');
+var ReactDOM = require('react-dom');
 
 
 var vidOptions = {
@@ -76,7 +77,7 @@ class VideoPlayer extends React.Component{
     }
 
     return (
-        <video id="player" className="video-js vjs-default-skin"
+        <video id="player" className={this.props.videoPlayerStatus}
           poster= "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Flag_of_Afghanistan_%281880%E2%80%931901%29.svg/900px-Flag_of_Afghanistan_%281880%E2%80%931901%29.svg.png"
           onEnded= {this.playNextVideo}
           src={src}
