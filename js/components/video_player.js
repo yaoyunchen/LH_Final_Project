@@ -34,7 +34,7 @@ class VideoPlayer extends React.Component{
 
   componentDidMount() {
     var that = this;
-    var player = videojs(document.getElementById("player"), vidDefaultOptions, function(){
+    var player = videojs(document.getElementById("player"), vidOptions, function(){
         player.playbackRate(vidDefault.playbackRate);
     });
 

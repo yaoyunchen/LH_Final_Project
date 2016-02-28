@@ -125,11 +125,8 @@ class App extends React.Component{
         countryName: this.searchCountry(code, list, "name"),
         cityList: this.searchCountry(code, list, "cities"),
       }, function() {
-        if (this.state.playMode == 'video') {
-          that.flickrPhotoPage(that.searchCountry(code, list, "place_id"), that.searchCountry(code, list, "woe_id"));
-        } else if (this.state.playMode == 'music') {
-          this.scUsersQueryByCountry(this.state.countryName);
-        }
+        that.flickrPhotoPage(that.searchCountry(code, list, "place_id"), that.searchCountry(code, list, "woe_id"));
+        this.scUsersQueryByCountry(this.state.countryName);
       });
     }
 
