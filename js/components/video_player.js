@@ -10,6 +10,14 @@ var vidOptions = {
   "playbackRates": [0.25, 1, 2, 4]
 };
 
+
+var vidDefaultOptions = {
+  "preload": 'auto',
+  "autoplay": true,
+  "controls": false,
+  "loop": true
+};
+
 var vidDefault = {
   src: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
   playbackRate: 0.25
@@ -22,13 +30,11 @@ class VideoPlayer extends React.Component{
       playDefault: false
     }
     this.playNextVideo = this.playNextVideo.bind(this);
-
-    // var player = videojs(document.getElementById("player"), vidOptions);
   }
 
   componentDidMount() {
     var that = this;
-    var player = videojs(document.getElementById("player"), vidOptions, function(){
+    var player = videojs(document.getElementById("player"), vidDefaultOptions, function(){
         player.playbackRate(vidDefault.playbackRate);
     });
 
@@ -61,6 +67,7 @@ class VideoPlayer extends React.Component{
   }
 
   componentWillReceiveProps() {
+    var player = videojs(document.getElementById("player"), vidOptions);
     this.setState({
       playDefault: false
     })
@@ -80,6 +87,7 @@ class VideoPlayer extends React.Component{
     }
 
     return (
+
         <video 
           id="player" 
           className={this.props.videoPlayerStatus}

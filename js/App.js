@@ -9,7 +9,6 @@ import Footer from './components/footer';
 import LoadingScreen from './components/loading_screen';
 import ToggleButtons from './components/toggle_buttons';
 
-
 var keys = {
   flickrKey: "c01e0fde2a3823f1e80eed24d5b80e63",
   soundCloudKey: "fa2d3ee788a538551b4a812ccabaf9b9"
@@ -23,12 +22,14 @@ class App extends React.Component{
       imageUrl: '',
       musicUrl: '',
       userUrl: '',
+      countryList: [],
       countryCode: '',
       countryName: '',
+      cityList: [],
       cityName: '',
       getCode: false,
       loading: '',
-      playMode: 'music',
+      playMode: 'video',
       videoTitle: '',
       tracks: [],
       tmpTrack: '',
@@ -38,6 +39,7 @@ class App extends React.Component{
     };
 
     this.handleMapClick = this.handleMapClick.bind(this);
+    this.searchCountry = this.searchCountry.bind(this);
     this.handleNextVideo = this.handleNextVideo.bind(this);
     this.startLoadingScreen = this.startLoadingScreen.bind(this);
     this.endLoadingScreen = this.endLoadingScreen.bind(this);
@@ -45,30 +47,49 @@ class App extends React.Component{
     this.handleEyeClick = this.handleEyeClick.bind(this);
     this.handleMusicClick = this.handleMusicClick.bind(this);
   }
+
+  componentDidMount() {
+    this.loadCountries();
+    setInterval(this.loadCountries.bind(this), this.props.pollInterval);
+  }
   
+  loadCountries() {
+    $.ajax({
+      url: './db/countries.json',
+      dataType: 'json',
+      success: (data) => {
+        this.setState({
+          countryList: data
+        });
+      }
+    });
+  }
+
   //called from flickrfindplace function
   //uses current state's country NAME
   scUsersQueryByCountry(country){
     var that = this;
-    //limited to first 5 users (usually most popular)
-    var strUrl = "http://api.soundcloud.com/users.json?client_id=" + keys.soundCloudKey + "&q=" + country + "&limit=5";
-    this.serverRequest = $.get(strUrl, function(results) {
-      //clear old requests
-      that.setState({
+    if (country !== '') {
+      //limited to first 5 users (usually most popular)
+      var strUrl = "http://api.soundcloud.com/users.json?client_id=" + keys.soundCloudKey + "&q=" + country + "&limit=5";
+      this.serverRequest = $.get(strUrl, function(results) {
+        //clear old requests
+        that.setState({
           musicUsers: [],
           tracks: []
         })
-      //repopulate current state with soundcloud user id
-      for (var i = 0; i < results.length; i++){
-        that.setState({
-          musicUsers: that.state.musicUsers.concat(results[i].id)
-        })
-      }
-      //invoke function to populate current state's tracklist with newly populated users
-      
-      that.scCreateTracklist()
-      
-    })
+
+        //repopulate current state with soundcloud user id
+        for (var i = 0; i < results.length; i++){
+          that.setState({
+            musicUsers: that.state.musicUsers.concat(results[i].id)
+          })
+        }
+        //invoke function to populate current state's tracklist with newly populated users
+        
+        that.scCreateTracklist()   
+      })
+    }
   }
 
   scCreateTracklist(){
@@ -79,9 +100,6 @@ class App extends React.Component{
     var build = this.state.musicUsers.forEach( function(user) {
       //create a unique api request for each user on state's music users list
       var strUrl = "http://api.soundcloud.com/tracks.json?client_id=" + keys.soundCloudKey + "&user_id=" + user
-
-      // SOMETIMES A USER WILL HAVE NO TRACKS
-      // ADD BY DURATION?
 
       that.serverRequest = $.get(strUrl, function(results) {
         //make api request for all tracks of the users
@@ -99,70 +117,98 @@ class App extends React.Component{
   }
 
   handleMapClick(code) {
-    this.setState({
-      countryCode: code,
-      countryName: 'Kenya'
-    }, function() {
+    var list = this.state.countryList;
+    var that = this;
+    if (code !== '') {
+      this.setState({
+        countryCode: code,
+        countryName: this.searchCountry(code, list, "name"),
+        cityList: this.searchCountry(code, list, "cities"),
+      }, function() {
+        if (this.state.playMode == 'video') {
+          that.flickrPhotoPage(that.searchCountry(code, list, "place_id"), that.searchCountry(code, list, "woe_id"));
+        } else if (this.state.playMode == 'music') {
+          this.scUsersQueryByCountry(this.state.countryName);
+        }
+      });
+    }
 
-      this.flickrFindPlace(this.state.countryCode);
-      this.scUsersQueryByCountry(this.state.countryName);
- 
-    });
   }
 
-
-  flickrFindPlace(code) {
-    var that = this
-
-    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=" + keys.flickrKey + "&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
-
-    this.serverRequest = $.get(strUrl, function(results){
-      for (var i=0; i < results.places.place.length; i ++) {
-          if (results.places.place[i].place_type == 'country') {
-            var country = results.places.place[i];
-            var countryName = country.place_url.replace(/\//, ' ');
-            countryName = countryName.replace(/\+/, ' ');
-            countryName = countryName.toUpperCase();
-
-            that.setState({
-              countryName: countryName
-            })
-            
-            that.startLoadingScreen();
-            that.flickrPhotoPage(country.place_id, country.woeid);
-          }
+  searchCountry(code, list, type) {
+    for(var i=0; i < list.length; i++) {
+      if(list[i].code == code) {
+        switch(type) {
+          case "name":
+            return list[i].name;
+          case "cities":
+            return list[i].cities;
+          case "woe_id":
+            return list[i].woe_id;
+          case "place_id":
+            return list[i].place_id;
+          default:
+            break;
+        }
       }
-    })
+    }
   }
+
+
+  // flickrFindPlace(code) {
+  //   var that = this;
+
+  //   var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.places.find&api_key=" + keys.flickrKey + "&query=" + this.state.countryCode + "&format=json&nojsoncallback=1"
+
+  //   this.serverRequest = $.get(strUrl, function(results){
+  //     for (var i=0; i < results.places.place.length; i ++) {
+  //       if (results.places.place[i].place_type == 'country') {
+  //         var country = results.places.place[i];
+  //         var countryName = country.place_url.replace(/\//, ' ');
+  //         countryName = countryName.replace(/\+/, ' ');
+  //         countryName = countryName.toUpperCase();
+
+  //         that.setState({
+  //           countryName: countryName
+  //         })
+  //         that.startLoadingScreen();
+  //         that.flickrPhotoPage(country.place_id, country.woeid);
+  //       }
+  //     }
+  //   })
+  // }
 
 
   flickrPhotoPage(place_id, woe_id) {
     var that = this;
-    var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=" + keys.flickrKey + "&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=10&page=&format=json&nojsoncallback=1";
+    if (that.state.countryCode != '') {
+      that.startLoadingScreen();
 
-    this.serverRequest = $.get(strUrl, function(results){
+      var strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=" + keys.flickrKey + "&woe_id=" + woe_id + "&place_id=" + place_id + "&media=videos&per_page=10&page=&format=json&nojsoncallback=1";
 
-      var pagesNumber = results.photos.pages;
-      var totalVideos = 10
+      this.serverRequest = $.get(strUrl, function(results){
 
-      if (pagesNumber == 1) {
-        totalVideos = results.photos.total;
-      } else {
-        if (pagesNumber > 200) {
-          pagesNumber = 200;
+        var pagesNumber = results.photos.pages;
+        var totalVideos = 10;
+
+        if (pagesNumber == 1) {
+          totalVideos = results.photos.total;
+        } else {
+          if (pagesNumber > 200) {
+            pagesNumber = 200;
+          }
+          pagesNumber = Math.floor(Math.random() * (pagesNumber - 0 + 1) + 0);  
         }
-        pagesNumber = Math.floor(Math.random() * (pagesNumber - 0 + 1) + 0);  
-      }
 
-      var arrayLength = results.photos.photo.length;
-      
-      if (arrayLength == 0) {
-        pagesNumber = 1;
-      } 
+        var arrayLength = results.photos.photo.length;
+        
+        if (arrayLength == 0) {
+          pagesNumber = 1;
+        } 
 
-      that.flickrPhotoSearch(place_id,woe_id, totalVideos, pagesNumber)
-    })
-
+        that.flickrPhotoSearch(place_id,woe_id, totalVideos, pagesNumber);
+      })
+    }
   }
 
   flickrPhotoSearch(place_id, woe_id, totalVideos, pagesNumber) {
@@ -177,7 +223,7 @@ class App extends React.Component{
       var photo = results.photos.photo[randomVideo];
 
       if (typeof photo === 'undefined') {
-        that.flickrFindPlace(that.props.countryCode)
+        that.flickrPhotoPage(that.searchCountry(that.state.countryCode, that.state.countryList, "place_id"), that.searchCountry(that.state.countryCode, that.state.countryList, "woe_id"));
       } else {
         that.flickrGetSizes(photo.id, photo.owner, photo.title);
         that.setState({
@@ -185,7 +231,6 @@ class App extends React.Component{
           userUrl: "https://www.flickr.com/photos/" + photo.owner
         })
       }
-      
     })
   }
 
@@ -211,7 +256,9 @@ class App extends React.Component{
   }
 
   handleNextVideo(){
-    this.flickrFindPlace(this.props.countryCode)
+    if (this.state.playMode == 'video') {
+      this.flickrPhotoPage(this.searchCountry(this.state.countryCode, this.state.countryList, "place_id"), this.searchCountry(this.state.countryCode, this.state.countryList, "woe_id"));  
+    }
   }
 
   startLoadingScreen() {
@@ -274,9 +321,6 @@ class App extends React.Component{
           countryCode={this.state.countryCode}
           key={keys.soundCloudKey}
           tracks={shuffle(this.state.tracks)}
-          playing={this.state.playing}
-          currentTime={this.state.currentTime}
-          currentTrack={this.state.currentTrack}
         />
       </div>
       )
