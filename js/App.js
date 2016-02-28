@@ -20,7 +20,6 @@ class App extends React.Component{
     this.state = {
       videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
       imageUrl: '',
-      musicUrl: '',
       userUrl: '',
       countryList: [],
       countryCode: '',
@@ -112,7 +111,8 @@ class App extends React.Component{
     }) 
 
     this.setState({
-      tracks: tmpTracks
+      tracks: tmpTracks,
+      musicReady: true
     })  
   }
 
@@ -314,10 +314,10 @@ class App extends React.Component{
         />
         <MusicPlayer
           musicPlayerStatus={this.state.musicPlayerStatus}
-          musicUrl={this.state.musicUrl}
           countryCode={this.state.countryCode}
           key={keys.soundCloudKey}
-          tracks={shuffle(this.state.tracks)}
+          tracks={this.state.tracks}
+          playMode={this.state.playMode}
         />
       </div>
       )
