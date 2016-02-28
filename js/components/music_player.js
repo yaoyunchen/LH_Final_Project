@@ -154,6 +154,12 @@ var MusicPlayer = React.createClass({
       title = currentTrack.title,
       duration = currentTrack.duration/1000,
       btnClassName = this.state.playing ? 'react-soundcloud-pause' : 'react-soundcloud-play';
+    if (this.props.musicPlayerStatus == 'hide-display') {
+      this.audio.pause();
+    }
+    if (this.props.musicPlayerStatus == 'music-player') {
+      this.audio.play();
+    }
     return(
       <div>
         <div className={this.props.musicPlayerStatus}>

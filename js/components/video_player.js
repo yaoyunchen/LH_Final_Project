@@ -78,6 +78,7 @@ class VideoPlayer extends React.Component{
     if (this.props.videoPlayerStatus == 'vjs-tech hide-display') {
       $('video').get(0).pause();
     }
+
     return (
         <video 
           id="player" 
