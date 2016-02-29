@@ -1,10 +1,8 @@
-Sinatra
-=============
+<h1>Glimpse</h1>
+<p>Glimpse is a global exploration and social discovery app that aims to provide a tranquil but visually-stimulating experience.</p>
+<p><b>Users can get a "glimpse" of various cultures and everyday events around the world through the eyes of others.</b></p>
 
-Brought to you by Lighthouse Labs
 
-## Getting Started
+<p>Created by Kay Cheng, Elaya Sison, Kenny Wu, and Andy Yao. © 2016.</p>
 
-1. `bundle install`
-2. `shotgun -p 3000 -o 0.0.0.0`
-3. Visit `http://localhost:3000/` in your browser
+
