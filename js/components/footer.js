@@ -41,7 +41,7 @@ var Footer = {
           <img id="splash" src="/assets/logo/logoback1.png" />
         </div>
         <div id="video-info">
-          <p id="video-title"><i><a href={this.props.userUrl}>{this.props.videoTitle}</a></i></p><p id="country-title">{this.props.countryName}</p>
+          <p id="video-title"><i><a href={this.props.userUrl}>{this.props.objTitle}</a></i></p><p id="country-title">{this.props.countryName}</p>
         </div>
       </footer>
       </div>
