@@ -1,0 +1,1738 @@
+[
+  {
+    "code": "AD",
+    "name": "Andorra",
+    "woe_id": "23424744",
+    "place_id": "GVN5ZXxTUb4iIV2jyw",
+    "cities" : []
+  },  
+  {
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "woe_id": "23424738",
+    "place_id": "TG3J2rZTUb5BDGbvrQ",
+    "cities" : ["Dubai City"]
+  },  
+  {
+    "code": "AF",
+    "name": "Afghanistan",
+    "woe_id": "23424739",
+    "place_id": "5dL98TpTUb4BwmH7YQ",
+    "cities" : []
+  },
+  {
+    "code": "AG",
+    "name": "Antigua",
+    "woe_id": "23424737",
+    "place_id": "O4AhWc1TUb4TQaIUrA",
+    "cities" : []
+  },
+  {
+    "code": "AI",
+    "name": "Anguilla",
+    "woe_id": "23424751",
+    "place_id": "FbbtZ7FTUb5G_1F.ww",
+    "cities" : []
+  },
+  {
+    "code": "AL",
+    "name": "Albania",
+    "woe_id": "23424742",
+    "place_id": "mWvHRVtTUb7MltWi7A",
+    "cities" : []
+  },
+  {
+    "code": "AM",
+    "name": "Armenia",
+    "woe_id": "23424743",
+    "place_id": "rPyuRu9TUb6SsryuYA",
+    "cities" : []
+  },
+  {
+    "code": "AO",
+    "name": "Angola",
+    "woe_id": "23424745",
+    "place_id": "rGlnXVNTUb5GJw0Y6A",
+    "cities" : []
+  },
+  {
+    "code": "AQ",
+    "name": "Antarctica",
+    "woe_id": "28289409",
+    "place_id": "q59Ez6dTWrhtYDm1pA",
+    "cities" : []
+  },
+  {
+    "code": "AR",
+    "name": "Argentina",
+    "woe_id": "23424747",
+    "place_id": "lvIrTvtTUb6d8j.uQQ",
+    "cities" : ["Buenos Aires"]
+  },
+  {
+    "code": "AS",
+    "name": "American Samoa",
+    "woe_id": "23424992",
+    "place_id": "57bAtgxTUb6ox6Eu9Q",
+    "cities" : []
+  },
+  {
+    "code": "AT",
+    "name": "Austria",
+    "woe_id": "23424750",
+    "place_id": "rSA5zEBTUb4nNhY79w",
+    "cities" : ["Vienna"]
+  },
+  {
+    "code": "AU",
+    "name": "Australia",
+    "woe_id": "23424748",
+    "place_id": "3fHNxEZTUb4mc08chA",
+    "cities" : ["Canberra", "Melbourne", "Sydney"]
+  },
+  {
+    "code": "AW",
+    "name": "Aruba",
+    "woe_id": "23424736",
+    "place_id": ".NHVX_tTUb6rKYNylQ",
+    "cities" : []
+  },
+  {
+    "code": "AX",
+    "name": "Aland Islands",
+    "woe_id": "12577865",
+    "place_id": "iO.ztCpQUL8XFnePKg",
+    "cities" : []
+  },
+  {
+    "code": "AZ",
+    "name": "Azerbaijan",
+    "woe_id": "23424741",
+    "place_id": "dH1OYrZTUb62_9xC_Q",
+    "cities" : []
+  },
+  {
+    "code": "BA",
+    "name": "Bosnia",
+    "woe_id": "23424761",
+    "place_id": "YGgrNINTUb4QB6.Jvg",
+    "cities" : []
+  },
+  {
+    "code": "BB",
+    "name": "Barbados",
+    "woe_id": "23424754",
+    "place_id": "4CbaSzRTUb61LEIh1A",
+    "cities" : []
+  },
+  {
+    "code": "BD",
+    "name": "Bangladesh",
+    "woe_id": "23424759",
+    "place_id": "EVO0HWhTUb4IjfiFog",
+    "cities" : []
+  },
+  {
+    "code": "BE",
+    "name": "Belgium",
+    "woe_id": "23424757",
+    "place_id": "KAx7uAdTUb4BXhB.8Q",
+    "cities" : ["Brussels"]
+  },
+  {
+    "code": "BF",
+    "name": "Burkina Faso",
+    "woe_id": "23424978",
+    "place_id": "1cvDhppTUb6HAfDEdQ",
+    "cities" : []
+  },
+  {
+    "code": "BG",
+    "name": "Bulgaria",
+    "woe_id": "23424771",
+    "place_id": "WF8vuvFTUb5YY4EDNQ",
+    "cities" : []
+  },
+  {
+    "code": "BH",
+    "name": "Bahrain",
+    "woe_id": "23424753",
+    "place_id": "WknUNEJTUb58vZu.kg",
+    "cities" : []
+  },
+  {
+    "code": "BI",
+    "name": "Burundi",
+    "woe_id": "23424774",
+    "place_id": "BTZCtvVTUb48CGjMjg",
+    "cities" : []
+  },
+  {
+    "code": "BJ",
+    "name": "Benin",
+    "woe_id": "23424764",
+    "place_id": "uie0.hZTUb5dvxVc5g",
+    "cities" : []
+  },
+  {
+    "code": "BL",
+    "name": "Saint Barthalemy",
+    "woe_id": "1325621",
+    "place_id": "22vWrb5QUbiFdT_F",
+    "cities" : []
+  },
+  {
+    "code": "BM",
+    "name": "Bermuda",
+    "woe_id": "23424756",
+    "place_id": "aDSypMJTUb41oAkq4g",
+    "cities" : []
+  },
+  {
+    "code": "BN",
+    "name": "Brunei",
+    "woe_id": "23424773",
+    "place_id": "QWTKC0xTUb5qF.IrZg",
+    "cities" : []
+  },
+  {
+    "code": "BO",
+    "name": "Bolivia",
+    "woe_id": "23424762",
+    "place_id": "JEZpMZtTUb4VCMwWuA",
+    "cities" : []
+  },
+  {
+    "code": "BQ",
+    "name": "Bonaire",
+    "woe_id": "24549811",
+    "place_id": "v3e.I.FTVr_.1UfJzA",
+    "cities" : []
+  },
+  {
+    "code": "BR",
+    "name": "Brazil",
+    "woe_id": "23424768",
+    "place_id": "xQfoS31TUb6eduaTWQ",
+    "cities" : ["Rio de Janeiro", "Sao Paulo"]
+  },
+  {
+    "code": "BS",
+    "name": "Bahamas",
+    "woe_id": "23424758",
+    "place_id": "I1Gyn6tTUb42dmFXlw",
+    "cities" : []
+  },
+  {
+    "code": "BT",
+    "name": "Bhutan",
+    "woe_id": "23424770",
+    "place_id": "R155WaNTUb73psIH0Q",
+    "cities" : []
+  },
+  {
+    "code": "BV",
+    "name": "Bovet Island",
+    "woe_id": "28289410",
+    "place_id": "NqQJX3dTWrglvoTzgA",
+    "cities" : []
+  },
+  {
+    "code": "BW",
+    "name": "Botswana",
+    "woe_id": "23424755",
+    "place_id": "aBw1MmxTUb4gvSeKwg",
+    "cities" : []
+  },
+  {
+    "code": "BY",
+    "name": "Belarus",
+    "woe_id": "23424765",
+    "place_id": "GrasvY9TUb7R0IEsjA",
+    "cities" : []
+  },
+  {
+    "code": "BZ",
+    "name": "Belize",
+    "woe_id": "23424760",
+    "place_id": "mJ1SidRTUb4YU0SUwg",
+    "cities" : []
+  },
+  {
+    "code": "CA",
+    "name": "Canada",
+    "woe_id": "23424775",
+    "place_id": "b9iFoOpTUb6KZ3MPGQ",
+    "cities" : ["Montreal", "Ottawa", "Toronto", "Vancouver"]
+  },
+  {
+    "code": "CC",
+    "name": "Cocos Islands",
+    "woe_id": "2488142",
+    "place_id": "yAVyPp5TVrLZtAjq",
+    "cities" : []
+  },
+  {
+    "code": "CD",
+    "name": "Democratic Republic of the Congo",
+    "woe_id": "23424780",
+    "place_id": "dGcZlZlTUb6OXa4Skg",
+    "cities" : []
+  },
+  {
+    "code": "CF",
+    "name": "Central African Republic",
+    "woe_id": "23424792",
+    "place_id": "ikYrg.dTUb4P2KCHtg",
+    "cities" : []
+  },
+  {
+    "code": "CG",
+    "name": "Congo",
+    "woe_id": "23424779",
+    "place_id": "mPgHlppTUb6eCymi6A",
+    "cities" : []
+  },
+  {
+    "code": "CH",
+    "name": "Switzerland",
+    "woe_id": "23424957",
+    "place_id": "HfSZnNxTUb7.Mo5Vpg",
+    "cities" : ["Berne", "Geneve", "Zurich"]
+  },
+  {
+    "code": "CI",
+    "name": "Ivory Coast",
+    "woe_id": "23424854",
+    "place_id": "6Oa023pTUb4YL23_Lg",
+    "cities" : []
+  },
+  {
+    "code": "CK",
+    "name": "Cook Islands",
+    "woe_id": "23424795",
+    "place_id": "X7bXOENTUb4X69ROUw",
+    "cities" : ["Berne", "Geneve", "Zurich"]
+  },
+  {
+    "code": "CL",
+    "name": "Chile",
+    "woe_id": "23424782",
+    "place_id": "FvjOFOJTUb63qNmf5g",
+    "cities" : ["Santiago"]
+  },
+  {
+    "code": "CM",
+    "name": "Cameroon",
+    "woe_id": "23424785",
+    "place_id": "Q53L3kVTUb6_FOB1kA",
+    "cities" : []
+  },
+  {
+    "code": "CN",
+    "name": "China",
+    "woe_id": "23424781",
+    "place_id": "MH3w3ENTUb45a2.GqA",
+    "cities" : ["Beijing", "Hong Kong", "Shanghai"]
+  },
+  {
+    "code": "CO",
+    "name": "Colombia",
+    "woe_id": "23424787",
+    "place_id": "zxBTKUtTUb7EpHaRTw",
+    "cities" : []
+  },
+  {
+    "code": "CR",
+    "name": "Costa Rica",
+    "woe_id": "23424791",
+    "place_id": "Z_eTmVZTUb7e7A086Q",
+    "cities" : []
+  },
+  {
+    "code": "CU",
+    "name": "Cuba",
+    "woe_id": "23424793",
+    "place_id": "UZnbzcNTUb7ztBELkQ",
+    "cities" : ["Havana"]
+  },
+  {
+    "code": "CV",
+    "name": "Cape Verde",
+    "woe_id": "23424794",
+    "place_id": "Ifq0NSFTUb6ZmrUzGw",
+    "cities" : []
+  },
+  {
+    "code": "CW",
+    "name": "Curacao",
+    "woe_id": "56558057",
+    "place_id": "oBSfrIRUVL.NaCr8mw",
+    "cities" : []
+  },
+  {
+    "code": "CX",
+    "name": "Christmas Island",
+    "woe_id": "23424869",
+    "place_id": "kzvhNRFTUb7IRRc3pQ",
+    "cities" : []
+  },
+  {
+    "code": "CY",
+    "name": "Cyprus",
+    "woe_id": "26812346",
+    "place_id": "FFVXZx5TVLIJjccaWA",
+    "cities" : []
+  },
+  {
+    "code": "CZ",
+    "name": "Czech Republic",
+    "woe_id": "23424810",
+    "place_id": "5iL78XNTUb6Q0TIacg",
+    "cities" : ["Prague"]
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "woe_id": "23424829",
+    "place_id": "h7eZVDlTUb50Btij9Q",
+    "cities" : ["Berlin", "Munich"]
+  },
+  {
+    "code": "DJ",
+    "name": "Djibouti",
+    "woe_id": "23424797",
+    "place_id": "g4DgqMdTUb47YvZIQg",
+    "cities" : []
+  },
+  {
+    "code": "DK",
+    "name": "Denmark",
+    "woe_id": "23424796",
+    "place_id": "wzcKZZdTUb7wa1WOFw",
+    "cities" : ["Copenhagen"]
+  },
+  {
+    "code": "DM",
+    "name": "Dominica",
+    "woe_id": "23424798",
+    "place_id": "jVKiswxTUb6_LUBH1w",
+    "cities" : []
+  },
+  {
+    "code": "DO",
+    "name": "Dominican Republic",
+    "woe_id": "23424800",
+    "place_id": "6OyuxGVTUb7sRHDuHg",
+    "cities" : []
+  },
+  {
+    "code": "DZ",
+    "name": "Algeria",
+    "woe_id": "23424740",
+    "place_id": "RoCCvR1TUb7O4dn1E",
+    "cities" : []
+  },
+  {
+    "code": "EC",
+    "name": "Ecuador",
+    "woe_id": "23424801",
+    "place_id": "czyKsLtTUb7tiyN0dQ",
+    "cities" : ["Quito"]
+  },
+  {
+    "code": "EE",
+    "name": "Estonia",
+    "woe_id": "23424805",
+    "place_id": "MtSPNk1TUb42y6snqw",
+    "cities" : []
+  },
+  {
+    "code": "EG",
+    "name": "Egypt",
+    "woe_id": "23424802",
+    "place_id": "QXJrdeNTUb6MYrcvXQ",
+    "cities" : ["Cairo"]
+  },
+  {
+    "code": "EH",
+    "name": "Western Sahara",
+    "woe_id": "23424990",
+    "place_id": "NPZnenlTUb4Ao.LoKA",
+    "cities" : []
+  },
+  {
+    "code": "ER",
+    "name": "Eritrea",
+    "woe_id": "23424806",
+    "place_id": "OY3_hvZTUb7.68UcXA",
+    "cities" : []
+  },
+  {
+    "code": "ES",
+    "name": "Spain",
+    "woe_id": "23424950",
+    "place_id": "oVKj1ohTUb5V1poSBg",
+    "cities" : ["Madrid"]
+  },
+  {
+    "code": "ET",
+    "name": "Ethiopia",
+    "woe_id": "23424808",
+    "place_id": "FkdGcjJTUb550_Ia7A",
+    "cities" : []
+  },
+  {
+    "code": "FI",
+    "name": "Finland",
+    "woe_id": "23424812",
+    "place_id": "5ryEXkVTUb66Tnx33g",
+    "cities" : ["Helsinki"]
+  },
+  {
+    "code": "FJ",
+    "name": "Fiji",
+    "woe_id": "23424813",
+    "place_id": "sB63fB9TUb6gEosd5Q",
+    "cities" : []
+  },
+  {
+    "code": "FK",
+    "name": "Falkland Islands",
+    "woe_id": "23424814",
+    "place_id": "Woc0tgZTUb5McOZrpA",
+    "cities" : []
+  },
+  {
+    "code": "FO",
+    "name": "Faroe Islands",
+    "woe_id": "23424816",
+    "place_id": "WooWBUxTUb5sH4vDkw",
+    "cities" : []
+  },
+  {
+    "code": "FM",
+    "name": "Micronesia",
+    "woe_id": "24865720",
+    "place_id": "fU3lF.NTVrJO6ZuFwg",
+    "cities" : []
+  },
+  {
+    "code": "FR",
+    "name": "France",
+    "woe_id": "23424819",
+    "place_id": "lbWye9tTUb6GOcp80w",
+    "cities" : ["Cannes", "Nice", "Paris"]
+  },
+  {
+    "code": "GA",
+    "name": "Gabon",
+    "woe_id": "23424822",
+    "place_id": "DAez7kdTUb5eVissOw",
+    "cities" : []
+  },
+  {
+    "code": "GB",
+    "name": "United Kingdom",
+    "woe_id": "23424975",
+    "place_id": "cnffEpdTUb5v258BBA",
+    "cities" : ["London"]
+  },
+  {
+    "code": "GD",
+    "name": "Grenada",
+    "woe_id": "23424826",
+    "place_id": "XJ6serhTUb65UU6E5A",
+    "cities" : []
+  },
+  {
+    "code": "GE",
+    "name": "Georgia",
+    "woe_id": "2347569",
+    "place_id": "Nmka7bxTUb7ZdRiB",
+    "cities" : []
+  },
+  {
+    "code": "GF",
+    "name": "French Guinea",
+    "woe_id": "2347605",
+    "place_id": "pPrhG7VTUb6SbYO.",
+    "cities" : []
+  },
+  {
+    "code": "GG",
+    "name": "Guernsey",
+    "woe_id": "24548836",
+    "place_id": "u0fVvJxTVr9Tmi_llw",
+    "cities" : []
+  },
+  {
+    "code": "GH",
+    "name": "Ghana",
+    "woe_id": "23424824",
+    "place_id": "f1yncWpTUb6P1oQDGw",
+    "cities" : []
+  },
+  {
+    "code": "GI",
+    "name": "Gibraltar",
+    "woe_id": "23424825",
+    "place_id": "S2PSBSBTUb5L_ZEOPw",
+    "cities" : []
+  },
+  {
+    "code": "GL",
+    "name": "Greenland",
+    "woe_id": "23424828",
+    "place_id": "F2okv31TUb71I7zbOw",
+    "cities" : []
+  },
+  {
+    "code": "GM",
+    "name": "Gambia",
+    "woe_id": "23424821",
+    "place_id": "QoGYsjhTUb4fzGA4mQ",
+    "cities" : []
+  },
+  {
+    "code": "GN",
+    "name": "Guinea",
+    "woe_id": "23424835",
+    "place_id": "CU_HNG5TUb7jycidtg",
+    "cities" : []
+  },
+  {
+    "code": "GP",
+    "name": "Guadeloupe",
+    "woe_id": "23424831",
+    "place_id": "2ro5NzdTUb61aDMxCA",
+    "cities" : []
+  },
+  {
+    "code": "GQ",
+    "name": "Equatorial Guinea",
+    "woe_id": "23424804",
+    "place_id": "WWjYS3tTUb7Udicg8w",
+    "cities" : []
+  },
+  {
+    "code": "GR",
+    "name": "Greece",
+    "woe_id": "23424833",
+    "place_id": "s1JMkOJTUb5LfB9USg",
+    "cities" : ["Athens", "Cologne"]
+  },
+  {
+    "code": "GS",
+    "name": "South Georgia",
+    "woe_id": "23424955",
+    "place_id": "AslSzChTUb6KpQG3hA",
+    "cities" : []
+  },
+  {
+    "code": "GT",
+    "name": "Guatemala",
+    "woe_id": "23424834",
+    "place_id": "KmbyHJpTUb6oaY1N7Q",
+    "cities" : []
+  },
+  {
+    "code": "GU",
+    "name": "Guam",
+    "woe_id": "23424832",
+    "place_id": "YIkKqldTUb4vpjFINg",
+    "cities" : []
+  },
+  {
+    "code": "GW",
+    "name": "Guinea-Bissau",
+    "woe_id": "23424929",
+    "place_id": "qEFMkLNTUb5EqjujsA",
+    "cities" : []
+  },
+  {
+    "code": "GY",
+    "name": "Guyana",
+    "woe_id": "23424836",
+    "place_id": "DkhkdNpTUb5Tk4o4Dw",
+    "cities" : []
+  },
+  {
+    "code": "HM",
+    "name": "Heard Island and Mcdonald Islands",
+    "woe_id": "28289411",
+    "place_id": "YTN8UU1TWrh_by3PdA",
+    "cities" : []
+  },
+  {
+    "code": "HK",
+    "name": "Hong Kong",
+    "woe_id": "24865698",
+    "place_id": "4Jji9AVTVrLRrBR9Zg",
+    "cities" : []
+  },
+  {
+    "code": "HN",
+    "name": "Honduras",
+    "woe_id": "23424841",
+    "place_id": "p6Dl.b9TUb6CNZVgDA",
+    "cities" : []
+  },
+  {
+    "code": "HR",
+    "name": "Croatia",
+    "woe_id": "23424843",
+    "place_id": "FunRCI5TUb6a6soTyw",
+    "cities" : []
+  },
+  {
+    "code": "HT",
+    "name": "Haiti",
+    "woe_id": "23424839",
+    "place_id": "AUrj3oBTUb4I17g0HA",
+    "cities" : []
+  },
+  {
+    "code": "HU",
+    "name": "Hungary",
+    "woe_id": "23424844",
+    "place_id": "WsLoR7ZTUb5XRxfB2g",
+    "cities" : ["Budapest"]
+  },
+  {
+    "code": "ID",
+    "name": "Indonesia",
+    "woe_id": "23424846",
+    "place_id": "QZY1SiRTUb674.n_LA",
+    "cities" : ["Jakarta"]
+  },
+  {
+    "code": "IE",
+    "name": "Ireland",
+    "woe_id": "23424803",
+    "place_id": "SZmkZvhTUb5ZpbSWHw",
+    "cities" : ["Dublin"]
+  },
+  {
+    "code": "IQ",
+    "name": "Iraq",
+    "woe_id": "23424855",
+    "place_id": "_VDp6axTUb60wPT4Hw",
+    "cities" : ["Dublin"]
+  },
+  {
+    "code": "IL",
+    "name": "Israel",
+    "woe_id": "23424852",
+    "place_id": "7UA7SU5TUb71bzkMVw",
+    "cities" : ["Nazareth"]
+  },
+  {
+    "code": "IM",
+    "name": "Isle of Man",
+    "woe_id": "23424847",
+    "place_id": "AAbupW5TUb73vd4AKw",
+    "cities" : ["Nazareth"]
+  },
+  {
+    "code": "IN",
+    "name": "India",
+    "woe_id": "23424848",
+    "place_id": "kZ2lUVFTUb7CK_DAfA",
+    "cities" : ["Delhi", "Mumbai"]
+  },
+  {
+    "code": "IO",
+    "name": "British Indian Ocean Territory",
+    "woe_id": "23424849",
+    "place_id": ".JWC9fdTUb7XdrDAPQ",
+    "cities" : ["Delhi", "Mumbai"]
+  },
+  {
+    "code": "IR",
+    "name": "Iran",
+    "woe_id": "23424851",
+    "place_id": ".aJWOSlTUb6stinYXA",
+    "cities" : []
+  },
+  {
+    "code": "IS",
+    "name": "Iceland",
+    "woe_id": "23424845",
+    "place_id": "jPn7LAVTUb5tyPnsog",
+    "cities" : ["ReyKjavik"]
+  },
+  {
+    "code": "IT",
+    "name": "Italy",
+    "woe_id": "23424853",
+    "place_id": "5QqgvRVTUb7tSzaDpQ",
+    "cities" : ["Florence", "Milan", "Venice"]
+  },
+  {
+    "code": "JE",
+    "name": "Jersey",
+    "woe_id": "24548836",
+    "place_id": "u0fVvJxTVr9Tmi_llw",
+    "cities" : []
+  },
+  {
+    "code": "JM",
+    "name": "Jamaica",
+    "woe_id": "23424858",
+    "place_id": "AmnGq3ZTUb7B55xgdg",
+    "cities" : []
+  },
+  {
+    "code": "JO",
+    "name": "Jordan",
+    "woe_id": "23424860",
+    "place_id": "yMXnKXZTUb5hbu4KcA",
+    "cities" : []
+  },
+  {
+    "code": "JP",
+    "name": "Japan",
+    "woe_id": "23424856",
+    "place_id": "W3QedCZTUb5Ez.rF.Q",
+    "cities" : ["Osaka", "Tokyo"]
+  },
+  {
+    "code": "KE",
+    "name": "Kenya",
+    "woe_id": "23424863",
+    "place_id": "EngO71ZTUb4lNpcJJg",
+    "cities" : []
+  },
+  {
+    "code": "KG",
+    "name": "Kyrgyzstan",
+    "woe_id": "23424864",
+    "place_id": "qYUZpjFTUb6c3X02mQ",
+    "cities" : []
+  },
+  {
+    "code": "KH",
+    "name": "Norway",
+    "woe_id": "23424910",
+    "place_id": ".w.HEL1TUb59cTCREg",
+    "cities" : ["Oslo"]
+  },
+  {
+    "code": "KI",
+    "name": "Kiribati",
+    "woe_id": "23424867",
+    "place_id": "2m6CBYBTUb42vV5bOA",
+    "cities" : []
+  },
+  {
+    "code": "KM",
+    "name": "Comoros",
+    "woe_id": "23424786",
+    "place_id": "GSHl0vxTUb6Ku84w6A",
+    "cities" : []
+  },
+  {
+    "code": "KN",
+    "name": "Saint Kitts and Nevis",
+    "woe_id": "23424940",
+    "place_id": "XelgjnpTUb5PRBDY1A",
+    "cities" : []
+  },
+  {
+    "code": "KP",
+    "name": "North Korea",
+    "woe_id": "23424865",
+    "place_id": "pTnJb9dTUb46k6S9mw",
+    "cities" : []
+  },
+  {
+    "code": "KR",
+    "name": "South Korea",
+    "woe_id": "23424868",
+    "place_id": "t33qbc9TUb4om3HfTg",
+    "cities" : []
+  },
+  {
+    "code": "KW",
+    "name": "Kuwait",
+    "woe_id": "23424870",
+    "place_id": "J9OeW6hTUb7gio.wcA",
+    "cities" : []
+  },
+  {
+    "code": "KY",
+    "name": "Cayman Islands",
+    "woe_id": "23424783",
+    "place_id": "m7F5SthTUb74w1F9Gw",
+    "cities" : []
+  },
+  {
+    "code": "KZ",
+    "name": "Kazakhstan",
+    "woe_id": "2393489",
+    "place_id": "JsBbYaRTUbPwSlzg",
+    "cities" : []
+  },
+  {
+    "code": "LA",
+    "name": "Laos",
+    "woe_id": "23424872",
+    "place_id": "hBWTl7JTUb6PrkFv3w",
+    "cities" : []
+  },
+  {
+    "code": "LB",
+    "name": "Lebanon",
+    "woe_id": "23424873",
+    "place_id": "VTSKbPhTUb5GYLKvlw",
+    "cities" : []
+  },
+  {
+    "code": "LC",
+    "name": "Saint Lucia",
+    "woe_id": "23424951",
+    "place_id": "fs9kH2BTUb6istucsQ",
+    "cities" : []
+  },
+  {
+    "code": "LI",
+    "name": "Liechtenstein",
+    "woe_id": "23424879",
+    "place_id": "W4pxuctTUb73PfaXNg",
+    "cities" : []
+  },
+  {
+    "code": "LK",
+    "name": "Sri Lanka",
+    "woe_id": "23424778",
+    "place_id": "Gdm6XV1TUb52hMbKtA",
+    "cities" : []
+  },
+  {
+    "code": "LR",
+    "name": "Liberia",
+    "woe_id": "23424876",
+    "place_id": "vw9_w8FTUb5KIfMxBw",
+    "cities" : []
+  },
+  {
+    "code": "LS",
+    "name": "Lesotho",
+    "woe_id": "23424880",
+    "place_id": "pvnoXG5TUb52ey6qkA",
+    "cities" : []
+  },
+  {
+    "code": "LT",
+    "name": "Lithuania",
+    "woe_id": "23424875",
+    "place_id": "OWYdY_xTUb7WSkjKmg",
+    "cities" : []
+  },
+  {
+    "code": "LU",
+    "name": "Luxembourg",
+    "woe_id": "23424881",
+    "place_id": "No5YFpFTUb6MSV_YVw",
+    "cities" : ["Luxembourg"]
+  },
+  {
+    "code": "LV",
+    "name": "Latvia",
+    "woe_id": "23424874",
+    "place_id": "EBUgZShTUb7bveX14w",
+    "cities" : []
+  },
+  {
+    "code": "LY",
+    "name": "Libya",
+    "woe_id": "23424882",
+    "place_id": "AavW7TpTUb6klXXUgA",
+    "cities" : []
+  },
+  {
+    "code": "MA",
+    "name": "Morocco",
+    "woe_id": "23424893",
+    "place_id": "QdcM3IFTUb6l.M6Xag",
+    "cities" : []
+  },
+  {
+    "code": "MC",
+    "name": "Monaco",
+    "woe_id": "23424892",
+    "place_id": "P47fNClTUb7iklTKJw",
+    "cities" : []
+  },
+  {
+    "code": "MD",
+    "name": "Moldova",
+    "woe_id": "23424885",
+    "place_id": "6TQy_cpTUb4IXB9FDg",
+    "cities" : []
+  },
+  {
+    "code": "ME",
+    "name": "Montenegro",
+    "woe_id": "20069817",
+    "place_id": "eprCURRTUrpjJf35WA",
+    "cities" : []
+  },
+  {
+    "code": "MF",
+    "name": "Saint Martin",
+    "woe_id": "625598",
+    "place_id": "xkdTBepXUL9AQAU",
+    "cities" : []
+  },
+  {
+    "code": "MG",
+    "name": "Madagascar",
+    "woe_id": "23424883",
+    "place_id": "x3wxwLxTUb7bdxh_ag",
+    "cities" : []
+  },
+  {
+    "code": "MH",
+    "name": "Marshall Islands",
+    "woe_id": "23424932",
+    "place_id": "hhiyq3BTUb7tl4A0YA",
+    "cities" : []
+  },
+  {
+    "code": "MK",
+    "name": "Macedonia",
+    "woe_id": "23424890",
+    "place_id": "VRblQUtTUb7xjFaKvw",
+    "cities" : []
+  },
+  {
+    "code": "ML",
+    "name": "Mali",
+    "woe_id": "23424891",
+    "place_id": "VlU6we9TUb6EsHzP1A",
+    "cities" : []
+  },
+  {
+    "code": "MM",
+    "name": "Myanmar",
+    "woe_id": "23424763",
+    "place_id": "huTyhQBTUb6qB7dS_g",
+    "cities" : []
+  },
+  {
+    "code": "MN",
+    "name": "Mongolia",
+    "woe_id": "23424887",
+    "place_id": "tF5cZClTUb5yGAqIvg",
+    "cities" : []
+  },
+  {
+    "code": "MO",
+    "name": "Macao",
+    "woe_id": "20070017",
+    "place_id": "JowsgTZTUrqtHfaPuw",
+    "cities" : []
+  },
+  {
+    "code": "MP",
+    "name": "Northern Mariana Islands",
+    "woe_id": "23424788",
+    "place_id": "sOFnMPZTUb5hWD4YdQ",
+    "cities" : []
+  },
+  {
+    "code": "MQ",
+    "name": "Martinique",
+    "woe_id": "23424884",
+    "place_id": "ivGgm91TUb5uoQUFzA",
+    "cities" : []
+  },
+  {
+    "code": "MR",
+    "name": "Mauritania",
+    "woe_id": "23424896",
+    "place_id": "AYJESDJTUb5vZPR0RA",
+    "cities" : []
+  },
+  {
+    "code": "MS",
+    "name": "Montserrat",
+    "woe_id": "23424888",
+    "place_id": "3nygu9pTUb4G_eIPaA",
+    "cities" : []
+  },
+  {
+    "code": "MT",
+    "name": "Macao",
+    "woe_id": "23424897",
+    "place_id": "WXGcEfpTUb5v4SlDPA",
+    "cities" : []
+  },
+  {
+    "code": "MU",
+    "name": "Mauritius",
+    "woe_id": "23424894",
+    "place_id": "ez4qLFVTUb7PUDvhDQ",
+    "cities" : []
+  },
+  {
+    "code": "MV",
+    "name": "Maldives",
+    "woe_id": "23424899",
+    "place_id": "7ZUIADRTUb5knKMfSg",
+    "cities" : []
+  },
+  {
+    "code": "MW",
+    "name": "Malawi",
+    "woe_id": "23424889",
+    "place_id": "kq82mrJTUb4TPOjqkQ",
+    "cities" : []
+  },
+  {
+    "code": "MX",
+    "name": "Mexico",
+    "woe_id": "23424900",
+    "place_id": "S._RoQ1TUb4WzNIdpA",
+    "cities" : ["Mexico City"]
+  },
+  {
+    "code": "MY",
+    "name": "Malaysia",
+    "woe_id": "23424901",
+    "place_id": "NKRoqlNTUb6OwzRGUw",
+    "cities" : ["Kuala Lumpur"]
+  },
+  {
+    "code": "MZ",
+    "name": "Mozambique",
+    "woe_id": "23424902",
+    "place_id": "q7dMKJlTUb7lWuGFDg",
+    "cities" : []
+  },
+  {
+    "code": "NA",
+    "name": "Namibia",
+    "woe_id": "23424987",
+    "place_id": "Vp.AXUJTUb6pwzv0rQ",
+    "cities" : []
+  },
+  {
+    "code": "NC",
+    "name": "New Caledonia",
+    "woe_id": "23424903",
+    "place_id": "iq6hH3pTUb4ygJugxA",
+    "cities" : []
+  },
+  {
+    "code": "NE",
+    "name": "Niger",
+    "woe_id": "23424906",
+    "place_id": "ua8HZkdTUb5IgmauiA",
+    "cities" : []
+  },
+  {
+    "code": "NF",
+    "name": "Norfolk Island",
+    "woe_id": "23424905",
+    "place_id": "fngqlLJTUb5F8j8kiQ",
+    "cities" : []
+  },
+  {
+    "code": "NG",
+    "name": "Nigeria",
+    "woe_id": "23424908",
+    "place_id": "O5qzzHRTUb7akwfnQA",
+    "cities" : []
+  },
+  {
+    "code": "NI",
+    "name": "Nicaragua",
+    "woe_id": "23424915",
+    "place_id": "K2PYgJxTUb7qmpvHmg",
+    "cities" : []
+  },
+  {
+    "code": "NL",
+    "name": "Netherlands",
+    "woe_id": "23424909",
+    "place_id": "Exbw8apTUb6236fOVA",
+    "cities" : ["Amsterdam", "Den Haag"]
+  },
+  {
+    "code": "NO",
+    "name": "Cambodia",
+    "woe_id": "23424776",
+    "place_id": "QRvAZFVTUb4TyZ_dJA",
+    "cities" : ["Phnom Penh"]
+  },
+  {
+    "code": "NP",
+    "name": "Nepal",
+    "woe_id": "23424911",
+    "place_id": "nNyGVVlTUb6pJM28gg",
+    "cities" : ["Kathmandu"]
+  },
+  {
+    "code": "NR",
+    "name": "Nauru",
+    "woe_id": "23424912",
+    "place_id": "b9Ei3n5TUb6BIT9y6g",
+    "cities" : []
+  },
+  {
+    "code": "NU",
+    "name": "Niue",
+    "woe_id": "23424904",
+    "place_id": "fAKeYOtTUb6nQ0otbg",
+    "cities" : []
+  },
+  {
+    "code": "NZ",
+    "name": "New Zealand",
+    "woe_id": "23424916",
+    "place_id": "X_2zAGVTUb5..jhXDw",
+    "cities" : []
+  },
+  {
+    "code": "OM",
+    "name": "Oman",
+    "woe_id": "23424898",
+    "place_id": "B.wPowlTUb6dHuj3ig",
+    "cities" : []
+  },
+  {
+    "code": "PA",
+    "name": "Panama",
+    "woe_id": "23424924",
+    "place_id": "F.rMeANTUb4uhvrqgA",
+    "cities" : []
+  },
+  {
+    "code": "PE",
+    "name": "Peru",
+    "woe_id": "23424919",
+    "place_id": "h54yFcpTUb6T_sbwtA",
+    "cities" : []
+  },
+  {
+    "code": "PF",
+    "name": "French Polynesia",
+    "woe_id": "23424817",
+    "place_id": "_xrjLLBTUb6Bk7rfYA",
+    "cities" : []
+  },
+  {
+    "code": "PG",
+    "name": "Papau New Guinea",
+    "woe_id": "23424926",
+    "place_id": "YqUtr2xTUb6lskpqEg",
+    "cities" : []
+  },
+  {
+    "code": "PH",
+    "name": "Philippines",
+    "woe_id": "23424934",
+    "place_id": "ooJ7Zd4BTUb7DgCfdxQ",
+    "cities" : ["Manila"]
+  },
+  {
+    "code": "PK",
+    "name": "Pakistan",
+    "woe_id": "23424922",
+    "place_id": "H1l1_JpTUb5Uv1K.gg",
+    "cities" : []
+  },
+  {
+    "code": "PL",
+    "name": "Poland",
+    "woe_id": "23424923",
+    "place_id": "rdlphhxTUb6nLbmC2w",
+    "cities" : []
+  },
+  {
+    "code": "PM",
+    "name": "Saint Pierre",
+    "woe_id": "1410240",
+    "place_id": "pW_hTm9QVrtK3Tb4",
+    "cities" : []
+  },
+  {
+    "code": "PN",
+    "name": "Pitcairn",
+    "woe_id": "23424918",
+    "place_id": "nY6GRvhTUb5.iTenhA",
+    "cities" : []
+  },
+  {
+    "code": "PR",
+    "name": "Puerto Rico",
+    "woe_id": "23424935",
+    "place_id": "IJSXI59TUb7Br390GA",
+    "cities" : []
+  },
+  {
+    "code": "PS",
+    "name": "Palestine",
+    "woe_id": "28289408",
+    "place_id": "W4MXdI1TWrjVVElajQ",
+    "cities" : ["Jerusalem"]
+  },
+  {
+    "code": "PT",
+    "name": "Portugal",
+    "woe_id": "23424925",
+    "place_id": "MdFHJtRTUb5nEKAgcw",
+    "cities" : ["Lisbon"]
+  },
+  {
+    "code": "PW",
+    "name": "Palau",
+    "woe_id": "23424927",
+    "place_id": "f5z5nnxTUb7VmOTVuA",
+    "cities" : []
+  },
+  {
+    "code": "PY",
+    "name": "Paraguay",
+    "woe_id": "23424917",
+    "place_id": "XFI0RWlTUb76tu49ow",
+    "cities" : []
+  },
+  {
+    "code": "QA",
+    "name": "Qatar",
+    "woe_id": "23424930",
+    "place_id": "gFf3ma9TUb5EYmsXWQ",
+    "cities" : []
+  },
+  {
+    "code": "RE",
+    "name": "Reunion",
+    "woe_id": "23424931",
+    "place_id": "oOWnm_1TUb7RMvZwGg",
+    "cities" : []
+  },
+  {
+    "code": "RO",
+    "name": "Romania",
+    "woe_id": "23424933",
+    "place_id": "_x6nX91TUb76bXGK_Q",
+    "cities" : []
+  },
+  {
+    "code": "RS",
+    "name": "Serbia",
+    "woe_id": "20069818",
+    "place_id": "giODdV9TUrre523rRA",
+    "cities" : []
+  },
+  {
+    "code": "RU",
+    "name": "Russia",
+    "woe_id": "23424936",
+    "place_id": "gMMKN7VTUb7Dg.7SoQ",
+    "cities" : ["Moscow", "Saint-Petersburg"]
+  },
+  {
+    "code": "RW",
+    "name": "Rwanda",
+    "woe_id": "23424937",
+    "place_id": "I6wnaRFTUb7YEiipoA",
+    "cities" : []
+  },
+  {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "woe_id": "23424938",
+    "place_id": "iLKqaDdTUb5Edhemcg",
+    "cities" : []
+  },
+  {
+    "code": "SB",
+    "name": "Solomon Islands",
+    "woe_id": "23424766",
+    "place_id": "8fgCYzFTUb4cnC0daQ",
+    "cities" : []
+  },
+  {
+    "code": "SC",
+    "name": "Seychelles",
+    "woe_id": "23424941",
+    "place_id": "L0gYBYFTUb61YoaIsQ",
+    "cities" : []
+  },
+  {
+    "code": "SD",
+    "name": "Sudan",
+    "woe_id": "23424952",
+    "place_id": "iL988GxTUb5NbPcugA",
+    "cities" : []
+  },
+  {
+    "code": "SE",
+    "name": "Sweden",
+    "woe_id": "23424954",
+    "place_id": "mibsDc9TUb5EaJuQAQ",
+    "cities" : ["Stockholm"]
+  },
+  {
+    "code": "SG",
+    "name": "Singapore",
+    "woe_id": "23424948",
+    "place_id": "XAX6n_BTUb7y_QAw9w",
+    "cities" : ["Singapore City"]
+  },
+  {
+    "code": "SH",
+    "name": "Saint Helena",
+    "woe_id": "23424944",
+    "place_id": "5JWM1BVTUb6JFejYYg",
+    "cities" : []
+  },
+  {
+    "code": "SI",
+    "name": "Slovenia",
+    "woe_id": "23424945",
+    "place_id": "xBxTVh9TUb4Mv4PHEA",
+    "cities" : []
+  },
+  {
+    "code": "SJ",
+    "name": "Svalbard and Jan Mayen",
+    "woe_id": "28289413",
+    "place_id": "vqwXI0lTWrgQdk_5WQ",
+    "cities" : []
+  },
+  {
+    "code": "SK",
+    "name": "Slovakia",
+    "woe_id": "23424877",
+    "place_id": "aR4i47JTUb453qD0Tw",
+    "cities" : []
+  },
+  {
+    "code": "SL",
+    "name": "Sierra Leone",
+    "woe_id": "23424946",
+    "place_id": "2xpuLMNTUb5c3V46YQ",
+    "cities" : []
+  },
+  {
+    "code": "SM",
+    "name": "San Marino",
+    "woe_id": "23424947",
+    "place_id": "al_LPPpTUb7bo2spVw",
+    "cities" : []
+  },
+  {
+    "code": "SN",
+    "name": "Senegal",
+    "woe_id": "23424943",
+    "place_id": "vcuzcrZTUb7Z7rNwCg",
+    "cities" : []
+  },
+  {
+    "code": "SO",
+    "name": "Somalia",
+    "woe_id": "23424949",
+    "place_id": "j_CK9IZTUb7Cl6D13w",
+    "cities" : []
+  },
+  {
+    "code": "SR",
+    "name": "Suriname",
+    "woe_id": "23424913",
+    "place_id": "Ec6rJZZTUb7wzqRyxQ",
+    "cities" : []
+  },
+  {
+    "code": "SS",
+    "name": "South Sudan",
+    "woe_id": "56558055",
+    "place_id": "oP5MOVRUVL.LVX63gg",
+    "cities" : []
+  },
+  {
+    "code": "ST",
+    "name": "Sao Tome",
+    "woe_id": "1441680",
+    "place_id": "T_K.CYlQVr43WL7x",
+    "cities" : []
+  },
+  {
+    "code": "SV",
+    "name": "El Salvador",
+    "woe_id": "23424807",
+    "place_id": "vZFyd1tTUb5wICHLTA",
+    "cities" : []
+  },
+  {
+    "code": "SX",
+    "name": "Sint Maarten",
+    "woe_id": "12484680",
+    "place_id": "24QF_NlQUL6uUb94zg",
+    "cities" : []
+  },
+  {
+    "code": "SY",
+    "name": "Syria",
+    "woe_id": "23424956",
+    "place_id": "T7vAbmpTUb73MdoGSA",
+    "cities" : ["Damascus"]
+  },
+  {
+    "code": "SZ",
+    "name": "Swaziland",
+    "woe_id": "23424993",
+    "place_id": "rnPGWu1TUb6YSp.g6w",
+    "cities" : []
+  },
+  {
+    "code": "TC",
+    "name": "Turks and Caicos Islands",
+    "woe_id": "23424962",
+    "place_id": "qb1.Yo5TUb6DHVnwDA",
+    "cities" : []
+  },
+  {
+    "code": "TD",
+    "name": "Chad",
+    "woe_id": "23424777",
+    "place_id": "0vHCgltTUb4Zo5RyCQ",
+    "cities" : []
+  },
+  {
+    "code": "TF",
+    "name": "French Southern Territories",
+    "woe_id": "28289406",
+    "place_id": ".aSZPadTWriHwQjXHw",
+    "cities" : []
+  },
+  {
+    "code": "TG",
+    "name": "Togo",
+    "woe_id": "23424965",
+    "place_id": "biPDb.hTUb4Q055whw",
+    "cities" : []
+  },
+  {
+    "code": "TH",
+    "name": "Thailand",
+    "woe_id": "23424960",
+    "place_id": "vsDe1u5TUb7Tju1VzA",
+    "cities" : ["Bangkok"]
+  },
+  {
+    "code": "TJ",
+    "name": "Tajikistan",
+    "woe_id": "23424961",
+    "place_id": "FLB8qB5TUb4PNGPhDg",
+    "cities" : []
+  },
+  {
+    "code": "TK",
+    "name": "Tokelau",
+    "woe_id": "23424963",
+    "place_id": "ZkqbBltTUb79Q0Qtlg",
+    "cities" : []
+  },
+  {
+    "code": "TL",
+    "name": "Timor-Leste",
+    "woe_id": "23424968",
+    "place_id": "xm7BR15TUb5eUK_yZg",
+    "cities" : []
+  },
+  {
+    "code": "TM",
+    "name": "Turkmenistan",
+    "woe_id": "23424972",
+    "place_id": "yvJZpVlTUb4IfOit5w",
+    "cities" : []
+  },
+  {
+    "code": "TN",
+    "name": "Tunisia",
+    "woe_id": "23424967",
+    "place_id": "ONnnjrJTUb7lGRnd1g",
+    "cities" : []
+  },
+  {
+    "code": "TO",
+    "name": "Tonga",
+    "woe_id": "23424964",
+    "place_id": "eXAQBb9TUb7azop9fw",
+    "cities" : []
+  },
+  {
+    "code": "TR",
+    "name": "Turkey",
+    "woe_id": "23424969",
+    "place_id": "aaobVhlTUb58c3KqSA",
+    "cities" : ["Ankara", "Istanbul"]
+  },
+  {
+    "code": "TT",
+    "name": "Trinidad and Tobago",
+    "woe_id": "23424958",
+    "place_id": "2KRKhmxTUb50EluhhA",
+    "cities" : []
+  },
+  {
+    "code": "TV",
+    "name": "Tuvalu",
+    "woe_id": "23424970",
+    "place_id": "BEU7NSxTUb5ZpFnU1g",
+    "cities" : []
+  },
+  {
+    "code": "TW",
+    "name": "Taiwan",
+    "woe_id": "23424971",
+    "place_id": "FnYzsLVTUb7w3bcfIg",
+    "cities" : ["Taipei"]
+  },
+  {
+    "code": "TZ",
+    "name": "Tanzania",
+    "woe_id": "23424973",
+    "place_id": "YhQ3yHpTUb4clWyAtQ",
+    "cities" : []
+  },
+  {
+    "code": "UA",
+    "name": "Ukraine",
+    "woe_id": "23424976",
+    "place_id": "sw.0lC9TUb5azUREDQ",
+    "cities" : []
+  },
+  {
+    "code": "UG",
+    "name": "Uganda",
+    "woe_id": "23424974",
+    "place_id": "CgRME8VTUb73gG7Yxw",
+    "cities" : []
+  },
+  {
+    "code": "UM",
+    "name": "United States Minor Outlying Islands",
+    "woe_id": "28289407",
+    "place_id": "qmB2PfxTWri3Vt8L7g",
+    "cities" : []
+  },
+  {
+    "code": "US",
+    "name": "United State of America",
+    "woe_id": "23424977",
+    "place_id": "nz.gsghTUb4c2WAecA",
+    "cities" : ["Atlantic City", "Baltimore", "Chicago", "Honolulu", "Kansas City", "New York", "Philadelphia", "San Francisco", "Santa Fe", "Washington"]
+  },
+  {
+    "code": "UZ",
+    "name": "Uzbekistan",
+    "woe_id": "23424980",
+    "place_id": "vwZ8yP5TUb78GuULXw",
+    "cities" : []
+  },
+  {
+    "code": "VA",
+    "name": "Vatican City",
+    "woe_id": "23424986",
+    "place_id": "xfftaFtTUb6gXRUjTg",
+    "cities" : ["Ha Noi"]
+  },
+  {
+    "code": "VC",
+    "name": "Saint Vincent",
+    "woe_id": "23424981",
+    "place_id": "ZntEnSRTUb5TKrXi1w",
+    "cities" : ["Ha Noi"]
+  },
+  {
+    "code": "VE",
+    "name": "Venezuela",
+    "woe_id": "23424982",
+    "place_id": "eQgUardTUb4WP5XdBw",
+    "cities" : []
+  },
+  {
+    "code": "VG",
+    "name": "British Virgin Islands",
+    "woe_id": "23424983",
+    "place_id": "iETgRI5TUb7ei9OelQ",
+    "cities" : []
+  },
+  {
+    "code": "VI",
+    "name": "US Virgin Islands",
+    "woe_id": "23424985",
+    "place_id": "q0R9oBpTUb7wxFGA6g",
+    "cities" : []
+  },
+  {
+    "code": "VN",
+    "name": "Vietnam",
+    "woe_id": "23424984",
+    "place_id": "WnHhXGpTUb51gvRgFg",
+    "cities" : ["Ha Noi"]
+  },
+  {
+    "code": "VU",
+    "name": "Vanuatu",
+    "woe_id": "23424907",
+    "place_id": "dhMgLLZTUb546wzOYA",
+    "cities" : []
+  },
+  {
+    "code": "WF",
+    "name": "Wallis and Futana",
+    "woe_id": "29034323",
+    "place_id": "wPhIBfNTW7rfG0PlCQ",
+    "cities" : []
+  },
+  {
+    "code": "WS",
+    "name": "Samoa",
+    "woe_id": "23424992",
+    "place_id": "57bAtgxTUb6ox6Eu9Q",
+    "cities" : []
+  },
+    {
+    "code": "YE",
+    "name": "Yemen",
+    "woe_id": "23425002",
+    "place_id": "zUUW42ZTUb7y5HPznQ",
+    "cities" : []
+  },
+  {
+    "code": "YT",
+    "name": "Mayotte",
+    "woe_id": "23424886",
+    "place_id": "pfbiNS9TUb71cuwwBA",
+    "cities" : []
+  },
+  {
+    "code": "ZA",
+    "name": "South Africa",
+    "woe_id": "23424942",
+    "place_id": "_0F0zO5TUb6ddnb9qQ",
+    "cities" : ["Cape Town"]
+  },
+  {
+    "code": "ZM",
+    "name": "Zambia",
+    "woe_id": "23425003",
+    "place_id": "x6N5_QBTUb5oHI1olA",
+    "cities" : []
+  },
+  {
+    "code": "ZW",
+    "name": "Zimbabwe",
+    "woe_id": "23425004",
+    "place_id": "875k7VdTUb5czA6z2Q",
+    "cities" : []
+  }
+]

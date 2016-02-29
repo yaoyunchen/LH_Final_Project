@@ -1,10 +1,15 @@
-Sinatra
-=============
+# Glimpse
+Glimpse is a global exploration and social discovery app that aims to provide a tranquil but visually-stimulating experience.
 
-Brought to you by Lighthouse Labs
+This project was created with the intention of providing a view into different cultures through the lens of other social explorers.
 
-## Getting Started
+Users choose where they would like to 'visit' on an interactive map, and can toggle between Video and Audio modes to attain both a visual and auditory "glimpse" of the countries across the globe.
 
-1. `bundle install`
-2. `shotgun -p 3000 -o 0.0.0.0`
-3. Visit `http://localhost:3000/` in your browser
+The project was created using React.js, JavaScript, jQuery, HTML5, and CSS3, in combination with the Sinatra framework. The project integrated data from Flickr API as well as the SoundCloud API.
+
+<p>Created by Kay Cheng, Elaya Sison, Kenny Wu, and Andy Yao. © 2016.</p>
+
+## Instructions
+- Download the file
+- Run 'npm start'
+- Visit 'localhost:8000'

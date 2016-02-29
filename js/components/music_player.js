@@ -70,7 +70,9 @@ var MusicPlayer = React.createClass({
     return {
       playing: false,
       currentTrack: 0,
-      currentTime: 0
+      currentTime: 0,
+      title: '',
+      duration: ''
     };
   },
 
@@ -88,11 +90,21 @@ var MusicPlayer = React.createClass({
     this.audio.addEventListener('ended', function() {
       self.nextTrack();
     }, false);
+
+    
   },
 
-
-
-
+  componentWillReceiveProps(nextProps) {
+    if (this.props.playMode == 'video' && nextProps.playMode == 'music') {
+      this.getinfo();
+      this.playPauseAction();
+    } else if (this.props.playMode == 'music' && nextProps.playMode == 'video') {
+        this.setState({
+          playing: false
+        });
+        this.playPauseAction();
+    }
+  },
 
   playAction: function (i) {
     var ind = i !== undefined ? i : this.state.currentTrack,
@@ -136,30 +148,35 @@ var MusicPlayer = React.createClass({
     this.playAction(i);
   },
 
+  getinfo: function () {
+    var currentTrack = this.props.tracks[this.state.currentTrack] || {}
+    this.setState({
+      playing: true,
+      title: currentTrack.title,
+      duration: currentTrack.duration/1000
+    });
+  },
 
   render: function() {
     var isActive;
-    var tracks = this.props.tracks.map(function (track, i) {
-      isActive = this.state.currentTrack === i ? true : undefined;
+    // var tracks = this.props.tracks.map(function (track, i) {
+    //   isActive = this.state.currentTrack === i ? true : undefined;
 
-      return <Track 
-        track={track} 
-        changeTrack={this.changeTrack}
-        ind={i}
-        isActive={isActive} 
-      />;
-    }, this);
+    //   return <Track 
+    //     track={track} 
+    //     changeTrack={this.changeTrack}
+    //     ind={i}
+    //     isActive={isActive} 
+    //   />;
+    // }, this);
 
-    var currentTrack = this.props.tracks[this.state.currentTrack] || {},
-      title = currentTrack.title,
-      duration = currentTrack.duration/1000,
-      btnClassName = this.state.playing ? 'react-soundcloud-pause' : 'react-soundcloud-play';
-    if (this.props.musicPlayerStatus == 'hide-display') {
-      this.audio.pause();
-    }
-    if (this.props.musicPlayerStatus == 'music-player') {
-      this.audio.play();
-    }
+    // var currentTrack = this.props.tracks[this.state.currentTrack] || {}
+    
+    // var title = currentTrack.title
+    // var duration = currentTrack.duration/1000
+    
+    var btnClassName = this.state.playing ? 'react-soundcloud-pause' : 'react-soundcloud-play';
+
     return(
       <div>
         <div className={this.props.musicPlayerStatus}>
@@ -176,13 +193,13 @@ var MusicPlayer = React.createClass({
             onClick={this.nextTrack}
           ></button>
           <span>
-            {title + " " + this.prettyTime(this.state.currentTime) + " - " + this.prettyTime(duration)}
+            {this.state.title + " " + this.prettyTime(this.state.currentTime) + " - " + this.prettyTime(this.state.duration)}
           </span>
           <progress className="react-soundcloud-progress"
             onClick={this.seekAction}
-            value={this.state.currentTime / duration || 0}
+            value={this.state.currentTime / this.state.duration || 0}
           >
-            {this.state.currentTime / duration || 0}
+            {this.state.currentTime / this.state.duration || 0}
           </progress>
         </div>
       </div>
@@ -190,21 +207,21 @@ var MusicPlayer = React.createClass({
   }
 });
 
-var Track = React.createClass({
-  displayName: 'Track',
+// var Track = React.createClass({
+//   displayName: 'Track',
   
-  clickHandler: function () {
-    this.props.changeTrack(this.props.ind);
-  },
+//   clickHandler: function () {
+//     this.props.changeTrack(this.props.ind);
+//   },
   
-  render: function () {
-    var title = this.props.track && this.props.track.title;
-    var track_class = 'react-soundcloud-track' + (this.props.isActive ? ' active' : '');
-    return React.DOM.div( {onClick:this.clickHandler, className:track_class}, 
-        this.props.ind + 1 + '.', " ", title
-      );
-  }
-});
+//   render: function () {
+//     var title = this.props.track && this.props.track.title;
+//     var track_class = 'react-soundcloud-track' + (this.props.isActive ? ' active' : '');
+//     return React.DOM.div( {onClick:this.clickHandler, className:track_class}, 
+//         this.props.ind + 1 + '.', " ", title
+//       );
+//   }
+// });
 
 
 export default MusicPlayer

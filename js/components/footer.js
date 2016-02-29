@@ -12,25 +12,28 @@ var Footer = {
   },
 
   onLogoClick() {
-    if(this.state.top == '') {
+    if(this.state.top == '' || this.state.top == 'overlay-move-back') {
       this.setState({
         top: 'overlay-move',
         opacity: '1'
       })
     } else {
       this.setState({
-        top: '',
+        top: 'overlay-move-back',
         opacity: '0'
       })
     }
   },
+
 
   render() {
     var overlayStyle = {opacity: this.state.opacity}
     return (
       <div>
         <div id="overlay" style={overlayStyle} className={this.state.top}>
-          <Overlay onLogoClick={this.onLogoClick} />
+          
+          <Overlay onLogoClick={this.onLogoClick} 
+                   value={this.state.top} />
         </div>
       <footer>
         <div id="logo" onClick={this.onLogoClick}>
@@ -38,7 +41,7 @@ var Footer = {
           <img id="splash" src="/assets/logo/logoback1.png" />
         </div>
         <div id="video-info">
-          <p id="video-title"><i><a href={this.props.userUrl}>{this.props.videoTitle}</a></i></p><p id="country-title">{this.props.countryName}</p>
+          <p id="video-title"><i><a href={this.props.userUrl}>{this.props.objTitle}</a></i></p><p id="country-title">{this.props.countryName}</p>
         </div>
       </footer>
       </div>

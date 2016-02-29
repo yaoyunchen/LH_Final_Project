@@ -14,8 +14,17 @@ p {
 }
 
 h1 {
-  margin-bottom: 30px;
+  margin-bottom: 5%;
   color: #f2f2f2;
+  font-size: 5.5vh;
+}
+
+h3 {
+  font-size: 3.0vh;
+}
+
+h4 {
+  font-size: 2.5vh;
 }
 
 footer {
@@ -39,6 +48,30 @@ button.vjs-control.vjs-button.material-icons {
   text-align: left;
 }
 
+input {
+  width: 100%;
+  height: 30px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  color: #000;
+  background-color: rgba(245, 245, 245, 0.5);
+  border: none;
+  padding-left: 2%;
+}
+
+input:focus {
+  outline: none;
+}
+
+legend {
+  text-align: right;
+  color: #FFFFFF;
+  width: 100%;
+  opacity: 0.5;
+}
+
 .jqvmap-zoomin, .jqvmap-zoomout {
   background: none;
 }
@@ -56,6 +89,42 @@ button.vjs-control.vjs-button.material-icons {
 .show-loading img {
   width: 100%;
   height: 100%;
+}
+
+.music-player {
+  z-index: 900;
+  width: 100%;
+  bottom: 10%;
+  /*background-color: rgba(43, 51, 63, 1);*/
+  background-color: rgba(0, 0, 0, 1);
+  position: absolute;
+}
+
+.react-soundcloud-progress {
+  width: 80%;
+  margin: auto;
+}
+
+.hide-display {
+  display: none;
+}
+
+.Select-menu-outer {
+  /*position: absolute;*/
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-top: 5px;
+  max-height: 200px;
+  max-width: 150px;
+  margin: auto;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.Select-menu {
+  max-height: 200px;
+  overflow-y: scroll;
 }
 
 #container {
@@ -193,22 +262,38 @@ button.vjs-control.vjs-button.material-icons {
   background: -ms-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
   background: radial-gradient(ellipse at center, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ededed', GradientType=1 );
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in;
   top: -110%;
 }
 
+#parent-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 #overlay-content {
+  position: absolute;
+  left: 0;
+  top: 0;
   margin-left: 20%;
   margin-right: 20%;
 }
 
 #overlay-content, #overlay-content h1 {
-  margin-top: 15%;
+  margin-top: 8%;
   color: black;
 }
 
 #overlay.overlay-move {
   top: 0;
+}
+
+#overlay.overlay-move-back {
+  top: -110%;
+  /*transition: top -110%, 0.5s;*/
+  transition-delay: 1s;
+  transform: translate3d(0, 0, 0)
 }
 
 #intro {
@@ -227,9 +312,41 @@ button.vjs-control.vjs-button.material-icons {
   display: inline;
 }
 
+/*#space-div {
+  position: relative;
+}*/
+
 #plane-icon {
-  height: 8%;
-  width: 8%;
+  position: absolute;
+  /*height: 8%;*/
+  width: 15%;
+  margin: auto;
+  bottom: 5%;
+  right: 42%;
+  transition: all 0.3s ease-in-out;
+}
+
+#plane-icon:hover {
+  transform: scale(1.5);
+}
+
+#flying-plane {
+  position: absolute;
+  width: 35%;
+  z-index: 8000;
+  /*top: 5%;*/
+  /*left: 40%;*/
+  left: 30%;
+  bottom: 25%;
+  /*margin: auto;*/
+}
+
+#blank-space {
+  position: relative;
+  height: 72px;
+  width: 72px;
+  margin: auto;
+  bottom: 15%;
 }
 
 #mode-toggle {
@@ -280,20 +397,10 @@ button.vjs-control.vjs-button.material-icons {
   opacity: 1;
 }
 
-.music-player {
-  z-index: 100000;
-  width: 100%;
-  bottom: 10%;
-  /*background-color: rgba(43, 51, 63, 1);*/
-  background-color: rgba(0, 0, 0, 1);
-  position: absolute;
-}
-
-.react-soundcloud-progress {
-  width: 80%;
-  margin: auto;
-}
-
-.hide-display {
-  display: none;
+#search-form {
+  /*bottom: 5%;*/
+  /*top: 20%;*/
+  /*position: absolute;*/
+  width: 90%;
+  margin-top: 50%;
 }
