@@ -89,7 +89,8 @@ class App extends React.Component{
         //clear old requests
         that.setState({
           musicUsers: [],
-          tracks: []
+          tracks: [], 
+          setInitialMusic: true
         })
 
         //repopulate current state with soundcloud user id
