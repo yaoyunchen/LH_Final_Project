@@ -23,6 +23,8 @@
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+  <script src="/assets/select-chosen_v1.5.1/chosen.jquery.js"></script>
+
   <script src="/assets/spinning-globe/spinning-globe-jquery-plugin/js/jquery.spinningGlobe.js"></script>
 
   <script type="text/javascript" src="./assets/jqmap/dist/jquery.vmap.min.js"></script>
@@ -52,12 +54,10 @@
 
   <script>
     $(".vjs-button.material-icons").text('fast_forward');
-    $('img').on('click', function() {
-      var blankDiv = $('#blank-space');
-      if (blankDiv.hasClass('hide-display')) {
-        blankDiv.removeClass('hide-display');
-      } 
-    });
+    $('.chosen-select').chosen();
+    $('.Select-placeholder').text('Select a country...');
+    $('.Select-input').children('input').css('width', '100%');
+    $('.Select-clear-zone').children('.Select-clear').css('margin-left', '2%');
   </script>
 </body>
 </html>
