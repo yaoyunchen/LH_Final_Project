@@ -51,6 +51,10 @@ var Slider = {
             countryCode={this.props.countryCode}
             onMapClick={this.handleSliderMapClick}
           />
+          <fieldset id="search-form">
+            <legend>Search a country</legend>
+            <input type="text" placeholder="Country Name" />
+          </fieldset>
         </div>
       </div>
     )

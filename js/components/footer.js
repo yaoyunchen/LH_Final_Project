@@ -12,14 +12,14 @@ var Footer = {
   },
 
   onLogoClick() {
-    if(this.state.top == '') {
+    if(this.state.top == '' || this.state.top == 'overlay-move-back') {
       this.setState({
         top: 'overlay-move',
         opacity: '1'
       })
     } else {
       this.setState({
-        top: '',
+        top: 'overlay-move-back',
         opacity: '0'
       })
     }
@@ -31,7 +31,9 @@ var Footer = {
     return (
       <div>
         <div id="overlay" style={overlayStyle} className={this.state.top}>
-          <Overlay onLogoClick={this.onLogoClick} />
+          
+          <Overlay onLogoClick={this.onLogoClick} 
+                   value={this.state.top} />
         </div>
       <footer>
         <div id="logo" onClick={this.onLogoClick}>
