@@ -1,4 +1,4 @@
-## Glimpse
+# Glimpse
 Glimpse is a global exploration and social discovery app that aims to provide a tranquil but visually-stimulating experience.
 
 This project was created with the intention of providing a view into different cultures through the lens of other social explorers.
@@ -9,7 +9,7 @@ The project was created using React.js, JavaScript, jQuery, HTML5, and CSS3, in 
 
 <p>Created by Kay Cheng, Elaya Sison, Kenny Wu, and Andy Yao. © 2016.</p>
 
-# Instructions
+## Instructions
 - Download the file
 - Run 'npm start'
 - Visit 'localhost:8000'
