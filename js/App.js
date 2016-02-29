@@ -16,15 +16,12 @@ const keys = {
   soundCloudKey: "fa2d3ee788a538551b4a812ccabaf9b9"
 }
 
-var file = './db/countries.json';
+const file = './db/countries.json';
 
 class App extends React.Component{
   constructor() {
     super();
     this.state = {
-      videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
-      imageUrl: './assets/paperplane.png',
-      userUrl: '',
       countryList: [],
       countryCode: '',
       countryName: '',
@@ -34,16 +31,20 @@ class App extends React.Component{
       cityName: '',
       getCode: false,
       loading: '',
-      playMode: 'video',
-      objTitle: '',
-      tracks: [],
       videoList: [],
+      videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
+      videoPlayerStatus: 'video-js vjs-default-skin',
       imageList: [],
+      imageUrl: './assets/paperplane.png',
+      objTitle: '',
+      userUrl: '',
+      tracks: [],
       tmpTrack: '',
       musicUsers: [],
       musicPlayerStatus: 'hide-display',
-      videoPlayerStatus: 'video-js vjs-default-skin',
-      setInitialVideo: true
+      playMode: 'video',
+      setInitialVideo: true,
+      setInitialMusic: true,
     };
 
     this.handleMapClick = this.handleMapClick.bind(this);
@@ -57,6 +58,7 @@ class App extends React.Component{
     this.handleMusicClick = this.handleMusicClick.bind(this);
     this.insertIntoArray = this.insertIntoArray.bind(this);
     this.setFlickrObject = this.setFlickrObject.bind(this);
+    this.setSCObject = this.setSCObject.bind(this);
   }
 
   componentDidMount() {
@@ -64,6 +66,7 @@ class App extends React.Component{
     setInterval(this.loadCountries.bind(this), this.props.pollInterval);
   }
   
+  // Loads the countries from the json file to local storage so doesn't have to search Flickr.
   loadCountries() {
     $.ajax({
       url: file,
@@ -76,14 +79,12 @@ class App extends React.Component{
     });
   }
 
-  //called from flickrfindplace function
-  //uses current state's country NAME
+ 
   scUsersQueryByCountry(country){
     var that = this;
     if (country !== '') {
-      //limited to first 5 users (usually most popular)
       var strUrl = "http://api.soundcloud.com/users.json?client_id=" + keys.soundCloudKey + "&q=" + country;
-      // + "&limit=10"
+
       this.serverRequest = $.get(strUrl, function(results) {
         //clear old requests
         that.setState({
@@ -334,10 +335,15 @@ class App extends React.Component{
     }
   }
 
+  setSCObject() {
+    this.setState({
+      setInitialMusic: false
+    })
+  }
+
   handleNextObject(type){
     var that = this;
     var videoList = this.state.videoList;
-    var firstTime = true;
     // Load the next video.
     for(var i = 0; i < videoList.length - 1; i++) {
       if (videoList[i].url == this.state.videoUrl) {
@@ -348,15 +354,8 @@ class App extends React.Component{
         if (videoList[i + 2].url == videoList[videoList.length-1].url) {
           that.flickrPhotoPage(that.state.place_id, that.state.woe_id, "videos");
         }
-        firstTime = false;
         return that.setFlickrObject(nextVid, nextTitle, nextUser, "video");
       }
-    }
-    if (firstTime === true) {
-      var nextVid = videoList[0].url;
-      var nextTitle = videoList[0].objTitle;
-      var nextUser = videoList[0].userUrl;
-      return that.setFlickrObject(nextVid, nextTitle, nextUser, "video");
     }
   }
 
@@ -415,8 +414,8 @@ class App extends React.Component{
           videoList={this.state.videoList}
           videoUrl={this.state.videoUrl}
           loading={this.state.loading}
-          setFlickrObject={this.setFlickrObject}
           setInitialVideo={this.state.setInitialVideo}
+          setFlickrObject={this.setFlickrObject}
         />
         <ImageSlideshow
           imageUrl={this.state.imageUrl}
@@ -427,6 +426,9 @@ class App extends React.Component{
           key={keys.soundCloudKey}
           tracks={this.state.tracks}
           playMode={this.state.playMode}
+          setInitialMusic={this.state.setInitialMusic}
+          setSCObject={this.setSCObject}
+          loading={this.state.loading}
         />
         <Footer 
           objTitle={this.state.objTitle}
@@ -434,9 +436,8 @@ class App extends React.Component{
           userUrl={this.state.userUrl}
         />
       </div>
-      )
+    )
   }
-
 };
 
 export default App
