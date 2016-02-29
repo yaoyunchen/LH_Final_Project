@@ -54,6 +54,12 @@
 
   <script>
     $(".vjs-button.material-icons").text('fast_forward');
+    $('img').on('click', function() { 
+      var blankDiv = $('#blank-space'); 
+      if (blankDiv.hasClass('hide-display')) { 
+        blankDiv.removeClass('hide-display');  
+      }     
+     });
     $('.chosen-select').chosen();
     $('.Select-placeholder').text('Select a country...');
     $('.Select-input').children('input').css('width', '100%');
