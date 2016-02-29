@@ -432,7 +432,7 @@
     "woe_id": "23424740",
     "place_id": "RoCCvR1TUb7O4dn1E",
     "cities" : []
-  }
+  },
   {
     "code": "EC",
     "name": "Ecuador",
@@ -1674,7 +1674,7 @@
   },
   {
     "code": "VN",
-    "name": "Viet Nam",
+    "name": "Vietnam",
     "woe_id": "23424984",
     "place_id": "WnHhXGpTUb51gvRgFg",
     "cities" : ["Ha Noi"]
@@ -1720,7 +1720,7 @@
     "woe_id": "23424942",
     "place_id": "_0F0zO5TUb6ddnb9qQ",
     "cities" : ["Cape Town"]
-  }
+  },
   {
     "code": "ZM",
     "name": "Zambia",
@@ -1734,5 +1734,5 @@
     "woe_id": "23425004",
     "place_id": "875k7VdTUb5czA6z2Q",
     "cities" : []
-  },
+  }
 ]

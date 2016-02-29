@@ -69,6 +69,7 @@ class App extends React.Component{
       url: file,
       dataType: 'json',
       success: (data) => {
+        localStorage.clear();
         localStorage.setItem('countries', JSON.stringify(data)), function() {
         }
       }
@@ -402,6 +403,7 @@ class App extends React.Component{
         <Slider 
           countryCode={this.state.countryCode}
           onMapClick={this.handleMapClick}
+          countryList={this.state.countryList}
         />
         <LoadingScreen 
           loading={this.state.loading}
