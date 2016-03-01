@@ -400,6 +400,7 @@ class App extends React.Component{
     this.setState({
       videoPlayerStatus: 'vjs-tech',
       musicPlayerStatus: 'hide-display',
+      slideshowStatus: 'hide-display',
       playMode: 'video'
     })
     
