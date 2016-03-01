@@ -4,7 +4,7 @@ var ReactDOM = require('react-dom');
 var Slider = require('react-slick')
 
 const sliderOptions = {
-  dots: false,
+  dots: true,
   arrows: false,
   autoplay: true,
   autoplaySpeed: 5000,
@@ -16,67 +16,78 @@ const sliderOptions = {
   slidesToScroll: 1
 }
 
-const defaultImages = {
-  img1: 'https://static.pexels.com/photos/279/black-and-white-branches-tree-high.jpg',
-  img2: '',
-  img3: '',
-  img4: '',
-  img5: ''
-}
+const DEFAULT_IMG = 'https://static.pexels.com/photos/279/black-and-white-branches-tree-high.jpg';
 
 var ImageSlideshow = React.createClass({
 
   getInitialState: function() {
     return {
-      img1: '',
-      img2: '',
-      img3: '',
-      img4: '',
-      img5: ''
+      imgArray: []
     }
+  },
+
+  componentWillMount() {
+    // Load the default image for the slideshow.
+    this.setState({
+      imgArray: [DEFAULT_IMG, DEFAULT_IMG, DEFAULT_IMG,  DEFAULT_IMG, DEFAULT_IMG]
+    });
   },
 
   componentWillReceiveProps(nextProps) {
     
-    if (this.props.playMode == 'video' && nextProps.playMode == 'music') {
+    if (this.props.imageList.length == 49 && nextProps.imageList.length == 50) {
+   
+      this.buildArray(nextProps);
+    }
+    // If on music mode.
+
+      // If no country is selected.
+
+        // If a country is selected.
+
+      // If a country is selected.
+
+
+    // If on video mode.
+
+      // If a country is selected. -> load the Flickr images.
+
+
+    // If going back to video mode.
+
+  // var images = [];
+  // for (var i=0; i < this.props.imageList.length; i++) {
+  //   var image = this.props.imageList[i].url;
+  //   images.push(image);
+  // }
+
+    // if (this.props.playMode == 'video' && nextProps.playMode == 'music') {
       
-      //If there is no country selected.
-      if (this.props.imageList.length == 5) {
-        this.loadImages();
-      } else {
-        this.loadDefaultImages();
-      }
+    //   //If there is no country selected.
+    //   if (this.props.imageList.length == 5) {
+    //     this.loadImages();
+    //   } 
 
+    // }
+
+    // if (this.props.setInitialImage == true && this.props.imageList.length != 0) {
+    //   var object=this.props.imageList;
+    //   this.props.setFlickrObject(object[0].url, object[0].title, object[0].user_url, "images")
+    // }
+  },
+
+  buildArray: function(nextProps) {
+    var tmpArray = [];
+    for(var i = 0; i < nextProps.imageList.length; i++) {
+      tmpArray.push(nextProps.imageList[i].url);
     }
+    this.loadImages(tmpArray)
+  }, 
 
-    if (this.props.setInitialImage == true && this.props.imageList.length != 0) {
-      var object=this.props.imageList;
-      this.props.setFlickrObject(object[0].url, object[0].title, object[0].user_url, "images")
-    }
-  },
-
-  loadImages: function() {
+  loadImages: function(arr) {
     this.setState({
-      img1: this.props.imageList[0].url,
-      img2: this.props.imageList[1].url,
-      img3: this.props.imageList[2].url,
-      img4: this.props.imageList[3].url,
-      img5: this.props.imageList[4].url
+      imgArray: arr
     });
-  },
-
-  loadDefaultImages: function() {
-    this.setState({
-      img1: defaultImages.img1,
-      img2: defaultImages.img2,
-      img3: defaultImages.img3,
-      img4: defaultImages.img4,
-      img5: defaultImages.img5
-    });
-  },
-
-  changeImage() {
-
   },
 
   render: function() {    
@@ -84,16 +95,24 @@ var ImageSlideshow = React.createClass({
       <Slider className={this.props.slideshowStatus}
         {...sliderOptions}
       >
-        <div><img src={this.state.img1} /></div>
-        <div><img src={this.state.img2} /></div>
-        <div><img src={this.state.img3} /></div>
-        <div><img src={this.state.img4} /></div>
-        <div><img src={this.state.img5} /></div>
+        {this.state.imgArray.map(function(result, i) {
+          return (
+            <div key={i}>
+              <ImageWrapper key={i} id={i} data={result} />
+            </div>
+          )
+        })}
       </Slider>
     )
   }
 })
 
-
+var ImageWrapper = React.createClass ({  
+  render: function() {
+    return (
+      <img key={this.props.id} src={this.props.data}></img>
+    )
+  }
+});
 
 export default ImageSlideshow;
