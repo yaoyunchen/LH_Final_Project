@@ -805,7 +805,7 @@
     "cities" : []
   },
   {
-    "code": "KH",
+    "code": "NO",
     "name": "Norway",
     "woe_id": "23424910",
     "place_id": ".w.HEL1TUb59cTCREg",
@@ -1155,7 +1155,7 @@
     "cities" : ["Amsterdam", "Den Haag"]
   },
   {
-    "code": "NO",
+    "code": "KH",
     "name": "Cambodia",
     "woe_id": "23424776",
     "place_id": "QRvAZFVTUb4TyZ_dJA",
