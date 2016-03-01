@@ -154,6 +154,7 @@ var MusicPlayer = React.createClass({
   },
 
   previousTrack: function () {
+    var that = this;
     if (this.state.currentTrack - 1 < 0) {
       return;
     }

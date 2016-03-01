@@ -13,40 +13,49 @@ const ids = {
 var Overlay = {
   getInitialState() {
     return {
-      image: images.static,
-      id: ids.static
-    }
+      animated: true
+    };
   },
 
   componentWillReceiveProps(nextProp) {
+    
     if (nextProp.value === '' || nextProp.value === 'overlay-move-back') {
       this.setState({
-        image: images.animated,
-        id: ids.animated
+        animated: true
       })
     }
+
     if (nextProp.value === 'overlay-move') {
       this.setState({
-        image: images.static,
-        id: ids.static
+        animated: false
       })
     }
   },
 
-  // componentWillReceiveUpdates() {
-  //   const {display} = this.props
-  //   if (display === 'none') {
-  //     this.setState({
-  //       mode: 'overlay-show'
-  //     })
-  //   } else {
-  //     this.setState({
-  //       mode: ''
-  //     })
-  //   }
-  // },
-
   render() {
+  
+    const staticStyle = {
+      display: this.state.animated ? 'none' : 'block'
+    };
+
+    const staticImage = (<img 
+      onClick={this.props.onLogoClick} 
+      id={ids.static} 
+      style={staticStyle}
+      src={images.static}
+    />);
+
+    const animatedStyle = {
+      display: this.state.animated ? 'block' : 'none'
+    };
+
+    const animatedImage = (<img 
+      onClick={this.props.onLogoClick} 
+      id={ids.animated} 
+      style={animatedStyle} 
+      src={images.animated+"?a="+Math.random()}
+    />);
+
     return (
       <div id="parent-overlay">
         <div id="overlay-content">
@@ -54,7 +63,7 @@ var Overlay = {
           <h3><b>Glimpse is a global exploration and social discovery app where users can get a "glimpse" of various cultures and everyday events around the world through the eyes of others. Our app aims to provide a tranquil but visually-stimulating experience.</b></h3>
           <div id="space-div">
             <div id="blank-space" className="hide-display"></div>
-            <img onClick={this.props.onLogoClick} id={this.state.id} src={this.state.image} />
+            {staticImage}{animatedImage}
           </div>
           <h4><b>Created by Kay Cheng, Elaya Sison, Kenny Wu, and Andy Yao. © 2016.</b></h4>
         </div>
