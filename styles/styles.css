@@ -125,6 +125,11 @@ legend {
 .Select-menu {
   max-height: 200px;
   overflow-y: scroll;
+  overflow-scrolling: auto;
+}
+
+.Select-clear-zone {
+  display: none;
 }
 
 #container {
@@ -262,7 +267,7 @@ legend {
   background: -ms-radial-gradient(center, ellipse cover, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
   background: radial-gradient(ellipse at center, rgba(246,246,246,1) 20%, rgba(255,255,255,0.53) 58%, rgba(237,237,237,0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ededed', GradientType=1 );
-  transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in-out;
   top: -110%;
 }
 
@@ -312,13 +317,8 @@ legend {
   display: inline;
 }
 
-/*#space-div {
-  position: relative;
-}*/
-
 #plane-icon {
   position: absolute;
-  /*height: 8%;*/
   width: 15%;
   margin: auto;
   bottom: 5%;
@@ -334,11 +334,8 @@ legend {
   position: absolute;
   width: 35%;
   z-index: 8000;
-  /*top: 5%;*/
-  /*left: 40%;*/
   left: 30%;
-  bottom: 25%;
-  /*margin: auto;*/
+  bottom: 15%;
 }
 
 #blank-space {
