@@ -5,8 +5,7 @@ var ImageSlideshow = {
   componentWillReceiveProps(nextProps) {
     if (this.props.setInitialImage == true && this.props.imageList.length != 0) {
       var object=this.props.imageList;
-      var index=this.props.imageIndex;
-      this.props.setFlickrObject(object[index].url, object[index].title, object[index].user_url, "images")
+      this.props.setFlickrObject(object[0].url, object[0].title, object[0].user_url, "images")
     } 
   },
 
