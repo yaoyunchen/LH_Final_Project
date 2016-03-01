@@ -35,7 +35,6 @@ class App extends React.Component{
       videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
       videoPlayerStatus: 'video-js vjs-default-skin',
       imageList: [],
-      imageUrl: './assets/paperplane.png',
       objTitle: '',
       userUrl: '',
       tracks: [],
@@ -399,13 +398,18 @@ class App extends React.Component{
           handleEyeClick={this.handleEyeClick}
           handleMusicClick={this.handleMusicClick}
         />
-        <Slider 
+        <Slider
           countryCode={this.state.countryCode}
           onMapClick={this.handleMapClick}
           countryList={this.state.countryList}
         />
-        <LoadingScreen 
+        <LoadingScreen
           loading={this.state.loading}
+        />
+        <ImageSlideshow
+          imageUrl={this.state.imageUrl}
+          playMode={this.state.playMode}
+          imageList={this.state.imageList}
         />
         <VideoPlayer
           videoPlayerStatus={this.state.videoPlayerStatus}
@@ -414,11 +418,8 @@ class App extends React.Component{
           videoList={this.state.videoList}
           videoUrl={this.state.videoUrl}
           loading={this.state.loading}
-          setInitialVideo={this.state.setInitialVideo}
           setFlickrObject={this.setFlickrObject}
-        />
-        <ImageSlideshow
-          imageUrl={this.state.imageUrl}
+          setInitialVideo={this.state.setInitialVideo}
         />
         <MusicPlayer
           musicPlayerStatus={this.state.musicPlayerStatus}
@@ -426,11 +427,8 @@ class App extends React.Component{
           key={keys.soundCloudKey}
           tracks={this.state.tracks}
           playMode={this.state.playMode}
-          setInitialMusic={this.state.setInitialMusic}
-          setSCObject={this.setSCObject}
-          loading={this.state.loading}
         />
-        <Footer 
+        <Footer
           objTitle={this.state.objTitle}
           countryName={this.state.countryName}
           userUrl={this.state.userUrl}

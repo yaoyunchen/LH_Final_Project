@@ -1,13 +1,35 @@
 var React = require('react');
 
-class ImageSlideshow extends React.Component{
+var ImageSlideshow = {
 
+  getInitialState() {
+    return {
+    status: 'slideshowStyle hide-display',
+    imageList: []
+    }
+  },
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.playMode == 'video' && nextProps.playMode == 'music') {
+      this.setState({
+        status: 'slideshowStyle',
+        imageList: this.props.imageList
+      })
+    } else if (this.props.playMode == 'music' && nextProps.playMode == 'video') {
+      this.setState({
+        status: 'slideshowStyle hide-display'
+      });
+    }
+  },
 
   render() {
     return (
-      <h1>Hi</h1>
+      <div className={this.state.status}>
+        <img className="imageStyle" src="https://static.pexels.com/photos/279/black-and-white-branches-tree-high.jpg" />
+      </div>
     )
   }
-};
 
-export default ImageSlideshow;
+}
+
+export default React.createClass(ImageSlideshow)
