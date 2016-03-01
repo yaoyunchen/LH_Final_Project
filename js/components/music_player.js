@@ -115,8 +115,9 @@ var MusicPlayer = React.createClass({
       this.playAction();
     }
 
+
     // Pauses music when changing from music to video mode.
-    if (this.props.playMode == 'music' && nextProps.playMode == 'video') {
+    if ((this.props.playMode == 'music' && nextProps.playMode == 'video') || (nextProps.loading == 'show-loading')) {
       this.setState({
         playing: false
       });
@@ -138,14 +139,17 @@ var MusicPlayer = React.createClass({
 
 
   nextTrack: function () {
+    var that = this;
     if (this.state.currentTrack + 1 >= this.props.tracks.length) {
       return;
     }
     var val = this.state.currentTrack + 1;
     this.setState({
       currentTrack: val
+    }, function () {
+      that.getinfo();
     });
-    this.getinfo();
+    
     this.playAction(val);
   },
 
@@ -156,6 +160,8 @@ var MusicPlayer = React.createClass({
     var val = this.state.currentTrack - 1;
     this.setState({
       currentTrack: val
+    }, function () {
+      that.getinfo();
     });
     this.getinfo();
     this.playAction(val);
