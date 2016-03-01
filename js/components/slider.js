@@ -42,6 +42,10 @@ var Slider = {
 
   logChange(obj) {
     this.props.onMapClick(obj.value);
+    this.setState({
+      status: '',
+      globestatus: ''
+    })
   },
 
   // componentDidUpdate() {
@@ -71,7 +75,7 @@ var Slider = {
             // className="chosen-select"
             placeholder="Select a country..."
             name="form-field-name"
-            // value="one"
+            // value="0"
             options={allCountries}
             onChange={this.logChange}
           />
