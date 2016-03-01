@@ -188,6 +188,10 @@ legend {
   bottom: 10%;
 }
 
+#player.vjs-fullscreen {
+  bottom: 0;
+}
+
 #globe {
   width: 100%;
   top: 40%;
