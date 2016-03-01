@@ -35,7 +35,7 @@ class App extends React.Component{
       videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
       videoPlayerStatus: 'video-js vjs-default-skin',
       imageList: [],
-      imageUrl: './assets/paperplane.png',
+      imageUrl: 'https://static.pexels.com/photos/279/black-and-white-branches-tree-high.jpg',
       objTitle: '',
       userUrl: '',
       tracks: [],
@@ -45,6 +45,8 @@ class App extends React.Component{
       playMode: 'video',
       setInitialVideo: true,
       setInitialMusic: true,
+      setInitialImage: true,
+      slideShowStatus: 'hide-display',
       reload: false
     };
 
@@ -336,6 +338,14 @@ class App extends React.Component{
         this.endLoadingScreen();
       }
     }
+    if (type == "images") {
+      this.setState({
+        videoUrl: objUrl,
+        objTitle: objTitle,
+        userUrl: objUser,
+        setInitialImage: false,
+      });
+    }
   }
 
   setSCObject() {
@@ -400,7 +410,8 @@ class App extends React.Component{
     this.setState({
       videoPlayerStatus: 'vjs-tech hide-display',
       musicPlayerStatus: 'music-player',
-      playMode: 'music'
+      playMode: 'music',
+      slideshowStatus: 'slideshowStyle imageStyle'
     });
 
     $('video').get(0).pause();
@@ -434,6 +445,10 @@ class App extends React.Component{
         />
         <ImageSlideshow
           imageUrl={this.state.imageUrl}
+          slideshowStatus={this.state.slideshowStatus}
+          setFlickrObject={this.setFlickrObject}
+          imageList={this.state.imageList}
+          setInitialImage={this.state.setInitialImage}
         />
         <MusicPlayer
           musicPlayerStatus={this.state.musicPlayerStatus}
