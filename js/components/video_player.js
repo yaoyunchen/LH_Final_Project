@@ -11,6 +11,7 @@ const vidOptions = {
 
 const vidDefault = {
   src: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
+  poster: "https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif",
   playbackRate: 0.25
 };
 
@@ -62,16 +63,25 @@ class VideoPlayer extends React.Component{
     this.setState({
       playDefault: false
     })
- 
+
     // Sets initial video to play.
-    if (this.props.setInitialVideo === true && nextProps.videoList.length == 5) {
-  
+    if (nextProps.setInitialVideo === true && nextProps.videoList.length == 5) {
       var url = nextProps.videoList[0].url;
       var objTitle = nextProps.videoList[0].objTitle;
-      var user = nextProps.videoList[0].userUrl
-      this.props.setFlickrObject(url, objTitle, user, "video");
+      var user = nextProps.videoList[0].userUrl;
+      nextProps.setFlickrObject(url, objTitle, user, "video");
     }
 
+    if (nextProps.reload === true) {
+      var url = nextProps.videoList[0].url;
+      var objTitle = nextProps.videoList[0].objTitle;
+      var user = nextProps.videoList[0].userUrl;
+      nextProps.setFlickrObject(url, objTitle, user, "video");
+    }
+    
+    if(this.props.countryCode != nextProps.countryCode) {
+      $('video').get(0).pause();
+    }
   }
 
   playNextVideo() {
@@ -91,7 +101,7 @@ class VideoPlayer extends React.Component{
       <video 
         id="player" 
         className={this.props.videoPlayerStatus}
-        poster= "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Flag_of_Afghanistan_%281880%E2%80%931901%29.svg/900px-Flag_of_Afghanistan_%281880%E2%80%931901%29.svg.png"
+        poster= {vidDefault.poster}
         onEnded= {this.playNextVideo}
         src={src}
       > 
