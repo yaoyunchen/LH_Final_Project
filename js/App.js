@@ -361,14 +361,25 @@ class App extends React.Component{
   }
 
   startLoadingScreen() {
+
+
     this.setState({
       loading:'show-loading'
+    }, function() {
+      ReactDOM.render(
+        <LoadingScreen 
+          loading={this.state.loading}
+        />,
+        document.getElementById('loading')
+      )
     })
   }
 
   endLoadingScreen() {
     this.setState({
       loading: ''
+    }, function() {
+      ReactDOM.unmountComponentAtNode(document.getElementById('loading'))
     })
   }
 
@@ -405,9 +416,7 @@ class App extends React.Component{
           onMapClick={this.handleMapClick}
           countryList={this.state.countryList}
         />
-        <LoadingScreen 
-          loading={this.state.loading}
-        />
+        <div id = 'loading'></div>
         <VideoPlayer
           videoPlayerStatus={this.state.videoPlayerStatus}
           onEnded={this.handleNextObject}
