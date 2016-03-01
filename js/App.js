@@ -340,7 +340,7 @@ class App extends React.Component{
     }
     if (type == "images") {
       this.setState({
-        videoUrl: objUrl,
+        imageUrl: objUrl,
         objTitle: objTitle,
         userUrl: objUser,
         setInitialImage: false,
