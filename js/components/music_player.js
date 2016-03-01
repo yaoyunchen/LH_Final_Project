@@ -158,6 +158,7 @@ var MusicPlayer = React.createClass({
       return;
     }
     var val = this.state.currentTrack - 1;
+    var that = this;
     this.setState({
       currentTrack: val
     }, function () {

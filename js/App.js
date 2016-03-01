@@ -35,6 +35,9 @@ class App extends React.Component{
       videoUrl: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
       videoPlayerStatus: 'video-js vjs-default-skin',
       imageList: [],
+      imageUrl: "https://static.pexels.com/photos/279/black-and-white-branches-tree-high.jpg",
+      imageIndex: 0,
+      slideshowStatus: 'hide-display',
       objTitle: '',
       userUrl: '',
       tracks: [],
@@ -44,6 +47,7 @@ class App extends React.Component{
       playMode: 'video',
       setInitialVideo: true,
       setInitialMusic: true,
+      setInitialImage: true
     };
 
     this.handleMapClick = this.handleMapClick.bind(this);
@@ -77,7 +81,6 @@ class App extends React.Component{
       }
     });
   }
-
  
   scUsersQueryByCountry(country){
     var that = this;
@@ -131,6 +134,8 @@ class App extends React.Component{
     })  
   }
 
+
+
   handleMapClick(code) {
     if (code !== '') {
       var that = this;
@@ -167,6 +172,7 @@ class App extends React.Component{
           that.flickrPhotoPage(that.state.place_id, that.state.woe_id, "images");
           // Load music URLs.
           that.scUsersQueryByCountry(that.state.countryName);
+          //set first image.
         });
         break;
       }
@@ -333,6 +339,14 @@ class App extends React.Component{
         this.endLoadingScreen();
       }
     }
+    if (type == "images") {
+      this.setState({
+        imageUrl: objUrl,
+        objTitle: objTitle,
+        userUrl: objUser,
+        setInitialImage: false,
+      })
+    }
   }
 
   setSCObject() {
@@ -375,6 +389,7 @@ class App extends React.Component{
     this.setState({
       videoPlayerStatus: 'vjs-tech',
       musicPlayerStatus: 'hide-display',
+      slideshowStatus: 'hide-display',
       playMode: 'video'
     })
     
@@ -385,6 +400,7 @@ class App extends React.Component{
     this.setState({
       videoPlayerStatus: 'vjs-tech hide-display',
       musicPlayerStatus: 'music-player',
+      slideshowStatus: 'imageStyle slideshowStyle',
       playMode: 'music'
     });
 
@@ -408,9 +424,13 @@ class App extends React.Component{
           loading={this.state.loading}
         />
         <ImageSlideshow
-          imageUrl={this.state.imageUrl}
-          playMode={this.state.playMode}
+          setInitialImage={this.state.setInitialImage}
+          playMode={this.props.playMode}
           imageList={this.state.imageList}
+          imageUrl={this.state.imageUrl}
+          slideshowStatus={this.state.slideshowStatus}
+          setFlickrObject={this.setFlickrObject}
+          imageIndex={this.state.imageIndex}
         />
         <VideoPlayer
           videoPlayerStatus={this.state.videoPlayerStatus}
