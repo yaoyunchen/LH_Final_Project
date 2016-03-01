@@ -126,11 +126,31 @@ legend {
   max-height: 200px;
   overflow-y: scroll;
   overflow-scrolling: auto;
+
 }
 
+.Select-input input {
+  min-width: 150px;
+  padding-left: 5px;
+}
+  
 .Select-clear-zone {
   display: none;
 }
+
+.Select-option {
+  cursor: pointer;
+  /*border-bottom: 0.5px solid #EEE;*/
+}
+
+.Select-option:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*.Select-clear {
+  margin-left: 2%;
+}*/
 
 #container {
   position: fixed;
