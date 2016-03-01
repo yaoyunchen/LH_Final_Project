@@ -44,6 +44,11 @@ var Slider = {
     this.props.onMapClick(obj.value);
   },
 
+  // componentDidUpdate() {
+    // $('.Select-placeholder').text('Select a country...');
+    // $('.Select-clear-zone').children('.Select-clear').css('margin-left', '2%');
+  // },
+
   render() {
     var countryList = JSON.parse(localStorage.getItem('countries'));
     var allCountries = [];
@@ -64,8 +69,9 @@ var Slider = {
           />
           <Select
             // className="chosen-select"
+            placeholder="Select a country..."
             name="form-field-name"
-            value="one"
+            // value="one"
             options={allCountries}
             onChange={this.logChange}
           />
