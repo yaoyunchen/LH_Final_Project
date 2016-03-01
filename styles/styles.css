@@ -109,11 +109,15 @@ legend {
   display: none;
 }
 
+.Select.is-searchable {
+  margin-top: 42%;
+}
+
 .Select-menu-outer {
   /*position: absolute;*/
   background-color: rgba(255, 255, 255, 0.2);
   margin-top: 5px;
-  max-height: 200px;
+  max-height: 185px;
   max-width: 150px;
   margin: auto;
   border-bottom-left-radius: 8px;
@@ -123,7 +127,7 @@ legend {
 }
 
 .Select-menu {
-  max-height: 200px;
+  max-height: 185px;
   overflow-y: scroll;
   overflow-scrolling: auto;
 
@@ -140,7 +144,7 @@ legend {
 
 .Select-option {
   cursor: pointer;
-  /*border-bottom: 0.5px solid #EEE;*/
+  padding: 2px 0 2px 0;
 }
 
 .Select-option:hover {
@@ -412,12 +416,4 @@ legend {
 #slideshow-toggle.focused {
   box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.4);
   opacity: 1;
-}
-
-#search-form {
-  /*bottom: 5%;*/
-  /*top: 20%;*/
-  /*position: absolute;*/
-  width: 90%;
-  margin-top: 50%;
 }
