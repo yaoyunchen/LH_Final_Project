@@ -35,7 +35,7 @@ var Slider = {
       this.props.onMapClick(code);
       this.setState({
         status: '',
-        globestatus: '',
+        globestatus: ''
       })
     } 
   },
