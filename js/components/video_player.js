@@ -15,14 +15,12 @@ const vidDefault = {
   playbackRate: 0.25
 };
 
-class VideoPlayer extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
+var VideoPlayer = React.createClass({
+  getInitialState: function() {
+    return {
       playDefault: false
     }
-    this.playNextVideo = this.playNextVideo.bind(this);
-  }
+  },
 
   componentDidMount() {
     var that = this;
@@ -56,7 +54,7 @@ class VideoPlayer extends React.Component{
 
     var skip = player.controlBar.addChild(new skipBtn());
     skip.addClass("material-icons");
-  }
+  },
 
   componentWillReceiveProps(nextProps) {
     var player = videojs(document.getElementById("player"), vidOptions);
@@ -82,11 +80,11 @@ class VideoPlayer extends React.Component{
     if(this.props.countryCode != nextProps.countryCode) {
       $('video').get(0).pause();
     }
-  }
+  },
 
   playNextVideo() {
     this.props.onEnded('video');
-  }
+  },
 
   render(){
     var src = this.props.videoUrl
@@ -108,7 +106,7 @@ class VideoPlayer extends React.Component{
       </video>
     )
   }
-};
+});
 
 
 export default VideoPlayer

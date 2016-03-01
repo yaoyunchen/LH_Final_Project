@@ -18,10 +18,9 @@ const keys = {
 
 const file = './db/countries.json';
 
-class App extends React.Component{
-  constructor() {
-    super();
-    this.state = {
+var App = React.createClass({
+  getInitialState: function() {
+    return {
       countryList: [],
       countryCode: '',
       countryName: '',
@@ -49,27 +48,10 @@ class App extends React.Component{
       slideShowStatus: 'hide-display',
       reload: false
     };
-
-    this.handleMapClick = this.handleMapClick.bind(this);
-    this.searchCountry = this.searchCountry.bind(this);
-    this.newList = this.newList.bind(this);
-    this.handleNextObject = this.handleNextObject.bind(this);
-    this.startLoadingScreen = this.startLoadingScreen.bind(this);
-    this.endLoadingScreen = this.endLoadingScreen.bind(this);
-    this.scUsersQueryByCountry = this.scUsersQueryByCountry.bind(this);
-    this.handleEyeClick = this.handleEyeClick.bind(this);
-    this.handleMusicClick = this.handleMusicClick.bind(this);
-    this.insertIntoArray = this.insertIntoArray.bind(this);
-    this.setFlickrObject = this.setFlickrObject.bind(this);
-    this.setSCObject = this.setSCObject.bind(this);
-  }
+  },
 
   componentDidMount() {
-    this.loadCountries();
-  }
-  
-  // Loads the countries from the json file to local storage so doesn't have to search Flickr.
-  loadCountries() {
+    // Loads the countries from the json file to local storage so doesn't have to search Flickr.
     $.ajax({
       url: file,
       dataType: 'json',
@@ -78,8 +60,8 @@ class App extends React.Component{
         }
       }
     });
-  }
-
+  },
+  
  
   scUsersQueryByCountry(country){
     var that = this;
@@ -105,7 +87,7 @@ class App extends React.Component{
         that.scCreateTracklist()   
       })
     }
-  }
+  },
 
   scCreateTracklist(){
     var that = this;
@@ -131,7 +113,7 @@ class App extends React.Component{
       tracks: tmpTracks,
       musicReady: true
     })  
-  }
+  },
 
   handleMapClick(code) {
     if (code !== '') {
@@ -143,7 +125,7 @@ class App extends React.Component{
         this.searchCountry(code, this.state.countryList)
       }
     }
-  }
+  },
 
   searchCountry(code, list) {
     var that = this;
@@ -177,7 +159,7 @@ class App extends React.Component{
     if (found === false) {
       this.flickrFindPlace(code, list);
     }
-  }
+  },
 
   // Search for and add the country to the json file if it doesn't exist.
   flickrFindPlace(code, list) {
@@ -213,13 +195,13 @@ class App extends React.Component{
         }
       }
     })
-  }
+  },
 
   newList(list) {
     this.setState({
       countryList: list
     });
-  }
+  },
 
   flickrPhotoPage(place_id, woe_id, type) {
     if (this.state.countryCode != '') {
@@ -266,7 +248,7 @@ class App extends React.Component{
         that.flickrPhotoSearch(place_id, woe_id, totalObjectsOnPage, pagesNumber, type);
       })
     }
-  }
+  },
 
   flickrPhotoSearch(place_id, woe_id, totalObjectsOnPage, pagesNumber, type) {
     var that = this;
@@ -285,7 +267,7 @@ class App extends React.Component{
         }
       } 
     })
-  }
+  },
 
 
   flickrGetSizes(object, type) {
@@ -308,7 +290,7 @@ class App extends React.Component{
 
       that.insertIntoArray(obj, type);
     })
-  }
+  },
 
   insertIntoArray(obj, type) {
     if (type == 'videos') {
@@ -320,7 +302,7 @@ class App extends React.Component{
         imageList: this.state.imageList.concat(obj)
       });
     }
-  }
+  },
 
   setFlickrObject(objUrl, objTitle, objUser, type) {
     if (type == "video") {
@@ -343,13 +325,13 @@ class App extends React.Component{
         setInitialImage: false,
       });
     }
-  }
+  },
 
   setSCObject() {
     this.setState({
       setInitialMusic: false
     })
-  }
+  },
 
   handleNextObject(type){
     var that = this;
@@ -370,7 +352,7 @@ class App extends React.Component{
         return that.setFlickrObject(nextVid, nextTitle, nextUser, "video");
       }
     }
-  }
+  },
 
   startLoadingScreen() {
     this.setState({
@@ -383,7 +365,7 @@ class App extends React.Component{
         document.getElementById('loading')
       )
     })
-  }
+  },
 
   endLoadingScreen() {
     this.setState({
@@ -391,7 +373,7 @@ class App extends React.Component{
     }, function() {
       ReactDOM.unmountComponentAtNode(document.getElementById('loading'))
     })
-  }
+  },
 
   handleEyeClick() {
     this.setState({
@@ -402,7 +384,7 @@ class App extends React.Component{
     })
     
     $('video').get(0).play();
-  }
+  },
   
   handleMusicClick() {
     this.setState({
@@ -414,9 +396,9 @@ class App extends React.Component{
 
     $('video').get(0).pause();
     
-  }
+  },
 
-  render(){
+  render: function() {
     return (
       <div id="container2">
         <ToggleButtons
@@ -442,6 +424,7 @@ class App extends React.Component{
           playMode={this.state.playMode}
         />
         <ImageSlideshow
+          playMode={this.state.playMode}
           imageUrl={this.state.imageUrl}
           slideshowStatus={this.state.slideshowStatus}
           setFlickrObject={this.setFlickrObject}
@@ -466,7 +449,7 @@ class App extends React.Component{
       </div>
     )
   }
-};
+});
 
 export default App
 
