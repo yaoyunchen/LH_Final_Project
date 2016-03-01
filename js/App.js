@@ -46,7 +46,7 @@ var App = React.createClass({
       setInitialMusic: true,
       setInitialImage: true,
       slideShowStatus: 'hide-display',
-      footerStatus: 'video-title',
+      footerStatus: 'video-info',
       reload: false
     };
   },

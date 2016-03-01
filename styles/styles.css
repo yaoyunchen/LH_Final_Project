@@ -95,7 +95,7 @@ legend {
   z-index: 900;
   width: 100%;
   bottom: 10%;
-  background-color: rgba(43, 51, 63, 0.5);
+  background-color: rgba(43, 51, 63, 0.7);
   /*background-color: rgba(0, 0, 0, 1);*/
   position: absolute;
 }
@@ -344,6 +344,7 @@ legend {
 
 #video-title {
   display: inline;
+  font-size: 3.5vh;
 }
 
 #plane-icon {
