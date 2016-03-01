@@ -36,7 +36,6 @@ var Slider = {
       this.setState({
         status: '',
         globestatus: '',
-        // countryList: this.props.countryList
       })
     } 
   },
