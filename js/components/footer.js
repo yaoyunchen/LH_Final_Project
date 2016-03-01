@@ -40,7 +40,7 @@ var Footer = {
           <img id="main-logo" src="/assets/logo/glimpse_logo1.gif" />
           <img id="splash" src="/assets/logo/logoback1.png" />
         </div>
-        <div id="video-info">
+        <div id={this.props.footerStatus}>
           <p id="video-title"><i><a href={this.props.userUrl}>{this.props.objTitle}</a></i></p><p id="country-title">{this.props.countryName}</p>
         </div>
       </footer>

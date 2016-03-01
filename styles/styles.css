@@ -433,3 +433,6 @@ legend {
   height: 100%;
 }
 
+#hide-display {
+  display:none;
+}
