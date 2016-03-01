@@ -46,6 +46,7 @@ var App = React.createClass({
       setInitialMusic: true,
       setInitialImage: true,
       slideShowStatus: 'hide-display',
+      footerStatus: 'video-title',
       reload: false
     };
   },
@@ -380,7 +381,8 @@ var App = React.createClass({
       videoPlayerStatus: 'vjs-tech',
       musicPlayerStatus: 'hide-display',
       slideshowStatus: 'hide-display',
-      playMode: 'video'
+      playMode: 'video',
+      footerStatus: 'video-info'
     })
     
     $('video').get(0).play();
@@ -391,7 +393,8 @@ var App = React.createClass({
       videoPlayerStatus: 'vjs-tech hide-display',
       musicPlayerStatus: 'music-player',
       playMode: 'music',
-      slideshowStatus: 'slideshowStyle imageStyle'
+      slideshowStatus: 'slideshowStyle imageStyle',
+      footerStatus: 'hide-display'
     });
 
     $('video').get(0).pause();
@@ -443,6 +446,7 @@ var App = React.createClass({
         />
         <Footer 
           objTitle={this.state.objTitle}
+          footerStatus={this.state.footerStatus}
           countryName={this.state.countryName}
           userUrl={this.state.userUrl}
         />
