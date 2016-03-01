@@ -7,7 +7,7 @@ var ImageSlideshow = {
       var object=this.props.imageList;
       var index=this.props.imageIndex;
       this.props.setFlickrObject(object[index].url, object[index].title, object[index].user_url, "images")
-    }
+    } 
   },
 
   render() {
