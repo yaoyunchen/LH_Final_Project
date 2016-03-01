@@ -55,13 +55,13 @@
     "place_id": "rGlnXVNTUb5GJw0Y6A",
     "cities" : []
   },
-  {
-    "code": "AQ",
-    "name": "Antarctica",
-    "woe_id": "28289409",
-    "place_id": "q59Ez6dTWrhtYDm1pA",
-    "cities" : []
-  },
+  // {
+  //   "code": "AQ",
+  //   "name": "Antarctica",
+  //   "woe_id": "28289409",
+  //   "place_id": "q59Ez6dTWrhtYDm1pA",
+  //   "cities" : []
+  // },
   {
     "code": "AR",
     "name": "Argentina",
