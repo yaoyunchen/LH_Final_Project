@@ -74,7 +74,6 @@ class App extends React.Component{
       url: file,
       dataType: 'json',
       success: (data) => {
-        localStorage.clear();
         localStorage.setItem('countries', JSON.stringify(data)), function() {
         }
       }
