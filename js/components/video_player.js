@@ -29,7 +29,6 @@ class VideoPlayer extends React.Component{
         player.playbackRate(vidDefault.playbackRate);
     });
 
-
     player.on("error", (e) => {
       if (this.props.countryCode != "") {
         console.log("Video Error - Loading another video from the country.")

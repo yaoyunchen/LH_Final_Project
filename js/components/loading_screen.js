@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
+
 
 var loadingGifs = [
   "http://3.bp.blogspot.com/-TwfMVDfEQZ0/VrDn3yXPDZI/AAAAAAAAG7g/3eplSpGOb9U/s1600/ocean.gif",
@@ -8,12 +10,30 @@ var loadingGifs = [
 ]
 
 class LoadingScreen extends React.Component{
+  componentDidMount() {
+    var ele = ReactDOM.findDOMNode(document.getElementById('loading-img'));
+    ele.style.opacity = 0;
+    window.requestAnimationFrame(function() {
+      ele.style.transition = "opacity 0.5s linear";
+      ele.style.opacity = 1;
+    });
+  }
+
   render() {
     return (
       <div className={this.props.loading} >
-        <img src={loadingGifs[0]}></img>
+        <img id="loading-img" src={loadingGifs[0]}></img>
       </div>
     )
+  }
+  
+  componentWillUnmount() {
+    var ele = ReactDOM.findDOMNode(document.getElementById('loading-img'));
+    ele.style.opacity = 1;
+    window.requestAnimationFrame(function() {
+      ele.style.transition = "opacity 0.5s linear";
+      ele.style.opacity = 0;
+    });
   }
 };
 
