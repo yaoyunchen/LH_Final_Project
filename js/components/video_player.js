@@ -11,7 +11,7 @@ const vidOptions = {
 
 const vidDefault = {
   src: "https://www.flickr.com/photos/wvs/2414600425/play/hd/a901c4406d/",
-  poster: "https://media.giphy.com/media/3AMRa6DRUhMli/giphy.gif",
+  poster: "",
   playbackRate: 0.25
 };
 
@@ -65,7 +65,7 @@ class VideoPlayer extends React.Component{
     })
 
     // Sets initial video to play.
-    if (nextProps.setInitialVideo === true && nextProps.videoList.length == 5) {
+    if (nextProps.setInitialVideo === true && nextProps.videoList.length == 1) {
       var url = nextProps.videoList[0].url;
       var objTitle = nextProps.videoList[0].objTitle;
       var user = nextProps.videoList[0].userUrl;

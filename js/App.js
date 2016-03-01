@@ -66,7 +66,6 @@ class App extends React.Component{
 
   componentDidMount() {
     this.loadCountries();
-    setInterval(this.loadCountries.bind(this), this.props.pollInterval);
   }
   
   // Loads the countries from the json file to local storage so doesn't have to search Flickr.
@@ -279,7 +278,6 @@ class App extends React.Component{
     } else if (type == 'images') {
        strUrl = "https://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key=" + keys.flickrKey + "&woe_id=" + woe_id + "&place_id=" + place_id + "&per_page=5&page=" + pagesNumber + "&format=json&nojsoncallback=1";
     }
-    
     this.serverRequest = $.get(strUrl, function(results) {
       var objectArray = results.photos.photo;
       for (var i = 0; i < objectArray.length; i++ ){
