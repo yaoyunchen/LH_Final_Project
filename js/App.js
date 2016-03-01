@@ -64,7 +64,7 @@ class App extends React.Component{
 
   componentDidMount() {
     this.loadCountries();
-    setInterval(this.loadCountries.bind(this), this.props.pollInterval);
+    // setInterval(this.loadCountries.bind(this), this.props.pollInterval);
   }
   
   // Loads the countries from the json file to local storage so doesn't have to search Flickr.
@@ -73,7 +73,6 @@ class App extends React.Component{
       url: file,
       dataType: 'json',
       success: (data) => {
-        localStorage.clear();
         localStorage.setItem('countries', JSON.stringify(data)), function() {
         }
       }
