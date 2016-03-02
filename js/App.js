@@ -57,8 +57,7 @@ var App = React.createClass({
       url: file,
       dataType: 'json',
       success: (data) => {
-        localStorage.setItem('countries', JSON.stringify(data)), function() {
-        }
+        localStorage.setItem('countries', JSON.stringify(data))
       }
     });
   },
@@ -335,22 +334,83 @@ var App = React.createClass({
   },
 
   handleNextObject(type){
+
     var that = this;
+    
     var videoList = this.state.videoList;
-    // Load the next video.
+    var currentVideo = this.state.videoUrl;
+    var nextVideo = [];
+
+    // Check if the video exists within the current array.
+    var videoExists = this.videoExist(currentVideo);
+
+    if (videoExists == true) {
+      // If the video exists, find the next video.
+      nextVideo = this.findNextVideo();
+
+      // If the next video is the same as the last video in the array, load five new videos in the array.
+      if (nextVideo[0] == this.state.videoList[videoList.length-4].url) {
+        // Load new array.
+        this.setState({
+          reload: true
+        });
+        this.flickrPhotoPage(that.state.place_id, that.state.woe_id, "videos");
+      }
+      // Skip the video.
+      return that.setFlickrObject(nextVideo[0], nextVideo[1], nextVideo[2], "video");
+    } else {
+      // If the video does not exist, load the first video in the current array.
+      if (this.state.videoList.length != 0) {
+        // Skip the video.
+        return that.setFlickrObject(videoList[0].url, videoList[0].objTitle, videoList[0].userUrl, "video");
+      } else {
+        // If for some reason there's no array, load the array first.
+        that.flickrPhotoPage(that.state.place_id, that.state.woe_id, "videos");
+        that.setState({
+          reload: true
+        });
+
+        //Skip the video.
+        return that.setFlickrObject(videoList[0].url, videoList[0].objTitle, videoList[0].userUrl, "video");  
+      }
+    }
+
+    // for(var i = 0; i < videoList.length - 1; i++) {
+    //   if (videoList[i].url == this.state.videoUrl) {
+    //     var nextVid = videoList[i + 1].url;
+    //     var nextTitle = videoList[i + 1].objTitle;
+    //     var nextUser = videoList[i + 1].userUrl;
+        
+    //     if (videoList[i + 1].url == videoList[videoList.length-1].url) {
+    //       that.flickrPhotoPage(that.state.place_id, that.state.woe_id, "videos");
+    //       that.setState({
+    //         reload: true
+    //       });
+    //     }
+    //     return that.setFlickrObject(nextVid, nextTitle, nextUser, "video");
+    //   }
+    // }
+  },
+
+  videoExist: function(currentVideo) {
+    var videoList = this.state.videoList;
+    var result = false;
+    for(var i = 0; i < videoList.length - 1; i++) {
+      if (videoList[i].url == currentVideo) {
+        result = true;
+      }
+    }
+    return result;
+  },
+
+  findNextVideo: function() {
+    var videoList = this.state.videoList;
     for(var i = 0; i < videoList.length - 1; i++) {
       if (videoList[i].url == this.state.videoUrl) {
         var nextVid = videoList[i + 1].url;
         var nextTitle = videoList[i + 1].objTitle;
         var nextUser = videoList[i + 1].userUrl;
-        
-        if (videoList[i + 1].url == videoList[videoList.length-1].url) {
-          that.flickrPhotoPage(that.state.place_id, that.state.woe_id, "videos");
-          that.setState({
-            reload: true
-          });
-        }
-        return that.setFlickrObject(nextVid, nextTitle, nextUser, "video");
+        return ([nextVid, nextTitle, nextUser]);
       }
     }
   },
@@ -427,6 +487,7 @@ var App = React.createClass({
           playMode={this.state.playMode}
         />
         <ImageSlideshow
+          countryCode={this.state.countryCode}
           playMode={this.state.playMode}
           imageUrl={this.state.imageUrl}
           slideshowStatus={this.state.slideshowStatus}

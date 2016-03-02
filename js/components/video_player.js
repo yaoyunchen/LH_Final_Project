@@ -99,7 +99,6 @@ var VideoPlayer = React.createClass({
       <video 
         id="player" 
         className={this.props.videoPlayerStatus}
-        poster= {vidDefault.poster}
         onEnded= {this.playNextVideo}
         src={src}
       > 
@@ -107,6 +106,7 @@ var VideoPlayer = React.createClass({
     )
   }
 });
+
 
 
 export default VideoPlayer
