@@ -39,41 +39,6 @@ var ImageSlideshow = React.createClass({
    
       this.buildArray(nextProps);
     }
-    // If on music mode.
-
-      // If no country is selected.
-
-        // If a country is selected.
-
-      // If a country is selected.
-
-
-    // If on video mode.
-
-      // If a country is selected. -> load the Flickr images.
-
-
-    // If going back to video mode.
-
-  // var images = [];
-  // for (var i=0; i < this.props.imageList.length; i++) {
-  //   var image = this.props.imageList[i].url;
-  //   images.push(image);
-  // }
-
-    // if (this.props.playMode == 'video' && nextProps.playMode == 'music') {
-      
-    //   //If there is no country selected.
-    //   if (this.props.imageList.length == 5) {
-    //     this.loadImages();
-    //   } 
-
-    // }
-
-    // if (this.props.setInitialImage == true && this.props.imageList.length != 0) {
-    //   var object=this.props.imageList;
-    //   this.props.setFlickrObject(object[0].url, object[0].title, object[0].user_url, "images")
-    // }
   },
 
   buildArray: function(nextProps) {
