@@ -354,6 +354,8 @@ legend {
 #plane-icon {
   position: absolute;
   width: 15%;
+  max-width: 110px;
+  min-width: 100px;
   margin: auto;
   bottom: 5%;
   right: 42%;
@@ -367,8 +369,11 @@ legend {
 #flying-plane {
   position: absolute;
   width: 35%;
+  max-width: 250px;
+  min-width: 245px;
   z-index: 8000;
-  left: 30%;
+  /*left: 30%;*/
+  right: 35%;
   bottom: 15%;
 }
 
