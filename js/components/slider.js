@@ -42,6 +42,8 @@ var Slider = {
 
   logChange(obj) {
     this.props.onMapClick(obj.value);
+    jQuery('#vmap').vectorMap('deselect', this.props.countryCode);
+    jQuery('#vmap').vectorMap('select', obj.value);
     this.setState({
       status: '',
       globestatus: ''
@@ -52,7 +54,7 @@ var Slider = {
     // $('.Select-placeholder').text('Select a country...');
     // $('.Select-clear-zone').children('.Select-clear').css('margin-left', '2%');
   // },
-
+    
   render() {
     var countryList = JSON.parse(localStorage.getItem('countries'));
     var allCountries = [];
