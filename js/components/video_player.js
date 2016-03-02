@@ -70,12 +70,12 @@ var VideoPlayer = React.createClass({
       nextProps.setFlickrObject(url, objTitle, user, "video");
     }
 
-    if (nextProps.reload === true) {
-      var url = nextProps.videoList[0].url;
-      var objTitle = nextProps.videoList[0].objTitle;
-      var user = nextProps.videoList[0].userUrl;
-      nextProps.setFlickrObject(url, objTitle, user, "video");
-    }
+    // if (nextProps.reload === true && this.props.countryCode != '') {
+    //   var url = nextProps.videoList[0].url;
+    //   var objTitle = nextProps.videoList[0].objTitle;
+    //   var user = nextProps.videoList[0].userUrl;
+    //   nextProps.setFlickrObject(url, objTitle, user, "video");
+    // }
     
     if(this.props.countryCode != nextProps.countryCode) {
       $('video').get(0).pause();

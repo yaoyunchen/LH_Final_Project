@@ -349,7 +349,7 @@ var App = React.createClass({
       nextVideo = this.findNextVideo();
 
       // If the next video is the same as the last video in the array, load five new videos in the array.
-      if (nextVideo[0] == this.state.videoList[videoList.length-4].url) {
+      if (nextVideo[0] == this.state.videoList[videoList.length-1].url) {
         // Load new array.
         this.setState({
           reload: true
@@ -370,8 +370,8 @@ var App = React.createClass({
           reload: true
         });
 
-        //Skip the video.
-        return that.setFlickrObject(videoList[0].url, videoList[0].objTitle, videoList[0].userUrl, "video");  
+        // //Skip the video.
+        // return that.setFlickrObject(videoList[0].url, videoList[0].objTitle, videoList[0].userUrl, "video");  
       }
     }
 
