@@ -121,6 +121,7 @@ var App = React.createClass({
       
       if (this.state.countryList.length == 0) { 
         this.searchCountry(code, JSON.parse(localStorage.getItem('countries')));
+        //this.searchCountry(code, JSON.parse(file));
       } else {
         this.searchCountry(code, this.state.countryList)
       }
