@@ -19744,7 +19744,7 @@
 	      setInitialVideo: true,
 	      setInitialMusic: true,
 	      setInitialImage: true,
-	      slideShowStatus: 'hide-display',
+	      slideshowStatus: '',
 	      footerStatus: 'video-info',
 	      reload: false
 	    };
@@ -20126,7 +20126,7 @@
 	    this.setState({
 	      videoPlayerStatus: 'vjs-tech',
 	      musicPlayerStatus: 'hide-display',
-	      slideshowStatus: 'hide-display',
+	      slideshowStatus: '',
 	      playMode: 'video',
 	      footerStatus: 'video-info'
 	    });
