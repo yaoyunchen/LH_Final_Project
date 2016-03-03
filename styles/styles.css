@@ -273,6 +273,7 @@ legend {
   float: right;
   right: -100%;
   z-index: 1000;
+  top: -10%;
   bottom: 10%;
   transition: all 0.35s ease;
 }
