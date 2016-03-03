@@ -43013,7 +43013,7 @@
 	  arrows: false,
 	  autoplay: true,
 	  autoplaySpeed: 5000,
-	  centerMode: true,
+	  centerMode: false,
 	  adaptiveHeight: false,
 	  draggable: false,
 	  fade: true,
@@ -46863,7 +46863,7 @@
 	          React.createElement(
 	            "b",
 	            null,
-	            "Glimpse is a global exploration and social discovery app where users can get a \"glimpse\" of various cultures and everyday events around the world through the eyes of others. Our app aims to provide a tranquil but visually-stimulating experience."
+	            "Glimpse is a global exploration and social discovery app where users can get a \"glimpse\" of various cultures and everyday events around the world through the eyes of others. Our app aims to provide a tranquil and visually-stimulating experience."
 	          )
 	        ),
 	        React.createElement(

@@ -60,7 +60,7 @@ var Overlay = {
       <div id="parent-overlay">
         <div id="overlay-content">
           <h1>Glimpse</h1>
-          <h3><b>Glimpse is a global exploration and social discovery app where users can get a "glimpse" of various cultures and everyday events around the world through the eyes of others. Our app aims to provide a tranquil but visually-stimulating experience.</b></h3>
+          <h3><b>Glimpse is a global exploration and social discovery app where users can get a "glimpse" of various cultures and everyday events around the world through the eyes of others. Our app aims to provide a tranquil and visually-stimulating experience.</b></h3>
           <div id="space-div">
             <div id="blank-space" className="hide-display"></div>
             {staticImage}{animatedImage}
