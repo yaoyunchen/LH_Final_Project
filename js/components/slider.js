@@ -56,7 +56,8 @@ var Slider = {
   // },
     
   render() {
-    var countryList = JSON.parse(localStorage.getItem('countries'));
+    //var countryList = JSON.parse(localStorage.getItem('countries'));
+    var countryList = this.props.countryList;
     var allCountries = [];
     for (var i = 0; i < countryList.length; i++) {
       allCountries.push({value: countryList[i].code, label: countryList[i].name});

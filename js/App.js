@@ -57,7 +57,10 @@ var App = React.createClass({
       url: file,
       dataType: 'json',
       success: (data) => {
-        localStorage.setItem('countries', JSON.stringify(data))
+        //localStorage.setItem('countries', JSON.stringify(data))
+        this.setState({
+          countryList: data
+        })
       }
     });
   },
@@ -118,13 +121,13 @@ var App = React.createClass({
   handleMapClick(code) {
     if (code !== '') {
       var that = this;
-      
-      if (this.state.countryList.length == 0) { 
-        this.searchCountry(code, JSON.parse(localStorage.getItem('countries')));
+      this.searchCountry(code, this.state.countryList)      
+      // if (this.state.countryList.length == 0) { 
+      //   this.searchCountry(code, JSON.parse(localStorage.getItem('countries')));
 
-      } else {
-        this.searchCountry(code, this.state.countryList)
-      }
+      // } else {
+      //   this.searchCountry(code, this.state.countryList)
+      // }
     }
   },
 
@@ -157,9 +160,9 @@ var App = React.createClass({
       }
     }
 
-    if (found === false) {
-      this.flickrFindPlace(code, list);
-    }
+    // if (found === false) {
+    //   this.flickrFindPlace(code, list);
+    // }
   },
 
   // Search for and add the country to the json file if it doesn't exist.
