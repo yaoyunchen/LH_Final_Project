@@ -46879,7 +46879,7 @@
 	          React.createElement(
 	            "b",
 	            null,
-	            "Created by Kay Cheng, Elaya Sison, Kenny Wu, and Andy Yao. © 2016."
+	            "Presented by Kay Cheng, Kenny Wu, and Andy Yao. © 2016."
 	          )
 	        )
 	      )
