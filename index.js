@@ -19751,12 +19751,17 @@
 	  },
 
 	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+
 	    // Loads the countries from the json file to local storage so doesn't have to search Flickr.
 	    $.ajax({
 	      url: file,
 	      dataType: 'json',
 	      success: function success(data) {
-	        localStorage.setItem('countries', JSON.stringify(data));
+	        //localStorage.setItem('countries', JSON.stringify(data))
+	        _this.setState({
+	          countryList: data
+	        });
 	      }
 	    });
 	  },
@@ -19813,12 +19818,13 @@
 	  handleMapClick: function handleMapClick(code) {
 	    if (code !== '') {
 	      var that = this;
+	      this.searchCountry(code, this.state.countryList);
+	      // if (this.state.countryList.length == 0) {
+	      //   this.searchCountry(code, JSON.parse(localStorage.getItem('countries')));
 
-	      if (this.state.countryList.length == 0) {
-	        this.searchCountry(code, JSON.parse(localStorage.getItem('countries')));
-	      } else {
-	        this.searchCountry(code, this.state.countryList);
-	      }
+	      // } else {
+	      //   this.searchCountry(code, this.state.countryList)
+	      // }
 	    }
 	  },
 	  searchCountry: function searchCountry(code, list) {
@@ -19850,9 +19856,9 @@
 	      }
 	    }
 
-	    if (found === false) {
-	      this.flickrFindPlace(code, list);
-	    }
+	    // if (found === false) {
+	    //   this.flickrFindPlace(code, list);
+	    // }
 	  },
 
 
@@ -45165,7 +45171,8 @@
 	  // },
 
 	  render: function render() {
-	    var countryList = JSON.parse(localStorage.getItem('countries'));
+	    //var countryList = JSON.parse(localStorage.getItem('countries'));
+	    var countryList = this.props.countryList;
 	    var allCountries = [];
 	    for (var i = 0; i < countryList.length; i++) {
 	      allCountries.push({ value: countryList[i].code, label: countryList[i].name });
